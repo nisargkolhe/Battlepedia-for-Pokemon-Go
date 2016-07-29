@@ -40,9 +40,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
         holder.pokemonName.setText(kmon.name);
         holder.ndex.setText("#"+kmon.ndex);
+        String color = kmon.type1.toLowerCase();
+        int img = mContext.getResources().getIdentifier("n"+kmon.ndex+".gif", "drawable", mContext.getPackageName());
+        holder.pokemonNameHolder.setBackgroundColor(mContext.getResources().getIdentifier(color, "color", mContext.getPackageName()));
 
-
-        Picasso.with(mContext).load(kmon.imageName).into(holder.pokeImg);
+        //Picasso.with(mContext).load(kmon.imageName).into(holder.pokeImg);
+        //Picasso.with(mContext).load(R.drawable.n1);
+        Picasso.with(mContext).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+kmon.ndex).into(holder.pokeImg);
         Picasso.with(mContext).load(mContext.getResources().getIdentifier(kmon.type1.toLowerCase(), "drawable", mContext.getPackageName())).into(holder.bgImg);
         /*Bitmap photo = BitmapFactory.decodeResource(mContext.getResources(),mContext.getResources().getIdentifier(kmon.type1.toLowerCase(), "drawable", mContext.getPackageName()));
 
