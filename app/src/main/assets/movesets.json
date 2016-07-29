@@ -1,0 +1,624 @@
+{
+  "Movesets":[
+    {
+      "attack": "Psycho Cut",
+      "type": "Psychic",
+      "dps": 15
+    },
+    {
+      "attack": "Mud Shot",
+      "type": "Ground",
+      "dps": 12
+    },
+    {
+      "attack": "Water Gun",
+      "type": "Water",
+      "dps": 10
+    },
+    {
+      "attack": "Scratch",
+      "type": "Normal",
+      "dps": 10
+    },
+    {
+      "attack": "Lick",
+      "type": "Ghost",
+      "dps": 10
+    },
+    {
+      "attack": "Metal Claw",
+      "type": "Steel",
+      "dps": 12
+    },
+    {
+      "attack": "Shadow Claw",
+      "type": "Ghost",
+      "dps": 16
+    },
+    {
+      "attack": "Wing Attack",
+      "type": "Flying",
+      "dps": 12
+    },
+    {
+      "attack": "Vine Whip",
+      "type": "Grass",
+      "dps": 10
+    },
+    {
+      "attack": "Pound",
+      "type": "Normal",
+      "dps": 8
+    },
+    {
+      "attack": "Frost Breath",
+      "type": "Ice",
+      "dps": 12
+    },
+    {
+      "attack": "Zen Headbutt",
+      "type": "Psychic",
+      "dps": 15
+    },
+    {
+      "attack": "Poison Jab",
+      "type": "Poison",
+      "dps": 15
+    },
+    {
+      "attack": "Bug Bite",
+      "type": "Bug",
+      "dps": 6
+    },
+    {
+      "attack": "Dragon Breath",
+      "type": "Dragon",
+      "dps": 6
+    },
+    {
+      "attack": "Bite",
+      "type": "Dark",
+      "dps": 6
+    },
+    {
+      "attack": "Feint Attack",
+      "type": "Dark",
+      "dps": 12
+    },
+    {
+      "attack": "Steel Wing",
+      "type": "Steel",
+      "dps": 15
+    },
+    {
+      "attack": "Tackle",
+      "type": "Normal",
+      "dps": 12
+    },
+    {
+      "attack": "Cut",
+      "type": "Normal",
+      "dps": 12
+    },
+    {
+      "attack": "Poison Sting",
+      "type": "Poison",
+      "dps": 6
+    },
+    {
+      "attack": "Razor Leaf",
+      "type": "Grass",
+      "dps": 15
+    },
+    {
+      "attack": "Sucker Punch",
+      "type": "Dark",
+      "dps": 7
+    },
+    {
+      "attack": "Spark",
+      "type": "Electric",
+      "dps": 7
+    },
+    {
+      "attack": "Ember",
+      "type": "Fire",
+      "dps": 10
+    },
+    {
+      "attack": "Acid",
+      "type": "Poison",
+      "dps": 10
+    },
+    {
+      "attack": "Rock Throw",
+      "type": "Rock",
+      "dps": 12
+    },
+    {
+      "attack": "Peck",
+      "type": "Flying",
+      "dps": 10
+    },
+    {
+      "attack": "Thunder Shock",
+      "type": "Electric",
+      "dps": 5
+    },
+    {
+      "attack": "Low Kick",
+      "type": "Fighting",
+      "dps": 5
+    },
+    {
+      "attack": "Fire Fang",
+      "type": "Fire",
+      "dps": 7
+    },
+    {
+      "attack": "Bullet Punch",
+      "type": "Steel",
+      "dps": 10
+    },
+    {
+      "attack": "Confusion",
+      "type": "Psychic",
+      "dps": 12
+    },
+    {
+      "attack": "Quick Attack",
+      "type": "Normal",
+      "dps": 10
+    },
+    {
+      "attack": "Karate Chop",
+      "type": "Fighting",
+      "dps": 6
+    },
+    {
+      "attack": "Fury Cutter",
+      "type": "Bug",
+      "dps": 3
+    },
+    {
+      "attack": "Ice Shard",
+      "type": "Ice",
+      "dps": 10
+    },
+    {
+      "attack": "Bubble",
+      "type": "Water",
+      "dps": 15
+    },
+    {
+      "attack": "Mud Slap",
+      "type": "Ground",
+      "dps": 6
+    },
+    {
+      "attack": "Rock Smash",
+      "type": "Fighting",
+      "dps": 5
+    },
+    {
+      "attack": "Splash",
+      "type": "Water",
+      "dps": 0
+    },
+    {
+      "attack": "Body Slam",
+      "type": "Normal",
+      "dps": 50
+    },
+    {
+      "attack": "Brick Break",
+      "type": "Fighting",
+      "dps": 30
+    },
+    {
+      "attack": "Iron Head",
+      "type": "Steel",
+      "dps": 40
+    },
+    {
+      "attack": "Dragon Claw",
+      "type": "Dragon",
+      "dps": 40
+    },
+    {
+      "attack": "Cross Poison",
+      "type": "Poison",
+      "dps": 20
+    },
+    {
+      "attack": "Thunder Punch",
+      "type": "Electric",
+      "dps": 40
+    },
+    {
+      "attack": "Bone Club",
+      "type": "Ground",
+      "dps": 20
+    },
+    {
+      "attack": "Hyper Fang",
+      "type": "Normal",
+      "dps": 35
+    },
+    {
+      "attack": "Discharge",
+      "type": "Electric",
+      "dps": 40
+    },
+    {
+      "attack": "Flame Burst",
+      "type": "Fire",
+      "dps": 25
+    },
+    {
+      "attack": "Stomp",
+      "type": "Normal",
+      "dps": 25
+    },
+    {
+      "attack": "Psyshock",
+      "type": "Psychic",
+      "dps": 40
+    },
+    {
+      "attack": "Low Sweep",
+      "type": "Fighting",
+      "dps": 25
+    },
+    {
+      "attack": "Struggle",
+      "type": "Normal",
+      "dps": 15
+    },
+    {
+      "attack": "X Scissor",
+      "type": "Bug",
+      "dps": 30
+    },
+    {
+      "attack": "Submission",
+      "type": "Fighting",
+      "dps": 30
+    },
+    {
+      "attack": "Aqua Tail",
+      "type": "Water",
+      "dps": 50
+    },
+    {
+      "attack": "Flash Cannon",
+      "type": "Steel",
+      "dps": 55
+    },
+    {
+      "attack": "Power Gem",
+      "type": "Rock",
+      "dps": 40
+    },
+    {
+      "attack": "Night Slash",
+      "type": "Dark",
+      "dps": 25
+    },
+    {
+      "attack": "Shadow Ball",
+      "type": "Ghost",
+      "dps": 40
+    },
+    {
+      "attack": "Dark Pulse",
+      "type": "Dark",
+      "dps": 45
+    },
+    {
+      "attack": "Ice Punch",
+      "type": "Ice",
+      "dps": 45
+    },
+    {
+      "attack": "Sludge Bomb",
+      "type": "Poison",
+      "dps": 50
+    },
+    {
+      "attack": "Mud Bomb",
+      "type": "Ground",
+      "dps": 25
+    },
+    {
+      "attack": "Sludge",
+      "type": "Poison",
+      "dps": 25
+    },
+    {
+      "attack": "Fire Punch",
+      "type": "Fire",
+      "dps": 35
+    },
+    {
+      "attack": "Seed Bomb",
+      "type": "Grass",
+      "dps": 30
+    },
+    {
+      "attack": "Rock Slide",
+      "type": "Rock",
+      "dps": 40
+    },
+    {
+      "attack": "Thunderbolt",
+      "type": "Electric",
+      "dps": 50
+    },
+    {
+      "attack": "Psybeam",
+      "type": "Psychic",
+      "dps": 35
+    },
+    {
+      "attack": "Water Pulse",
+      "type": "Water",
+      "dps": 30
+    },
+    {
+      "attack": "Horn Attack",
+      "type": "Normal",
+      "dps": 20
+    },
+    {
+      "attack": "Psychic",
+      "type": "Psychic",
+      "dps": 50
+    },
+    {
+      "attack": "Magnet Bomb",
+      "type": "Steel",
+      "dps": 25
+    },
+    {
+      "attack": "Vice Grip",
+      "type": "Normal",
+      "dps": 15
+    },
+    {
+      "attack": "Bulldoze",
+      "type": "Ground",
+      "dps": 30
+    },
+    {
+      "attack": "Leaf Blade",
+      "type": "Grass",
+      "dps": 45
+    },
+    {
+      "attack": "Play Rough",
+      "type": "Fairy",
+      "dps": 50
+    },
+    {
+      "attack": "Flamethrower",
+      "type": "Fire",
+      "dps": 50
+    },
+    {
+      "attack": "Aerial Ace",
+      "type": "Flying",
+      "dps": 25
+    },
+    {
+      "attack": "Bubble Beam",
+      "type": "Water",
+      "dps": 25
+    },
+    {
+      "attack": "Signal Beam",
+      "type": "Bug",
+      "dps": 35
+    },
+    {
+      "attack": "Ancient Power",
+      "type": "Rock",
+      "dps": 30
+    },
+    {
+      "attack": "Drill Peck",
+      "type": "Flying",
+      "dps": 30
+    },
+    {
+      "attack": "Swift",
+      "type": "Normal",
+      "dps": 25
+    },
+    {
+      "attack": "Air Cutter",
+      "type": "Flying",
+      "dps": 25
+    },
+    {
+      "attack": "Rock Tomb",
+      "type": "Rock",
+      "dps": 25
+    },
+    {
+      "attack": "Flame Charge",
+      "type": "Fire",
+      "dps": 25
+    },
+    {
+      "attack": "Ominous Wind",
+      "type": "Ghost",
+      "dps": 25
+    },
+    {
+      "attack": "Dazzling Gleam",
+      "type": "Fairy",
+      "dps": 45
+    },
+    {
+      "attack": "Aqua Jet",
+      "type": "Water",
+      "dps": 15
+    },
+    {
+      "attack": "Petal Blizzard",
+      "type": "Grass",
+      "dps": 50
+    },
+    {
+      "attack": "Poison Fang",
+      "type": "Poison",
+      "dps": 15
+    },
+    {
+      "attack": "Brine",
+      "type": "Water",
+      "dps": 15
+    },
+    {
+      "attack": "Flame Wheel",
+      "type": "Fire",
+      "dps": 35
+    },
+    {
+      "attack": "Cross Chop",
+      "type": "Fighting",
+      "dps": 55
+    },
+    {
+      "attack": "Drill Run",
+      "type": "Ground",
+      "dps": 30
+    },
+    {
+      "attack": "Dragon Pulse",
+      "type": "Dragon",
+      "dps": 50
+    },
+    {
+      "attack": "Twister",
+      "type": "Dragon",
+      "dps": 15
+    },
+    {
+      "attack": "Ice Beam",
+      "type": "Ice",
+      "dps": 50
+    },
+    {
+      "attack": "Draining Kiss",
+      "type": "Fairy",
+      "dps": 15
+    },
+    {
+      "attack": "Scald",
+      "type": "Water",
+      "dps": 35
+    },
+    {
+      "attack": "Disarming Voice",
+      "type": "Fairy",
+      "dps": 20
+    },
+    {
+      "attack": "Bug Buzz",
+      "type": "Bug",
+      "dps": 50
+    },
+    {
+      "attack": "Dig",
+      "type": "Ground",
+      "dps": 45
+    },
+    {
+      "attack": "Stone Edge",
+      "type": "Rock",
+      "dps": 55
+    },
+    {
+      "attack": "Power Whip",
+      "type": "Grass",
+      "dps": 60
+    },
+    {
+      "attack": "Gunk Shot",
+      "type": "Poison",
+      "dps": 60
+    },
+    {
+      "attack": "Icy Wind",
+      "type": "Ice",
+      "dps": 15
+    },
+    {
+      "attack": "Hurricane",
+      "type": "Flying",
+      "dps": 60
+    },
+    {
+      "attack": "Wrap",
+      "type": "Normal",
+      "dps": 15
+    },
+    {
+      "attack": "Sludge Wave",
+      "type": "Poison",
+      "dps": 60
+    },
+    {
+      "attack": "Megahorn",
+      "type": "Bug",
+      "dps": 55
+    },
+    {
+      "attack": "Heat Wave",
+      "type": "Fire",
+      "dps": 60
+    },
+    {
+      "attack": "Hydro Pump",
+      "type": "Water",
+      "dps": 60
+    },
+    {
+      "attack": "Blizzard",
+      "type": "Ice",
+      "dps": 60
+    },
+    {
+      "attack": "Thunder",
+      "type": "Electric",
+      "dps": 65
+    },
+    {
+      "attack": "Moonblast",
+      "type": "Fairy",
+      "dps": 60
+    },
+    {
+      "attack": "Fire Blast",
+      "type": "Fire",
+      "dps": 60
+    },
+    {
+      "attack": "Earthquake",
+      "type": "Ground",
+      "dps": 60
+    },
+    {
+      "attack": "Hyper Beam",
+      "type": "Normal",
+      "dps": 70
+    },
+    {
+      "attack": "Solar Beam",
+      "type": "Grass",
+      "dps": 65
+    }
+  ]
+}

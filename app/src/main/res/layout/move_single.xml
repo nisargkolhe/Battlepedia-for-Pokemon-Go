@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    card_view:contentPadding="0dp"
+    card_view:cardCornerRadius="@dimen/card_corner_radius"
+    card_view:cardElevation="@dimen/card_elevation"
+    android:id="@+id/moveCard"
+    card_view:cardBackgroundColor="@color/normal">
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/normalicon"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="8dp"
+        android:id="@+id/moveType"
+        />
+    <TextView
+        android:id="@+id/move"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Dazzling Gleam"
+        android:textColor="@android:color/white"
+        android:textAppearance="?android:attr/textAppearanceListItem"
+        android:layout_gravity="center"
+        android:padding="8dp"
+        />
+    <TextView
+        android:id="@+id/dps"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:padding="8dp"
+        android:gravity="center"
+        android:text="23"
+        android:textColor="@android:color/white"
+        android:textAppearance="?android:attr/textAppearanceListItem"
+        android:background="@color/flying"/>
+</android.support.v7.widget.CardView>

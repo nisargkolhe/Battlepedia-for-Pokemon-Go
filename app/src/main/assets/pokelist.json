@@ -3,7 +3,7 @@
     {
       "num": 63,
       "name": "Abra",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.68,
       "hpBase": 25,
       "maxTotalCP": 600,
       "maxTotalHP": 51,
@@ -13,8 +13,7 @@
       "attack": 110,
       "defence": 76,
       "type1": "Psychic",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/c\/cf\/063MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 142,
@@ -29,13 +28,12 @@
       "attack": 182,
       "defence": 162,
       "type1": "Rock",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/d\/d1\/142MS.png"
+      "type2": "Flying"
     },
     {
       "num": 65,
       "name": "Alakazam",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 55,
       "maxTotalCP": 1813,
       "maxTotalHP": 98,
@@ -45,13 +43,12 @@
       "attack": 186,
       "defence": 152,
       "type1": "Psychic",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/c\/ca\/065MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 24,
       "name": "Arbok",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 60,
       "maxTotalCP": 1767,
       "maxTotalHP": 106,
@@ -61,13 +58,12 @@
       "attack": 166,
       "defence": 166,
       "type1": "Poison",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/d\/d3\/024MS.png"
+      "type2": "Poison"
     },
     {
       "num": 59,
       "name": "Arcanine",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 90,
       "maxTotalCP": 2983,
       "maxTotalHP": 154,
@@ -77,8 +73,7 @@
       "attack": 230,
       "defence": 180,
       "type1": "Fire",
-      "type2": "Fire",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/3\/35\/059MS.png"
+      "type2": "Fire"
     },
     {
       "num": 144,
@@ -93,13 +88,12 @@
       "attack": 198,
       "defence": 242,
       "type1": "Ice",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/0\/04\/144MS.png"
+      "type2": "Flying"
     },
     {
       "num": 15,
       "name": "Beedrill",
-      "cpMultiplier": 1.1,
+      "cpMultiplier": "",
       "hpBase": 65,
       "maxTotalCP": 1439,
       "maxTotalHP": 114,
@@ -109,13 +103,12 @@
       "attack": 144,
       "defence": 130,
       "type1": "Bug",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/5a\/015MS.png"
+      "type2": "Poison"
     },
     {
       "num": 69,
       "name": "Bellsprout",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.57,
       "hpBase": 50,
       "maxTotalCP": 1117,
       "maxTotalHP": 90,
@@ -125,13 +118,12 @@
       "attack": 158,
       "defence": 78,
       "type1": "Grass",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/7\/7b\/069MS.png"
+      "type2": "Poison"
     },
     {
       "num": 9,
       "name": "Blastoise",
-      "cpMultiplier": 1.1,
+      "cpMultiplier": "",
       "hpBase": 79,
       "maxTotalCP": 2542,
       "maxTotalHP": 136,
@@ -141,13 +133,12 @@
       "attack": 186,
       "defence": 222,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/c\/cb\/009MS.png"
+      "type2": "Water"
     },
     {
       "num": 1,
       "name": "Bulbasaur",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.56,
       "hpBase": 45,
       "maxTotalCP": 1071,
       "maxTotalHP": 82,
@@ -157,13 +148,12 @@
       "attack": 126,
       "defence": 126,
       "type1": "Grass",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/e\/ec\/001MS.png"
+      "type2": "Poison"
     },
     {
       "num": 12,
       "name": "Butterfree",
-      "cpMultiplier": 1.1,
+      "cpMultiplier": "",
       "hpBase": 60,
       "maxTotalCP": 1454,
       "maxTotalHP": 106,
@@ -173,13 +163,12 @@
       "attack": 144,
       "defence": 144,
       "type1": "Bug",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/1\/14\/012MS.png"
+      "type2": "Flying"
     },
     {
       "num": 10,
       "name": "Caterpie",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.06,
       "hpBase": 45,
       "maxTotalCP": 443,
       "maxTotalHP": 82,
@@ -189,8 +178,7 @@
       "attack": 62,
       "defence": 66,
       "type1": "Bug",
-      "type2": "Bug",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/69\/010MS.png"
+      "type2": "Bug"
     },
     {
       "num": 113,
@@ -205,13 +193,12 @@
       "attack": 40,
       "defence": 60,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/e\/ea\/113MS.png"
+      "type2": "Normal"
     },
     {
       "num": 6,
       "name": "Charizard",
-      "cpMultiplier": 1.2,
+      "cpMultiplier": "",
       "hpBase": 78,
       "maxTotalCP": 2602,
       "maxTotalHP": 135,
@@ -221,13 +208,12 @@
       "attack": 212,
       "defence": 182,
       "type1": "Fire",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/0\/01\/006MS.png"
+      "type2": "Flying"
     },
     {
       "num": 4,
       "name": "Charmander",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.67,
       "hpBase": 39,
       "maxTotalCP": 955,
       "maxTotalHP": 73,
@@ -237,13 +223,12 @@
       "attack": 128,
       "defence": 108,
       "type1": "Fire",
-      "type2": "Fire",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/b\/bb\/004MS.png"
+      "type2": "Fire"
     },
     {
       "num": 5,
       "name": "Charmeleon",
-      "cpMultiplier": 1.3,
+      "cpMultiplier": 1.72,
       "hpBase": 58,
       "maxTotalCP": 1557,
       "maxTotalHP": 103,
@@ -253,13 +238,12 @@
       "attack": 160,
       "defence": 140,
       "type1": "Fire",
-      "type2": "Fire",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/d\/dc\/005MS.png"
+      "type2": "Fire"
     },
     {
       "num": 36,
       "name": "Clefable",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 95,
       "maxTotalCP": 2397,
       "maxTotalHP": 162,
@@ -269,13 +253,12 @@
       "attack": 178,
       "defence": 178,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/7\/75\/036MS.png"
+      "type2": "Normal"
     },
     {
       "num": 35,
       "name": "Clefairy",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.11,
       "hpBase": 70,
       "maxTotalCP": 1200,
       "maxTotalHP": 122,
@@ -285,13 +268,12 @@
       "attack": 116,
       "defence": 124,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/f\/f9\/035MS.png"
+      "type2": "Normal"
     },
     {
       "num": 91,
       "name": "Cloyster",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 50,
       "maxTotalCP": 2052,
       "maxTotalHP": 90,
@@ -301,13 +283,12 @@
       "attack": 196,
       "defence": 196,
       "type1": "Water",
-      "type2": "Ice",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/b\/bc\/091MS.png"
+      "type2": "Ice"
     },
     {
       "num": 104,
       "name": "Cubone",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.66,
       "hpBase": 50,
       "maxTotalCP": 1006,
       "maxTotalHP": 90,
@@ -317,13 +298,12 @@
       "attack": 102,
       "defence": 150,
       "type1": "Ground",
-      "type2": "Ground",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/2\/2e\/104MS.png"
+      "type2": "Ground"
     },
     {
       "num": 87,
       "name": "Dewgong",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 90,
       "maxTotalCP": 2145,
       "maxTotalHP": 154,
@@ -333,13 +313,12 @@
       "attack": 156,
       "defence": 192,
       "type1": "Water",
-      "type2": "Ice",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/2\/20\/087MS.png"
+      "type2": "Ice"
     },
     {
       "num": 50,
       "name": "Diglett",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.73,
       "hpBase": 10,
       "maxTotalCP": 456,
       "maxTotalHP": 27,
@@ -349,8 +328,7 @@
       "attack": 108,
       "defence": 86,
       "type1": "Ground",
-      "type2": "Ground",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/8\/8b\/050MS.png"
+      "type2": "Ground"
     },
     {
       "num": 132,
@@ -365,13 +343,12 @@
       "attack": 110,
       "defence": 110,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/53\/132MS.png"
+      "type2": "Normal"
     },
     {
       "num": 85,
       "name": "Dodrio",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 60,
       "maxTotalCP": 1836,
       "maxTotalHP": 106,
@@ -381,13 +358,12 @@
       "attack": 182,
       "defence": 150,
       "type1": "Normal",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/1\/19\/085MS.png"
+      "type2": "Flying"
     },
     {
       "num": 84,
       "name": "Doduo",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.18,
       "hpBase": 35,
       "maxTotalCP": 855,
       "maxTotalHP": 67,
@@ -397,13 +373,12 @@
       "attack": 126,
       "defence": 96,
       "type1": "Normal",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/f\/fc\/084MS.png"
+      "type2": "Flying"
     },
     {
       "num": 148,
       "name": "Dragonair",
-      "cpMultiplier": 1,
+      "cpMultiplier": 2.06,
       "hpBase": 61,
       "maxTotalCP": 1747,
       "maxTotalHP": 108,
@@ -413,13 +388,12 @@
       "attack": 170,
       "defence": 152,
       "type1": "Dragon",
-      "type2": "Dragon",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/4\/4e\/148MS.png"
+      "type2": "Dragon"
     },
     {
       "num": 149,
       "name": "Dragonite",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 91,
       "maxTotalCP": 3500,
       "maxTotalHP": 155,
@@ -429,13 +403,12 @@
       "attack": 250,
       "defence": 212,
       "type1": "Dragon",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/c\/cc\/149MS.png"
+      "type2": "Flying"
     },
     {
       "num": 147,
       "name": "Dratini",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.83,
       "hpBase": 41,
       "maxTotalCP": 983,
       "maxTotalHP": 76,
@@ -445,13 +418,12 @@
       "attack": 128,
       "defence": 110,
       "type1": "Dragon",
-      "type2": "Dragon",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/2\/26\/147MS.png"
+      "type2": "Dragon"
     },
     {
       "num": 96,
       "name": "Drowzee",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.08,
       "hpBase": 60,
       "maxTotalCP": 1075,
       "maxTotalHP": 106,
@@ -461,13 +433,12 @@
       "attack": 104,
       "defence": 140,
       "type1": "Psychic",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/8\/8e\/096MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 51,
       "name": "Dugtrio",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 35,
       "maxTotalCP": 1168,
       "maxTotalHP": 67,
@@ -477,8 +448,7 @@
       "attack": 148,
       "defence": 140,
       "type1": "Ground",
-      "type2": "Ground",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/8\/86\/051MS.png"
+      "type2": "Ground"
     },
     {
       "num": 133,
@@ -493,13 +463,12 @@
       "attack": 114,
       "defence": 128,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/d\/de\/133MS.png"
+      "type2": "Normal"
     },
     {
       "num": 23,
       "name": "Ekans",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.27,
       "hpBase": 35,
       "maxTotalCP": 824,
       "maxTotalHP": 67,
@@ -509,8 +478,7 @@
       "attack": 112,
       "defence": 112,
       "type1": "Poison",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/0\/0d\/023MS.png"
+      "type2": "Poison"
     },
     {
       "num": 125,
@@ -525,13 +493,12 @@
       "attack": 198,
       "defence": 160,
       "type1": "Electric",
-      "type2": "Electric",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/7\/72\/125MS.png"
+      "type2": "Electric"
     },
     {
       "num": 101,
       "name": "Electrode",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 60,
       "maxTotalCP": 1646,
       "maxTotalHP": 106,
@@ -541,13 +508,12 @@
       "attack": 150,
       "defence": 174,
       "type1": "Electric",
-      "type2": "Electric",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/69\/101MS.png"
+      "type2": "Electric"
     },
     {
       "num": 102,
       "name": "Exeggcute",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.94,
       "hpBase": 60,
       "maxTotalCP": 1099,
       "maxTotalHP": 106,
@@ -557,13 +523,12 @@
       "attack": 110,
       "defence": 132,
       "type1": "Grass",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/a\/a6\/102MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 103,
       "name": "Exeggutor",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 95,
       "maxTotalCP": 2955,
       "maxTotalHP": 162,
@@ -573,8 +538,7 @@
       "attack": 232,
       "defence": 164,
       "type1": "Grass",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/d\/db\/103MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 83,
@@ -589,13 +553,12 @@
       "attack": 138,
       "defence": 132,
       "type1": "Normal",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/57\/083MS.png"
+      "type2": "Flying"
     },
     {
       "num": 22,
       "name": "Fearow",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 65,
       "maxTotalCP": 1746,
       "maxTotalHP": 114,
@@ -605,13 +568,12 @@
       "attack": 168,
       "defence": 146,
       "type1": "Normal",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/3\/35\/022MS.png"
+      "type2": "Flying"
     },
     {
       "num": 136,
       "name": "Flareon",
-      "cpMultiplier": 1,
+      "cpMultiplier": 2.55,
       "hpBase": 65,
       "maxTotalCP": 2643,
       "maxTotalHP": 114,
@@ -621,13 +583,12 @@
       "attack": 238,
       "defence": 178,
       "type1": "Fire",
-      "type2": "Fire",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/3\/30\/136MS.png"
+      "type2": "Fire"
     },
     {
       "num": 92,
       "name": "Gastly",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.79,
       "hpBase": 30,
       "maxTotalCP": 804,
       "maxTotalHP": 59,
@@ -637,13 +598,12 @@
       "attack": 136,
       "defence": 82,
       "type1": "Ghost",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/c\/cf\/092MS.png"
+      "type2": "Poison"
     },
     {
       "num": 94,
       "name": "Gengar",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 60,
       "maxTotalCP": 2078,
       "maxTotalHP": 106,
@@ -653,13 +613,12 @@
       "attack": 204,
       "defence": 156,
       "type1": "Ghost",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/a\/a4\/094MS.png"
+      "type2": "Poison"
     },
     {
       "num": 74,
       "name": "Geodude",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.74,
       "hpBase": 40,
       "maxTotalCP": 849,
       "maxTotalHP": 75,
@@ -669,13 +628,12 @@
       "attack": 106,
       "defence": 118,
       "type1": "Rock",
-      "type2": "Ground",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/0\/04\/074MS.png"
+      "type2": "Ground"
     },
     {
       "num": 44,
       "name": "Gloom",
-      "cpMultiplier": 1,
+      "cpMultiplier": 1.51,
       "hpBase": 60,
       "maxTotalCP": 1689,
       "maxTotalHP": 106,
@@ -685,13 +643,12 @@
       "attack": 162,
       "defence": 158,
       "type1": "Grass",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/d\/d9\/044MS.png"
+      "type2": "Poison"
     },
     {
       "num": 42,
       "name": "Golbat",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 75,
       "maxTotalCP": 1921,
       "maxTotalHP": 130,
@@ -701,13 +658,12 @@
       "attack": 164,
       "defence": 164,
       "type1": "Poison",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/d\/d0\/042MS.png"
+      "type2": "Flying"
     },
     {
       "num": 118,
       "name": "Goldeen",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.19,
       "hpBase": 45,
       "maxTotalCP": 965,
       "maxTotalHP": 82,
@@ -717,13 +673,12 @@
       "attack": 112,
       "defence": 126,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/9\/9b\/118MS.png"
+      "type2": "Water"
     },
     {
       "num": 55,
       "name": "Golduck",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 80,
       "maxTotalCP": 2386,
       "maxTotalHP": 138,
@@ -733,13 +688,12 @@
       "attack": 194,
       "defence": 176,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/64\/055MS.png"
+      "type2": "Water"
     },
     {
       "num": 76,
       "name": "Golem",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 80,
       "maxTotalCP": 2303,
       "maxTotalHP": 138,
@@ -749,13 +703,12 @@
       "attack": 176,
       "defence": 198,
       "type1": "Rock",
-      "type2": "Ground",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/3\/34\/076MS.png"
+      "type2": "Ground"
     },
     {
       "num": 75,
       "name": "Graveler",
-      "cpMultiplier": 1,
+      "cpMultiplier": 1.68,
       "hpBase": 55,
       "maxTotalCP": 1433,
       "maxTotalHP": 98,
@@ -765,13 +718,12 @@
       "attack": 142,
       "defence": 156,
       "type1": "Rock",
-      "type2": "Ground",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/5c\/075MS.png"
+      "type2": "Ground"
     },
     {
       "num": 88,
       "name": "Grimer",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.1,
       "hpBase": 80,
       "maxTotalCP": 1284,
       "maxTotalHP": 138,
@@ -781,13 +733,12 @@
       "attack": 124,
       "defence": 110,
       "type1": "Poison",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/50\/088MS.png"
+      "type2": "Poison"
     },
     {
       "num": 58,
       "name": "Growlithe",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.31,
       "hpBase": 55,
       "maxTotalCP": 1335,
       "maxTotalHP": 98,
@@ -797,13 +748,12 @@
       "attack": 156,
       "defence": 110,
       "type1": "Fire",
-      "type2": "Fire",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/69\/058MS.png"
+      "type2": "Fire"
     },
     {
       "num": 130,
       "name": "Gyarados",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 95,
       "maxTotalCP": 2688,
       "maxTotalHP": 162,
@@ -813,13 +763,12 @@
       "attack": 192,
       "defence": 196,
       "type1": "Water",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/a\/a0\/130MS.png"
+      "type2": "Flying"
     },
     {
       "num": 93,
       "name": "Haunter",
-      "cpMultiplier": 1,
+      "cpMultiplier": 1.67,
       "hpBase": 45,
       "maxTotalCP": 1380,
       "maxTotalHP": 82,
@@ -829,8 +778,7 @@
       "attack": 172,
       "defence": 118,
       "type1": "Ghost",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/7\/71\/093MS.png"
+      "type2": "Poison"
     },
     {
       "num": 107,
@@ -845,8 +793,7 @@
       "attack": 138,
       "defence": 204,
       "type1": "Fighting",
-      "type2": "Fighting",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/1\/1a\/107MS.png"
+      "type2": "Fighting"
     },
     {
       "num": 106,
@@ -861,13 +808,12 @@
       "attack": 148,
       "defence": 172,
       "type1": "Fighting",
-      "type2": "Fighting",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/60\/106MS.png"
+      "type2": "Fighting"
     },
     {
       "num": 116,
       "name": "Horsea",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.21,
       "hpBase": 30,
       "maxTotalCP": 794,
       "maxTotalHP": 59,
@@ -877,13 +823,12 @@
       "attack": 122,
       "defence": 100,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/2\/23\/116MS.png"
+      "type2": "Water"
     },
     {
       "num": 97,
       "name": "Hypno",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 85,
       "maxTotalCP": 2184,
       "maxTotalHP": 146,
@@ -893,13 +838,12 @@
       "attack": 162,
       "defence": 196,
       "type1": "Psychic",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/9\/98\/097MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 2,
       "name": "Ivysaur",
-      "cpMultiplier": 2,
+      "cpMultiplier": 1.41,
       "hpBase": 60,
       "maxTotalCP": 1632,
       "maxTotalHP": 106,
@@ -909,13 +853,12 @@
       "attack": 156,
       "defence": 158,
       "type1": "Grass",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/6b\/002MS.png"
+      "type2": "Poison"
     },
     {
       "num": 39,
       "name": "Jigglypuff",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.44,
       "hpBase": 115,
       "maxTotalCP": 917,
       "maxTotalHP": 193,
@@ -925,13 +868,12 @@
       "attack": 98,
       "defence": 54,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/9\/9c\/039MS.png"
+      "type2": "Normal"
     },
     {
       "num": 135,
       "name": "Jolteon",
-      "cpMultiplier": 1,
+      "cpMultiplier": 2.05,
       "hpBase": 65,
       "maxTotalCP": 2140,
       "maxTotalHP": 114,
@@ -941,8 +883,7 @@
       "attack": 192,
       "defence": 174,
       "type1": "Electric",
-      "type2": "Electric",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/1\/16\/135MS.png"
+      "type2": "Electric"
     },
     {
       "num": 124,
@@ -957,13 +898,12 @@
       "attack": 172,
       "defence": 134,
       "type1": "Ice",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/f\/f5\/124MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 140,
       "name": "Kabuto",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.17,
       "hpBase": 30,
       "maxTotalCP": 1104,
       "maxTotalHP": 59,
@@ -973,13 +913,12 @@
       "attack": 148,
       "defence": 142,
       "type1": "Rock",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/1\/1e\/140MS.png"
+      "type2": "Water"
     },
     {
       "num": 141,
       "name": "Kabutops",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 60,
       "maxTotalCP": 2130,
       "maxTotalHP": 106,
@@ -989,13 +928,12 @@
       "attack": 190,
       "defence": 190,
       "type1": "Rock",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/0\/08\/141MS.png"
+      "type2": "Water"
     },
     {
       "num": 64,
       "name": "Kadabra",
-      "cpMultiplier": 1,
+      "cpMultiplier": 1.53,
       "hpBase": 40,
       "maxTotalCP": 1131,
       "maxTotalHP": 75,
@@ -1005,13 +943,12 @@
       "attack": 150,
       "defence": 112,
       "type1": "Psychic",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/b\/b6\/064MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 14,
       "name": "Kakuna",
-      "cpMultiplier": 1.1,
+      "cpMultiplier": 3.36,
       "hpBase": 45,
       "maxTotalCP": 485,
       "maxTotalHP": 82,
@@ -1021,8 +958,7 @@
       "attack": 62,
       "defence": 82,
       "type1": "Bug",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/8\/81\/014MS.png"
+      "type2": "Poison"
     },
     {
       "num": 115,
@@ -1037,13 +973,12 @@
       "attack": 142,
       "defence": 178,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/68\/115MS.png"
+      "type2": "Normal"
     },
     {
       "num": 99,
       "name": "Kingler",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 55,
       "maxTotalCP": 1823,
       "maxTotalHP": 98,
@@ -1053,13 +988,12 @@
       "attack": 178,
       "defence": 168,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/5c\/099MS.png"
+      "type2": "Water"
     },
     {
       "num": 109,
       "name": "Koffing",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.03,
       "hpBase": 40,
       "maxTotalCP": 1151,
       "maxTotalHP": 75,
@@ -1069,13 +1003,12 @@
       "attack": 136,
       "defence": 142,
       "type1": "Poison",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/3\/3f\/109MS.png"
+      "type2": "Poison"
     },
     {
       "num": 98,
       "name": "Krabby",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.38,
       "hpBase": 30,
       "maxTotalCP": 792,
       "maxTotalHP": 59,
@@ -1085,8 +1018,7 @@
       "attack": 116,
       "defence": 110,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/4\/40\/098MS.png"
+      "type2": "Water"
     },
     {
       "num": 131,
@@ -1101,8 +1033,7 @@
       "attack": 186,
       "defence": 190,
       "type1": "Water",
-      "type2": "Ice",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/4\/4b\/131MS.png"
+      "type2": "Ice"
     },
     {
       "num": 108,
@@ -1117,13 +1048,12 @@
       "attack": 126,
       "defence": 160,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/2\/25\/108MS.png"
+      "type2": "Normal"
     },
     {
       "num": 68,
       "name": "Machamp",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 90,
       "maxTotalCP": 2594,
       "maxTotalHP": 154,
@@ -1133,13 +1063,12 @@
       "attack": 198,
       "defence": 180,
       "type1": "Fighting",
-      "type2": "Fighting",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/1\/1e\/068MS.png"
+      "type2": "Fighting"
     },
     {
       "num": 67,
       "name": "Machoke",
-      "cpMultiplier": 1,
+      "cpMultiplier": 1.59,
       "hpBase": 80,
       "maxTotalCP": 1760,
       "maxTotalHP": 138,
@@ -1149,13 +1078,12 @@
       "attack": 154,
       "defence": 144,
       "type1": "Fighting",
-      "type2": "Fighting",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/0\/0f\/067MS.png"
+      "type2": "Fighting"
     },
     {
       "num": 66,
       "name": "Machop",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.65,
       "hpBase": 70,
       "maxTotalCP": 1089,
       "maxTotalHP": 122,
@@ -1165,13 +1093,12 @@
       "attack": 118,
       "defence": 96,
       "type1": "Fighting",
-      "type2": "Fighting",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/6c\/066MS.png"
+      "type2": "Fighting"
     },
     {
       "num": 129,
       "name": "Magikarp",
-      "cpMultiplier": "",
+      "cpMultiplier": 11.03,
       "hpBase": 20,
       "maxTotalCP": 262,
       "maxTotalHP": 43,
@@ -1181,8 +1108,7 @@
       "attack": 42,
       "defence": 84,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/7\/7c\/129MS.png"
+      "type2": "Water"
     },
     {
       "num": 126,
@@ -1197,13 +1123,12 @@
       "attack": 214,
       "defence": 158,
       "type1": "Fire",
-      "type2": "Fire",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/e\/e7\/126MS.png"
+      "type2": "Fire"
     },
     {
       "num": 81,
       "name": "Magnemite",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.18,
       "hpBase": 25,
       "maxTotalCP": 890,
       "maxTotalHP": 51,
@@ -1213,13 +1138,12 @@
       "attack": 128,
       "defence": 138,
       "type1": "Electric",
-      "type2": "Steel",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/0\/0f\/081MS.png"
+      "type2": "Steel"
     },
     {
       "num": 82,
       "name": "Magneton",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 50,
       "maxTotalCP": 1879,
       "maxTotalHP": 90,
@@ -1229,13 +1153,12 @@
       "attack": 186,
       "defence": 180,
       "type1": "Electric",
-      "type2": "Steel",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/0\/0c\/082MS.png"
+      "type2": "Steel"
     },
     {
       "num": 56,
       "name": "Mankey",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.22,
       "hpBase": 40,
       "maxTotalCP": 878,
       "maxTotalHP": 75,
@@ -1245,13 +1168,12 @@
       "attack": 122,
       "defence": 96,
       "type1": "Fighting",
-      "type2": "Fighting",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/a\/ad\/056MS.png"
+      "type2": "Fighting"
     },
     {
       "num": 105,
       "name": "Marowak",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 60,
       "maxTotalCP": 1656,
       "maxTotalHP": 106,
@@ -1261,13 +1183,12 @@
       "attack": 140,
       "defence": 202,
       "type1": "Ground",
-      "type2": "Ground",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/6f\/105MS.png"
+      "type2": "Ground"
     },
     {
       "num": 52,
       "name": "Meowth",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.11,
       "hpBase": 40,
       "maxTotalCP": 756,
       "maxTotalHP": 75,
@@ -1277,13 +1198,12 @@
       "attack": 104,
       "defence": 94,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/50\/052MS.png"
+      "type2": "Normal"
     },
     {
       "num": 11,
       "name": "Metapod",
-      "cpMultiplier": 1.1,
+      "cpMultiplier": 3.66,
       "hpBase": 50,
       "maxTotalCP": 477,
       "maxTotalHP": 90,
@@ -1293,8 +1213,7 @@
       "attack": 56,
       "defence": 86,
       "type1": "Bug",
-      "type2": "Bug",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/c\/ce\/011MS.png"
+      "type2": "Bug"
     },
     {
       "num": 151,
@@ -1309,8 +1228,7 @@
       "attack": 220,
       "defence": 220,
       "type1": "Psychic",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/a\/a7\/151MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 150,
@@ -1325,8 +1243,7 @@
       "attack": 284,
       "defence": 202,
       "type1": "Psychic",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/1\/1a\/150MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 146,
@@ -1341,8 +1258,7 @@
       "attack": 242,
       "defence": 194,
       "type1": "Fire",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/f\/fe\/146MS.png"
+      "type2": "Flying"
     },
     {
       "num": 122,
@@ -1357,13 +1273,12 @@
       "attack": 154,
       "defence": 196,
       "type1": "Psychic",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/58\/122MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 89,
       "name": "Muk",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 105,
       "maxTotalCP": 2602,
       "maxTotalHP": 177,
@@ -1373,13 +1288,12 @@
       "attack": 180,
       "defence": 188,
       "type1": "Poison",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/b\/b4\/089MS.png"
+      "type2": "Poison"
     },
     {
       "num": 34,
       "name": "Nidoking",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 81,
       "maxTotalCP": 2475,
       "maxTotalHP": 139,
@@ -1389,13 +1303,12 @@
       "attack": 204,
       "defence": 170,
       "type1": "Poison",
-      "type2": "Ground",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/1\/18\/034MS.png"
+      "type2": "Ground"
     },
     {
       "num": 31,
       "name": "Nidoqueen",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 90,
       "maxTotalCP": 2485,
       "maxTotalHP": 154,
@@ -1405,13 +1318,12 @@
       "attack": 184,
       "defence": 190,
       "type1": "Poison",
-      "type2": "Ground",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/3\/31\/031MS.png"
+      "type2": "Ground"
     },
     {
       "num": 29,
-      "name": "Nidoran \u2640",
-      "cpMultiplier": "",
+      "name": "Nidoran ♀",
+      "cpMultiplier": 1.64,
       "hpBase": 55,
       "maxTotalCP": 876,
       "maxTotalHP": 98,
@@ -1421,13 +1333,12 @@
       "attack": 100,
       "defence": 104,
       "type1": "Poison",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/a\/ab\/029MS.png"
+      "type2": "Poison"
     },
     {
       "num": 32,
-      "name": "Nidoran \u2642",
-      "cpMultiplier": "",
+      "name": "Nidoran ♂",
+      "cpMultiplier": 1.68,
       "hpBase": 46,
       "maxTotalCP": 843,
       "maxTotalHP": 84,
@@ -1437,13 +1348,12 @@
       "attack": 110,
       "defence": 94,
       "type1": "Poison",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/f\/fb\/032MS.png"
+      "type2": "Poison"
     },
     {
       "num": 30,
       "name": "Nidorina",
-      "cpMultiplier": 1,
+      "cpMultiplier": 1.92,
       "hpBase": 70,
       "maxTotalCP": 1404,
       "maxTotalHP": 122,
@@ -1453,13 +1363,12 @@
       "attack": 132,
       "defence": 136,
       "type1": "Poison",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/d\/d0\/030MS.png"
+      "type2": "Poison"
     },
     {
       "num": 33,
       "name": "Nidorino",
-      "cpMultiplier": 1,
+      "cpMultiplier": 1.75,
       "hpBase": 61,
       "maxTotalCP": 1372,
       "maxTotalHP": 108,
@@ -1469,13 +1378,12 @@
       "attack": 142,
       "defence": 128,
       "type1": "Poison",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/0\/0e\/033MS.png"
+      "type2": "Poison"
     },
     {
       "num": 38,
       "name": "Ninetales",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 73,
       "maxTotalCP": 2188,
       "maxTotalHP": 127,
@@ -1485,13 +1393,12 @@
       "attack": 176,
       "defence": 194,
       "type1": "Fire",
-      "type2": "Fire",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/1\/10\/038MS.png"
+      "type2": "Fire"
     },
     {
       "num": 43,
       "name": "Oddish",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.5,
       "hpBase": 45,
       "maxTotalCP": 1148,
       "maxTotalHP": 82,
@@ -1501,13 +1408,12 @@
       "attack": 134,
       "defence": 130,
       "type1": "Grass",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/a\/a5\/043MS.png"
+      "type2": "Poison"
     },
     {
       "num": 138,
       "name": "Omanyte",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.06,
       "hpBase": 35,
       "maxTotalCP": 1119,
       "maxTotalHP": 67,
@@ -1517,13 +1423,12 @@
       "attack": 132,
       "defence": 160,
       "type1": "Rock",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/9\/97\/138MS.png"
+      "type2": "Water"
     },
     {
       "num": 139,
       "name": "Omastar",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 70,
       "maxTotalCP": 2233,
       "maxTotalHP": 122,
@@ -1533,8 +1438,7 @@
       "attack": 180,
       "defence": 202,
       "type1": "Rock",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/2\/2a\/139MS.png"
+      "type2": "Water"
     },
     {
       "num": 95,
@@ -1549,13 +1453,12 @@
       "attack": 90,
       "defence": 186,
       "type1": "Rock",
-      "type2": "Ground",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/c\/cd\/095MS.png"
+      "type2": "Ground"
     },
     {
       "num": 46,
       "name": "Paras",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.97,
       "hpBase": 35,
       "maxTotalCP": 916,
       "maxTotalHP": 67,
@@ -1565,13 +1468,12 @@
       "attack": 122,
       "defence": 120,
       "type1": "Bug",
-      "type2": "Grass",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/7\/7a\/046MS.png"
+      "type2": "Grass"
     },
     {
       "num": 47,
       "name": "Parasect",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 60,
       "maxTotalCP": 1747,
       "maxTotalHP": 106,
@@ -1581,13 +1483,12 @@
       "attack": 162,
       "defence": 170,
       "type1": "Bug",
-      "type2": "Grass",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/4\/41\/047MS.png"
+      "type2": "Grass"
     },
     {
       "num": 53,
       "name": "Persian",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 65,
       "maxTotalCP": 1631,
       "maxTotalHP": 114,
@@ -1597,13 +1498,12 @@
       "attack": 156,
       "defence": 146,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/a\/a7\/053MS.png"
+      "type2": "Normal"
     },
     {
       "num": 18,
       "name": "Pidgeot",
-      "cpMultiplier": 1.1,
+      "cpMultiplier": "",
       "hpBase": 83,
       "maxTotalCP": 2091,
       "maxTotalHP": 143,
@@ -1613,13 +1513,12 @@
       "attack": 170,
       "defence": 166,
       "type1": "Normal",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/68\/018MS.png"
+      "type2": "Flying"
     },
     {
       "num": 17,
       "name": "Pidgeotto",
-      "cpMultiplier": 1.1,
+      "cpMultiplier": 1.76,
       "hpBase": 63,
       "maxTotalCP": 1223,
       "maxTotalHP": 111,
@@ -1629,13 +1528,12 @@
       "attack": 126,
       "defence": 122,
       "type1": "Normal",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/a\/a9\/017MS.png"
+      "type2": "Flying"
     },
     {
       "num": 16,
       "name": "Pidgey",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.89,
       "hpBase": 40,
       "maxTotalCP": 679,
       "maxTotalHP": 75,
@@ -1645,13 +1543,12 @@
       "attack": 94,
       "defence": 90,
       "type1": "Normal",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/9\/9c\/016MS.png"
+      "type2": "Flying"
     },
     {
       "num": 25,
       "name": "Pikachu",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.36,
       "hpBase": 35,
       "maxTotalCP": 887,
       "maxTotalHP": 67,
@@ -1661,8 +1558,7 @@
       "attack": 124,
       "defence": 108,
       "type1": "Electric",
-      "type2": "Electric",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/0\/0f\/025MS.png"
+      "type2": "Electric"
     },
     {
       "num": 127,
@@ -1677,13 +1573,12 @@
       "attack": 184,
       "defence": 186,
       "type1": "Bug",
-      "type2": "Bug",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/5c\/127MS.png"
+      "type2": "Bug"
     },
     {
       "num": 60,
       "name": "Poliwag",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.81,
       "hpBase": 40,
       "maxTotalCP": 795,
       "maxTotalHP": 75,
@@ -1693,13 +1588,12 @@
       "attack": 108,
       "defence": 98,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/1\/17\/060MS.png"
+      "type2": "Water"
     },
     {
       "num": 61,
       "name": "Poliwhirl",
-      "cpMultiplier": 1,
+      "cpMultiplier": 1.93,
       "hpBase": 65,
       "maxTotalCP": 1340,
       "maxTotalHP": 114,
@@ -1709,13 +1603,12 @@
       "attack": 132,
       "defence": 132,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/3\/36\/061MS.png"
+      "type2": "Water"
     },
     {
       "num": 62,
       "name": "Poliwrath",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 90,
       "maxTotalCP": 2505,
       "maxTotalHP": 154,
@@ -1725,13 +1618,12 @@
       "attack": 180,
       "defence": 202,
       "type1": "Water",
-      "type2": "Fighting",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/5e\/062MS.png"
+      "type2": "Fighting"
     },
     {
       "num": 77,
       "name": "Ponyta",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.54,
       "hpBase": 50,
       "maxTotalCP": 1516,
       "maxTotalHP": 90,
@@ -1741,8 +1633,7 @@
       "attack": 168,
       "defence": 138,
       "type1": "Fire",
-      "type2": "Fire",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/55\/077MS.png"
+      "type2": "Fire"
     },
     {
       "num": 137,
@@ -1757,13 +1648,12 @@
       "attack": 156,
       "defence": 158,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/f\/f7\/137MS.png"
+      "type2": "Normal"
     },
     {
       "num": 57,
       "name": "Primeape",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 65,
       "maxTotalCP": 1864,
       "maxTotalHP": 114,
@@ -1773,13 +1663,12 @@
       "attack": 178,
       "defence": 150,
       "type1": "Fighting",
-      "type2": "Fighting",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/f\/f1\/057MS.png"
+      "type2": "Fighting"
     },
     {
       "num": 54,
       "name": "Psyduck",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.26,
       "hpBase": 50,
       "maxTotalCP": 1109,
       "maxTotalHP": 90,
@@ -1789,13 +1678,12 @@
       "attack": 132,
       "defence": 112,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/6b\/054MS.png"
+      "type2": "Water"
     },
     {
       "num": 26,
       "name": "Raichu",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 60,
       "maxTotalCP": 2028,
       "maxTotalHP": 106,
@@ -1805,13 +1693,12 @@
       "attack": 200,
       "defence": 154,
       "type1": "Electric",
-      "type2": "Electric",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/d\/da\/026MS.png"
+      "type2": "Electric"
     },
     {
       "num": 78,
       "name": "Rapidash",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 65,
       "maxTotalCP": 2199,
       "maxTotalHP": 114,
@@ -1821,13 +1708,12 @@
       "attack": 200,
       "defence": 170,
       "type1": "Fire",
-      "type2": "Fire",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/66\/078MS.png"
+      "type2": "Fire"
     },
     {
       "num": 20,
       "name": "Raticate",
-      "cpMultiplier": 1.1,
+      "cpMultiplier": "",
       "hpBase": 55,
       "maxTotalCP": 1444,
       "maxTotalHP": 98,
@@ -1837,13 +1723,12 @@
       "attack": 146,
       "defence": 150,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/4\/4d\/020MS.png"
+      "type2": "Normal"
     },
     {
       "num": 19,
       "name": "Rattata",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.67,
       "hpBase": 30,
       "maxTotalCP": 581,
       "maxTotalHP": 59,
@@ -1853,13 +1738,12 @@
       "attack": 92,
       "defence": 86,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/4\/4d\/019MS.png"
+      "type2": "Normal"
     },
     {
       "num": 112,
       "name": "Rhydon",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 105,
       "maxTotalCP": 2243,
       "maxTotalHP": 177,
@@ -1869,13 +1753,12 @@
       "attack": 166,
       "defence": 160,
       "type1": "Ground",
-      "type2": "Rock",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/c\/ce\/112MS.png"
+      "type2": "Rock"
     },
     {
       "num": 111,
       "name": "Rhyhorn",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.91,
       "hpBase": 80,
       "maxTotalCP": 1182,
       "maxTotalHP": 138,
@@ -1885,13 +1768,12 @@
       "attack": 110,
       "defence": 116,
       "type1": "Ground",
-      "type2": "Rock",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/67\/111MS.png"
+      "type2": "Rock"
     },
     {
       "num": 27,
       "name": "Sandshrew",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.56,
       "hpBase": 50,
       "maxTotalCP": 798,
       "maxTotalHP": 90,
@@ -1901,13 +1783,12 @@
       "attack": 90,
       "defence": 114,
       "type1": "Ground",
-      "type2": "Ground",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/c\/c3\/027MS.png"
+      "type2": "Ground"
     },
     {
       "num": 28,
       "name": "Sandslash",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 75,
       "maxTotalCP": 1810,
       "maxTotalHP": 130,
@@ -1917,8 +1798,7 @@
       "attack": 150,
       "defence": 172,
       "type1": "Ground",
-      "type2": "Ground",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/e\/e0\/028MS.png"
+      "type2": "Ground"
     },
     {
       "num": 123,
@@ -1933,13 +1813,12 @@
       "attack": 176,
       "defence": 180,
       "type1": "Bug",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/54\/123MS.png"
+      "type2": "Flying"
     },
     {
       "num": 117,
       "name": "Seadra",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 55,
       "maxTotalCP": 1713,
       "maxTotalHP": 98,
@@ -1949,13 +1828,12 @@
       "attack": 176,
       "defence": 150,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/8\/81\/117MS.png"
+      "type2": "Water"
     },
     {
       "num": 119,
       "name": "Seaking",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 80,
       "maxTotalCP": 2043,
       "maxTotalHP": 138,
@@ -1965,13 +1843,12 @@
       "attack": 172,
       "defence": 160,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/8\/88\/119MS.png"
+      "type2": "Water"
     },
     {
       "num": 86,
       "name": "Seel",
-      "cpMultiplier": "",
+      "cpMultiplier": 2,
       "hpBase": 65,
       "maxTotalCP": 1107,
       "maxTotalHP": 114,
@@ -1981,13 +1858,12 @@
       "attack": 104,
       "defence": 138,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/9\/9b\/086MS.png"
+      "type2": "Water"
     },
     {
       "num": 90,
       "name": "Shellder",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.64,
       "hpBase": 30,
       "maxTotalCP": 822,
       "maxTotalHP": 59,
@@ -1997,13 +1873,12 @@
       "attack": 120,
       "defence": 112,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/4\/41\/090MS.png"
+      "type2": "Water"
     },
     {
       "num": 80,
       "name": "Slowbro",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 95,
       "maxTotalCP": 2597,
       "maxTotalHP": 162,
@@ -2013,13 +1888,12 @@
       "attack": 184,
       "defence": 198,
       "type1": "Water",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/b\/b6\/080MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 79,
       "name": "Slowpoke",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.2,
       "hpBase": 90,
       "maxTotalCP": 1218,
       "maxTotalHP": 154,
@@ -2029,8 +1903,7 @@
       "attack": 110,
       "defence": 110,
       "type1": "Water",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/6a\/079MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 143,
@@ -2045,13 +1918,12 @@
       "attack": 180,
       "defence": 180,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/d\/d6\/143MS.png"
+      "type2": "Normal"
     },
     {
       "num": 21,
       "name": "Spearow",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.7,
       "hpBase": 40,
       "maxTotalCP": 686,
       "maxTotalHP": 75,
@@ -2061,13 +1933,12 @@
       "attack": 102,
       "defence": 78,
       "type1": "Normal",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/5b\/021MS.png"
+      "type2": "Flying"
     },
     {
       "num": 7,
       "name": "Squirtle",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.65,
       "hpBase": 44,
       "maxTotalCP": 1008,
       "maxTotalHP": 81,
@@ -2077,13 +1948,12 @@
       "attack": 112,
       "defence": 142,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/9\/92\/007MS.png"
+      "type2": "Water"
     },
     {
       "num": 121,
       "name": "Starmie",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 60,
       "maxTotalCP": 2182,
       "maxTotalHP": 106,
@@ -2093,13 +1963,12 @@
       "attack": 194,
       "defence": 192,
       "type1": "Water",
-      "type2": "Psychic",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/5\/55\/121MS.png"
+      "type2": "Psychic"
     },
     {
       "num": 120,
       "name": "Staryu",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.4,
       "hpBase": 30,
       "maxTotalCP": 937,
       "maxTotalHP": 59,
@@ -2109,8 +1978,7 @@
       "attack": 130,
       "defence": 128,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/60\/120MS.png"
+      "type2": "Water"
     },
     {
       "num": 114,
@@ -2125,8 +1993,7 @@
       "attack": 164,
       "defence": 152,
       "type1": "Grass",
-      "type2": "Grass",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/4\/45\/114MS.png"
+      "type2": "Grass"
     },
     {
       "num": 128,
@@ -2141,13 +2008,12 @@
       "attack": 148,
       "defence": 184,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/9\/95\/128MS.png"
+      "type2": "Normal"
     },
     {
       "num": 72,
       "name": "Tentacool",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.54,
       "hpBase": 40,
       "maxTotalCP": 905,
       "maxTotalHP": 75,
@@ -2157,13 +2023,12 @@
       "attack": 106,
       "defence": 136,
       "type1": "Water",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/4\/42\/072MS.png"
+      "type2": "Poison"
     },
     {
       "num": 73,
       "name": "Tentacruel",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 80,
       "maxTotalCP": 2220,
       "maxTotalHP": 138,
@@ -2173,13 +2038,12 @@
       "attack": 170,
       "defence": 196,
       "type1": "Water",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/f\/fc\/073MS.png"
+      "type2": "Poison"
     },
     {
       "num": 134,
       "name": "Vaporeon",
-      "cpMultiplier": 1,
+      "cpMultiplier": 2.65,
       "hpBase": 130,
       "maxTotalCP": 2816,
       "maxTotalHP": 217,
@@ -2189,13 +2053,12 @@
       "attack": 186,
       "defence": 168,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/b\/be\/134MS.png"
+      "type2": "Water"
     },
     {
       "num": 49,
       "name": "Venomoth",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 70,
       "maxTotalCP": 1890,
       "maxTotalHP": 122,
@@ -2205,13 +2068,12 @@
       "attack": 172,
       "defence": 154,
       "type1": "Bug",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/3\/31\/049MS.png"
+      "type2": "Poison"
     },
     {
       "num": 48,
       "name": "Venonat",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.88,
       "hpBase": 60,
       "maxTotalCP": 1029,
       "maxTotalHP": 106,
@@ -2221,13 +2083,12 @@
       "attack": 108,
       "defence": 118,
       "type1": "Bug",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/1\/1e\/048MS.png"
+      "type2": "Poison"
     },
     {
       "num": 3,
       "name": "Venusaur",
-      "cpMultiplier": 1.5,
+      "cpMultiplier": "",
       "hpBase": 80,
       "maxTotalCP": 2580,
       "maxTotalHP": 138,
@@ -2237,13 +2098,12 @@
       "attack": 198,
       "defence": 200,
       "type1": "Grass",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/d\/df\/003MS.png"
+      "type2": "Poison"
     },
     {
       "num": 71,
       "name": "Victreebel",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 80,
       "maxTotalCP": 2530,
       "maxTotalHP": 138,
@@ -2253,13 +2113,12 @@
       "attack": 222,
       "defence": 152,
       "type1": "Grass",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/9\/9b\/071MS.png"
+      "type2": "Poison"
     },
     {
       "num": 45,
       "name": "Vileplume",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 75,
       "maxTotalCP": 2492,
       "maxTotalHP": 130,
@@ -2269,13 +2128,12 @@
       "attack": 202,
       "defence": 190,
       "type1": "Grass",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/3\/3e\/045MS.png"
+      "type2": "Poison"
     },
     {
       "num": 100,
       "name": "Voltorb",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.02,
       "hpBase": 40,
       "maxTotalCP": 839,
       "maxTotalHP": 75,
@@ -2285,13 +2143,12 @@
       "attack": 102,
       "defence": 124,
       "type1": "Electric",
-      "type2": "Electric",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/c\/c1\/100MS.png"
+      "type2": "Electric"
     },
     {
       "num": 37,
       "name": "Vulpix",
-      "cpMultiplier": "",
+      "cpMultiplier": 2.71,
       "hpBase": 38,
       "maxTotalCP": 831,
       "maxTotalHP": 71,
@@ -2301,13 +2158,12 @@
       "attack": 106,
       "defence": 118,
       "type1": "Fire",
-      "type2": "Fire",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/8\/85\/037MS.png"
+      "type2": "Fire"
     },
     {
       "num": 8,
       "name": "Wartortle",
-      "cpMultiplier": 1.1,
+      "cpMultiplier": 1.53,
       "hpBase": 59,
       "maxTotalCP": 1582,
       "maxTotalHP": 105,
@@ -2317,13 +2173,12 @@
       "attack": 144,
       "defence": 176,
       "type1": "Water",
-      "type2": "Water",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/f\/f3\/008MS.png"
+      "type2": "Water"
     },
     {
       "num": 13,
       "name": "Weedle",
-      "cpMultiplier": "",
+      "cpMultiplier": 1.08,
       "hpBase": 40,
       "maxTotalCP": 449,
       "maxTotalHP": 75,
@@ -2333,13 +2188,12 @@
       "attack": 68,
       "defence": 64,
       "type1": "Bug",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/6\/65\/013MS.png"
+      "type2": "Poison"
     },
     {
       "num": 70,
       "name": "Weepinbell",
-      "cpMultiplier": 1,
+      "cpMultiplier": 1.5,
       "hpBase": 65,
       "maxTotalCP": 1723,
       "maxTotalHP": 114,
@@ -2349,13 +2203,12 @@
       "attack": 190,
       "defence": 110,
       "type1": "Grass",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/d\/d5\/070MS.png"
+      "type2": "Poison"
     },
     {
       "num": 110,
       "name": "Weezing",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 65,
       "maxTotalCP": 2250,
       "maxTotalHP": 114,
@@ -2365,13 +2218,12 @@
       "attack": 190,
       "defence": 198,
       "type1": "Poison",
-      "type2": "Poison",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/2\/22\/110MS.png"
+      "type2": "Poison"
     },
     {
       "num": 40,
       "name": "Wigglytuff",
-      "cpMultiplier": 1,
+      "cpMultiplier": "",
       "hpBase": 140,
       "maxTotalCP": 2177,
       "maxTotalHP": 233,
@@ -2381,8 +2233,7 @@
       "attack": 168,
       "defence": 108,
       "type1": "Normal",
-      "type2": "Normal",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/f\/f1\/040MS.png"
+      "type2": "Normal"
     },
     {
       "num": 145,
@@ -2397,13 +2248,12 @@
       "attack": 232,
       "defence": 194,
       "type1": "Electric",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/3\/3f\/145MS.png"
+      "type2": "Flying"
     },
     {
       "num": 41,
       "name": "Zubat",
-      "cpMultiplier": "",
+      "cpMultiplier": 3.12,
       "hpBase": 40,
       "maxTotalCP": 642,
       "maxTotalHP": 75,
@@ -2413,8 +2263,7 @@
       "attack": 88,
       "defence": 90,
       "type1": "Poison",
-      "type2": "Flying",
-      "img": "http:\/\/cdn.bulbagarden.net\/upload\/9\/96\/041MS.png"
+      "type2": "Flying"
     }
   ]
 }
