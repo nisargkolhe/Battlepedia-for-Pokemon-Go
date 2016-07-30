@@ -1,6 +1,8 @@
 package me.nisarg.battlepedia;
 
 import android.annotation.TargetApi;
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -113,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } catch (JSONException e) {
-            // TODO Auto-generated catch block
             Log.e("me.nisarg.battlepedia",e.toString());
             e.printStackTrace();
         }
@@ -178,7 +180,47 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        final MenuItem myActionMenuItem = menu.findItem( R.id.searchPokemon);
+
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        final SearchView searchView =
+                (SearchView) menu.findItem(R.id.searchPokemon).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Log.e("me.nisarg.battlepedia",query);
+                if( ! searchView.isIconified()) {
+                    searchView.setIconified(true);
+                }
+                myActionMenuItem.collapseActionView();
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String s) {
+               // final ArrayList<Pokemon> filteredModelList = filter(PokeList, s);
+               // mAdapter.animateTo(filteredModelList);
+               // mRecyclerView.scrollToPosition(0);
+                mAdapter.filter(s);
+                return true;
+            }
+        });
+
         return true;
+    }
+
+    private ArrayList<Pokemon> filter(ArrayList<Pokemon> models, String query) {
+        query = query.toLowerCase();
+
+        final ArrayList<Pokemon> filteredModelList = new ArrayList<>();
+        for (Pokemon model : models) {
+            final String text = model.name.toLowerCase();
+            if (text.contains(query)) {
+                filteredModelList.add(model);
+            }
+        }
+        return filteredModelList;
     }
 
     @Override
@@ -191,6 +233,23 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if(id == R.id.toggle_view){
+            int count = mStaggeredLayoutManager.getSpanCount();
+            int fCount = 2;
+            LinearLayout nameHolder = (LinearLayout) findViewById(R.id.placeNameHolder);
+            ImageView bg = (ImageView) findViewById(R.id.bgImg);
+
+            switch (count){
+                case 1:
+                    break;
+                case 2:
+                    fCount = 3;
+                    break;
+                case 3:
+                    fCount = 1;
+
+            }
+            mStaggeredLayoutManager.setSpanCount(fCount);
         }
 
         return super.onOptionsItemSelected(item);

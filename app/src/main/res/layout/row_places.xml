@@ -48,6 +48,7 @@
         android:orientation="horizontal"
         android:background="#000000"
         android:transitionName="tNameHolder"
+        android:visibility="visible"
         >
 
         <TextView

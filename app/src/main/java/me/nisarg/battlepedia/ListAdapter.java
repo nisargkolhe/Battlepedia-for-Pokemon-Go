@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 /**
  * Created by nisarg on 20/7/16.
  */
@@ -19,11 +21,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     Context mContext;
     OnItemClickListener mItemClickListener;
+    private ArrayList<Pokemon> itemsCopy = new ArrayList<Pokemon>();
 
-
-    // 2
     public ListAdapter(Context context) {
         this.mContext = context;
+        itemsCopy.addAll(MainActivity.PokeList);
     }
 
     @Override
@@ -44,18 +46,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         int img = mContext.getResources().getIdentifier("n"+kmon.ndex+".gif", "drawable", mContext.getPackageName());
         holder.pokemonNameHolder.setBackgroundColor(mContext.getResources().getIdentifier(color, "color", mContext.getPackageName()));
 
-        //Picasso.with(mContext).load(kmon.imageName).into(holder.pokeImg);
-        //Picasso.with(mContext).load(R.drawable.n1);
         Picasso.with(mContext).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+kmon.ndex).into(holder.pokeImg);
         Picasso.with(mContext).load(mContext.getResources().getIdentifier(kmon.type1.toLowerCase(), "drawable", mContext.getPackageName())).into(holder.bgImg);
-        /*Bitmap photo = BitmapFactory.decodeResource(mContext.getResources(),mContext.getResources().getIdentifier(kmon.type1.toLowerCase(), "drawable", mContext.getPackageName()));
 
-        Palette.generateAsync(photo, new Palette.PaletteAsyncListener() {
-            public void onGenerated(Palette palette) {
-                int bgColor = palette.getMutedColor(mContext.getResources().getColor(android.R.color.black));
-                holder.pokemonNameHolder.setBackgroundColor(bgColor);
-            }
-        });*/
     }
 
     @Override
@@ -63,7 +56,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         return MainActivity.PokeList.size();
     }
 
-    // 3
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public LinearLayout pokemonHolder;
         public LinearLayout pokemonNameHolder;
@@ -87,8 +79,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         public void onClick(View v) {
             if (mItemClickListener != null) mItemClickListener.onItemClick(itemView,getAdapterPosition());
         }
-
-
     }
 
     public interface OnItemClickListener {
@@ -97,5 +87,78 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     public void setOnItemClickListener(final OnItemClickListener mItemClickListener) {
         this.mItemClickListener = mItemClickListener;
+    }
+
+    public Pokemon removeItem(int position) {
+        final Pokemon model = MainActivity.PokeList.remove(position);
+        notifyItemRemoved(position);
+        return model;
+    }
+
+    public void addItem(int position, Pokemon model) {
+        MainActivity.PokeList.add(position, model);
+        notifyItemInserted(position);
+    }
+
+    public void moveItem(int fromPosition, int toPosition) {
+        final Pokemon model = MainActivity.PokeList.remove(fromPosition);
+        MainActivity.PokeList.add(toPosition, model);
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
+    public void animateTo(ArrayList<Pokemon> models) {
+        applyAndAnimateRemovals(models);
+        applyAndAnimateAdditions(models);
+        applyAndAnimateMovedItems(models);
+    }
+
+    private void applyAndAnimateMovedItems(ArrayList<Pokemon> models) {
+        for (int toPosition = models.size() - 1; toPosition >= 0; toPosition--) {
+            final Pokemon model = models.get(toPosition);
+            final int fromPosition = MainActivity.PokeList.indexOf(model);
+            if (fromPosition >= 0 && fromPosition != toPosition) {
+                moveItem(fromPosition, toPosition);
+            }
+        }
+    }
+
+
+    private void applyAndAnimateAdditions(ArrayList<Pokemon> models) {
+        for (int i = 0, count = models.size(); i < count; i++) {
+            final Pokemon model = models.get(i);
+            if (!MainActivity.PokeList.contains(model)) {
+                addItem(i, model);
+            }
+        }
+    }
+
+    private void applyAndAnimateRemovals(ArrayList<Pokemon> models) {
+        for (int i = MainActivity.PokeList.size() - 1; i >= 0; i--) {
+            final Pokemon model = MainActivity.PokeList.get(i);
+            if (!models.contains(model)) {
+                removeItem(i);
+            }
+        }
+    }
+
+
+    public void filter(String text) {
+
+        
+        if(text.isEmpty()){
+            MainActivity.PokeList.clear();
+            MainActivity.PokeList.addAll(itemsCopy);
+        } else{
+            ArrayList<Pokemon> result = new ArrayList<>();
+            text = text.toLowerCase();
+            for(Pokemon item: itemsCopy){
+                if(item.name.toLowerCase().contains(text)){
+                    result.add(item);
+                }
+            }
+            MainActivity.PokeList.clear();
+            MainActivity.PokeList.addAll(result);
+        }
+        notifyDataSetChanged();
     }
 }

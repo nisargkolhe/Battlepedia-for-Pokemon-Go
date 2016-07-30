@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.transition.Fade;
@@ -77,6 +78,8 @@ public class DetailActivity extends Activity {
         setContentView(R.layout.activity_detail);
         mContext = getApplicationContext();
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setMinimumHeight(0);
 
         pokedet = PokeList.get(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
 
@@ -239,7 +242,6 @@ public class DetailActivity extends Activity {
             typeData = new Gson().fromJson(jsonArray.get(0).toString(), new TypeToken<HashMap<String, String>>() {}.getType());
 
         } catch (JSONException e) {
-            // TODO Auto-generated catch block
             Log.e("me.nisarg.battlepedia",e.toString());
             e.printStackTrace();
         }
