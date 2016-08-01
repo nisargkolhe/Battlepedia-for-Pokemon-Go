@@ -20,4 +20,7 @@ public class Pokemon {
     public String type2;
     public static boolean isFav;
 
+    public int getNdex(){
+        return ndex;
+    }
 }

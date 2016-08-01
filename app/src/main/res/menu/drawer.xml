@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_item_attachment"
+            android:checked="true"
+            android:icon="@drawable/ic_search_white_24dp"
+            android:title="One" />
+        <item
+            android:id="@+id/navigation_item_images"
+            android:icon="@drawable/ic_search_white_24dp"
+            android:title="Two" />
+        <item
+            android:id="@+id/navigation_item_location"
+            android:icon="@drawable/ic_search_white_24dp"
+            android:title="Three" />
+    </group>-->
+
+    <item android:title="Sort By">
+        <menu>
+            <item
+                android:icon="@drawable/ic_sort_by_alpha_white_24dp"
+                android:title="Alphabetic" />
+            <item
+                android:icon="@drawable/ic_sort_white_24dp"
+                android:title="Ndex" />
+        </menu>
+    </item>
+
+</menu>

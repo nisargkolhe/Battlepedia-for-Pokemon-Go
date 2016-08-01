@@ -31,7 +31,7 @@ public class MovesAdapter extends BaseAdapter {
     List<String> result;
     Context context;
     private static LayoutInflater inflater=null;
-    private HashMap movesList = new HashMap();
+    public HashMap movesList = new HashMap();
     private HashMap<String,String> dpsList = new HashMap<String,String> ();
 
 
@@ -88,6 +88,7 @@ public class MovesAdapter extends BaseAdapter {
         }
 
         try{
+            //holder.type.setImageDrawable(context.getDrawable(context.getResources().getIdentifier(movesList.get(result.get(i)).toString().toLowerCase()+"icon", "drawable", context.getPackageName())));
             Picasso.with(context).load(context.getResources().getIdentifier(movesList.get(result.get(i)).toString().toLowerCase()+"icon", "drawable", context.getPackageName())).into(holder.type);
         } catch (Exception e){
             Log.e("me.nisarg.battlepedia","type icon didn't load "+e.toString());

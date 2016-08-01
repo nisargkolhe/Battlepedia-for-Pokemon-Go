@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,6 +13,7 @@ import android.transition.Fade;
 import android.transition.Transition;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -21,6 +23,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.koushikdutta.ion.Ion;
+import com.koushikdutta.ion.builder.AnimateGifMode;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -80,6 +83,10 @@ public class DetailActivity extends Activity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setMinimumHeight(0);
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+
 
         pokedet = PokeList.get(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
 
@@ -209,8 +216,21 @@ public class DetailActivity extends Activity {
         }
 
         //Picasso.with(getApplicationContext()).load(pokedet.imageName).into(pokeImage);
-        Ion.with(pokeImage).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+pokedet.ndex);
-        Picasso.with(getApplicationContext()).load(getApplicationContext().getResources().getIdentifier(pokedet.type1.toLowerCase(), "drawable", getApplicationContext().getPackageName())).into(bgImage);
+        //Glide.with(getApplicationContext()).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+pokedet.ndex).asBitmap().into(pokeImage);
+        Ion.with(pokeImage).animateGif(AnimateGifMode.NO_ANIMATE).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+pokedet.ndex);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Do something after 5s = 5000ms
+                //Glide.with(getApplicationContext()).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+pokedet.ndex).asGif().into(pokeImage);
+
+                Ion.with(pokeImage).animateGif(AnimateGifMode.ANIMATE).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+pokedet.ndex);
+            }
+        }, 1500);
+        //Ion.with(bgImage).load("android.resource://" + mContext.getPackageName() + "/drawable/"+pokedet.type1.toLowerCase());
+        Picasso.with(getApplicationContext()).load("android.resource://" + mContext.getPackageName() + "/drawable/"+pokedet.type1.toLowerCase()).into(bgImage);
+
     }
 
     private HashMap getTypeStats(String type){
@@ -284,5 +304,14 @@ public class DetailActivity extends Activity {
         fade.excludeTarget(android.R.id.navigationBarBackground, true);
         fade.excludeTarget(android.R.id.statusBarBackground, true);
         return fade;
+    }
+
+    public int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
     }
 }

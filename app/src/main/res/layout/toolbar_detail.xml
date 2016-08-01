@@ -7,5 +7,6 @@
                                    android:background="@color/colorPrimary"
                                    android:transitionName="tActionBar"
                                    app:titleTextColor="@android:color/white"
-                                   android:theme="@style/AppTheme.AppBarOverlay">
+                                   android:theme="@style/AppTheme.AppBarOverlay"
+    >
 </android.support.v7.widget.Toolbar>

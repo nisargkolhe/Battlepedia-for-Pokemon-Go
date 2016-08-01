@@ -9,9 +9,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.koushikdutta.ion.Ion;
+import com.koushikdutta.ion.builder.AnimateGifMode;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+import static me.nisarg.battlepedia.MainActivity.PokeList;
 
 /**
  * Created by nisarg on 20/7/16.
@@ -25,7 +31,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     public ListAdapter(Context context) {
         this.mContext = context;
-        itemsCopy.addAll(MainActivity.PokeList);
+        itemsCopy.addAll(PokeList);
     }
 
     @Override
@@ -38,7 +44,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public void onBindViewHolder(final ViewHolder holder, int position) {
         Pokemon kmon;
 
-        kmon = MainActivity.PokeList.get(position);
+        kmon = PokeList.get(position);
 
         holder.pokemonName.setText(kmon.name);
         holder.ndex.setText("#"+kmon.ndex);
@@ -46,14 +52,17 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         int img = mContext.getResources().getIdentifier("n"+kmon.ndex+".gif", "drawable", mContext.getPackageName());
         holder.pokemonNameHolder.setBackgroundColor(mContext.getResources().getIdentifier(color, "color", mContext.getPackageName()));
 
-        Picasso.with(mContext).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+kmon.ndex).into(holder.pokeImg);
-        Picasso.with(mContext).load(mContext.getResources().getIdentifier(kmon.type1.toLowerCase(), "drawable", mContext.getPackageName())).into(holder.bgImg);
+
+        Ion.with(holder.pokeImg).animateGif(AnimateGifMode.NO_ANIMATE).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+kmon.ndex);
+        //Ion.with(holder.bgImg).load("android.resource://" + mContext.getPackageName() + "/drawable/"+kmon.type1.toLowerCase());
+        Picasso.with(mContext).load("android.resource://" + mContext.getPackageName() + "/drawable/"+kmon.type1.toLowerCase()).into(holder.bgImg);
+
 
     }
 
     @Override
     public int getItemCount() {
-        return MainActivity.PokeList.size();
+        return PokeList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -90,19 +99,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     public Pokemon removeItem(int position) {
-        final Pokemon model = MainActivity.PokeList.remove(position);
+        final Pokemon model = PokeList.remove(position);
         notifyItemRemoved(position);
         return model;
     }
 
     public void addItem(int position, Pokemon model) {
-        MainActivity.PokeList.add(position, model);
+        PokeList.add(position, model);
         notifyItemInserted(position);
     }
 
     public void moveItem(int fromPosition, int toPosition) {
-        final Pokemon model = MainActivity.PokeList.remove(fromPosition);
-        MainActivity.PokeList.add(toPosition, model);
+        final Pokemon model = PokeList.remove(fromPosition);
+        PokeList.add(toPosition, model);
         notifyItemMoved(fromPosition, toPosition);
     }
 
@@ -115,7 +124,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private void applyAndAnimateMovedItems(ArrayList<Pokemon> models) {
         for (int toPosition = models.size() - 1; toPosition >= 0; toPosition--) {
             final Pokemon model = models.get(toPosition);
-            final int fromPosition = MainActivity.PokeList.indexOf(model);
+            final int fromPosition = PokeList.indexOf(model);
             if (fromPosition >= 0 && fromPosition != toPosition) {
                 moveItem(fromPosition, toPosition);
             }
@@ -126,28 +135,31 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private void applyAndAnimateAdditions(ArrayList<Pokemon> models) {
         for (int i = 0, count = models.size(); i < count; i++) {
             final Pokemon model = models.get(i);
-            if (!MainActivity.PokeList.contains(model)) {
+            if (!PokeList.contains(model)) {
                 addItem(i, model);
             }
         }
     }
 
     private void applyAndAnimateRemovals(ArrayList<Pokemon> models) {
-        for (int i = MainActivity.PokeList.size() - 1; i >= 0; i--) {
-            final Pokemon model = MainActivity.PokeList.get(i);
+        for (int i = PokeList.size() - 1; i >= 0; i--) {
+            final Pokemon model = PokeList.get(i);
             if (!models.contains(model)) {
                 removeItem(i);
             }
         }
     }
 
+    public void reset(){
+        PokeList.clear();
+        PokeList.addAll(itemsCopy);
+        notifyDataSetChanged();
+    }
 
     public void filter(String text) {
-
-        
         if(text.isEmpty()){
-            MainActivity.PokeList.clear();
-            MainActivity.PokeList.addAll(itemsCopy);
+            PokeList.clear();
+            PokeList.addAll(itemsCopy);
         } else{
             ArrayList<Pokemon> result = new ArrayList<>();
             text = text.toLowerCase();
@@ -156,9 +168,41 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                     result.add(item);
                 }
             }
-            MainActivity.PokeList.clear();
-            MainActivity.PokeList.addAll(result);
+            PokeList.clear();
+            PokeList.addAll(result);
         }
+        notifyDataSetChanged();
+    }
+
+    public void filterByType(String text) {
+        if(text.isEmpty()){
+            PokeList.clear();
+            PokeList.addAll(itemsCopy);
+        } else{
+            ArrayList<Pokemon> result = new ArrayList<>();
+            text = text.toLowerCase();
+            for(Pokemon item: itemsCopy){
+                if(item.type1.toLowerCase().contains(text) || item.type2.toLowerCase().contains(text)){
+                    result.add(item);
+                }
+            }
+            PokeList.clear();
+            PokeList.addAll(result);
+        }
+        notifyDataSetChanged();
+    }
+
+    public void sortByNdex(){
+        ArrayList<Pokemon> result = new ArrayList<>(151);
+        result.addAll(itemsCopy);
+        Collections.sort(result, new Comparator<Pokemon>() {
+            @Override
+            public int compare(Pokemon pokemon, Pokemon t1) {
+                return pokemon.getNdex() - t1.getNdex();
+            }
+        });
+        MainActivity.PokeList.clear();
+        MainActivity.PokeList.addAll(result);
         notifyDataSetChanged();
     }
 }

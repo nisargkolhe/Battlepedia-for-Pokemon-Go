@@ -4,19 +4,27 @@ import android.annotation.TargetApi;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
@@ -32,6 +40,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -40,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
     private StaggeredGridLayoutManager mStaggeredLayoutManager;
     private ListAdapter mAdapter;
     private Toolbar toolbar;
+    private DrawerLayout mDrawerLayout;
+    private Menu menu;
 
     public static ArrayList<Pokemon> PokeList = new ArrayList<>();
 
@@ -47,11 +58,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setUpActionBar();
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setUpActionBar();
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
+        actionBar.setDisplayHomeAsUpEnabled(true);
         mRecyclerView = (RecyclerView) findViewById(R.id.list);
         mStaggeredLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(mStaggeredLayoutManager);
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
 
        /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +144,30 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
         mStaggeredLayoutManager.setSpanCount(2);
         mAdapter.setOnItemClickListener(onItemClickListener);
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        SubMenu topChannelMenu = navigationView.getMenu().addSubMenu("Types");
+        final String[] types = {"Normal","Fighting","Flying","Poison","Ground","Rock","Bug","Ghost","Steel","Fire","Water","Grass","Electric","Psychic","Ice","Dragon","Dark","Fairy"};
+        for(String type: types){
+            topChannelMenu.add(type).setIcon(getApplicationContext().getResources().getIdentifier(type.toLowerCase()+"icon", "drawable", getApplicationContext().getPackageName()));
+        }
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                menuItem.setEnabled(true);
+                mDrawerLayout.closeDrawers();
+                if(menuItem.getTitle().toString().equals("Alphabetic")){
+                    mAdapter.reset();
+                }
+                else if(menuItem.getTitle().toString().equals("Ndex")){
+                    mAdapter.sortByNdex();
+                }
+                else if(Arrays.asList(types).contains(menuItem.getTitle().toString())){
+                    mAdapter.filterByType(menuItem.getTitle().toString());
+                }
+                return true;
+            }
+        });
     }
 
     ListAdapter.OnItemClickListener onItemClickListener = new ListAdapter.OnItemClickListener() {
@@ -154,14 +197,47 @@ public class MainActivity extends AppCompatActivity {
 
             Pair<View, String> navPair = Pair.create(navigationBar,
                     Window.NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME);
-            Pair<View, String> statusPair = Pair.create(statusBar, Window.STATUS_BAR_BACKGROUND_TRANSITION_NAME);
+            /*Pair<View, String> statusPair = Pair.create(statusBar, Window.STATUS_BAR_BACKGROUND_TRANSITION_NAME);*/
+            ActivityOptionsCompat options;
+            if(hasNavBar(getApplicationContext())){
+                options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, bgPair, ndexPair, navPair, toolbarPair, holderPair);
+            }
+            else{
+                options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, bgPair, ndexPair, toolbarPair, holderPair);
+            }
 
-            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this,
-                    imagePair, bgPair, ndexPair, navPair, statusPair, toolbarPair, holderPair);
             ActivityCompat.startActivity(MainActivity.this, intent, options.toBundle());
         }
 
     };
+
+    public boolean hasNavBar(Context context) {
+        Point realSize = new Point();
+        Point screenSize = new Point();
+        boolean hasNavBar = false;
+        DisplayMetrics metrics = new DisplayMetrics();
+        this.getWindowManager().getDefaultDisplay().getRealMetrics(metrics);
+        realSize.x = metrics.widthPixels;
+        realSize.y = metrics.heightPixels;
+        getWindowManager().getDefaultDisplay().getSize(screenSize);
+        if (realSize.y != screenSize.y) {
+            int difference = realSize.y - screenSize.y;
+            int navBarHeight = 0;
+            Resources resources = context.getResources();
+            int resourceId = resources.getIdentifier("navigation_bar_height", "dimen", "android");
+            if (resourceId > 0) {
+                navBarHeight = resources.getDimensionPixelSize(resourceId);
+            }
+            if (navBarHeight != 0) {
+                if (difference == navBarHeight) {
+                    hasNavBar = true;
+                }
+            }
+
+        }
+        return hasNavBar;
+
+    }
 
     private void setUpActionBar() {
         if (toolbar != null) {
@@ -179,6 +255,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        this.menu = menu;
         getMenuInflater().inflate(R.menu.menu_main, menu);
         final MenuItem myActionMenuItem = menu.findItem( R.id.searchPokemon);
 
@@ -190,11 +267,12 @@ public class MainActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Log.e("me.nisarg.battlepedia",query);
-                if( ! searchView.isIconified()) {
+                /*if( ! searchView.isIconified()) {
                     searchView.setIconified(true);
-                }
+                }*/
+                mAdapter.filter(query);
                 myActionMenuItem.collapseActionView();
+
                 return false;
             }
             @Override
@@ -208,19 +286,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         return true;
-    }
-
-    private ArrayList<Pokemon> filter(ArrayList<Pokemon> models, String query) {
-        query = query.toLowerCase();
-
-        final ArrayList<Pokemon> filteredModelList = new ArrayList<>();
-        for (Pokemon model : models) {
-            final String text = model.name.toLowerCase();
-            if (text.contains(query)) {
-                filteredModelList.add(model);
-            }
-        }
-        return filteredModelList;
     }
 
     @Override
@@ -238,18 +303,23 @@ public class MainActivity extends AppCompatActivity {
             int fCount = 2;
             LinearLayout nameHolder = (LinearLayout) findViewById(R.id.placeNameHolder);
             ImageView bg = (ImageView) findViewById(R.id.bgImg);
-
             switch (count){
                 case 1:
+                    menu.getItem(0).setIcon(R.drawable.ic_view_module_white_24dp);
                     break;
                 case 2:
                     fCount = 3;
+                    menu.getItem(0).setIcon(R.drawable.ic_view_column_white_24dp);
                     break;
                 case 3:
+                    menu.getItem(0).setIcon(R.drawable.ic_view_stream_white_24dp);
                     fCount = 1;
 
             }
             mStaggeredLayoutManager.setSpanCount(fCount);
+        } else if(id == android.R.id.home){
+            mDrawerLayout.openDrawer(GravityCompat.START);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
