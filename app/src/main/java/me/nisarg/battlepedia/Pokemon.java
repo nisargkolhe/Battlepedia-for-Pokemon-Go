@@ -1,5 +1,7 @@
 package me.nisarg.battlepedia;
 
+import android.content.Context;
+
 /**
  * Created by nisarg on 20/7/16.
  */
@@ -22,5 +24,9 @@ public class Pokemon {
 
     public int getNdex(){
         return ndex;
+    }
+
+    public String getThumb(Context context){
+        return "android.resource://" + context.getPackageName() + "/drawable/m"+ndex;
     }
 }

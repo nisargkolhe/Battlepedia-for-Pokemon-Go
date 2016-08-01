@@ -86,7 +86,8 @@ public class DetailActivity extends Activity {
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+//        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         pokedet = PokeList.get(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
 
@@ -217,7 +218,7 @@ public class DetailActivity extends Activity {
 
         //Picasso.with(getApplicationContext()).load(pokedet.imageName).into(pokeImage);
         //Glide.with(getApplicationContext()).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+pokedet.ndex).asBitmap().into(pokeImage);
-        Ion.with(pokeImage).animateGif(AnimateGifMode.NO_ANIMATE).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+pokedet.ndex);
+        Ion.with(pokeImage).load("android.resource://" + mContext.getPackageName() + "/drawable/m"+pokedet.ndex);
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -270,6 +271,7 @@ public class DetailActivity extends Activity {
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void windowTransition() {
+
         getWindow().setEnterTransition(makeEnterTransition());
         getWindow().getEnterTransition().addListener(new Transition.TransitionListener() {
             @Override

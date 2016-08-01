@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.koushikdutta.ion.Ion;
-import com.koushikdutta.ion.builder.AnimateGifMode;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -46,6 +45,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
         kmon = PokeList.get(position);
 
+
         holder.pokemonName.setText(kmon.name);
         holder.ndex.setText("#"+kmon.ndex);
         String color = kmon.type1.toLowerCase();
@@ -53,9 +53,17 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         holder.pokemonNameHolder.setBackgroundColor(mContext.getResources().getIdentifier(color, "color", mContext.getPackageName()));
 
 
-        Ion.with(holder.pokeImg).animateGif(AnimateGifMode.NO_ANIMATE).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+kmon.ndex);
-        //Ion.with(holder.bgImg).load("android.resource://" + mContext.getPackageName() + "/drawable/"+kmon.type1.toLowerCase());
-        Picasso.with(mContext).load("android.resource://" + mContext.getPackageName() + "/drawable/"+kmon.type1.toLowerCase()).into(holder.bgImg);
+        if(kmon.getThumb(mContext) != null){
+            Ion.with(holder.pokeImg).load("android.resource://" + mContext.getPackageName() + "/drawable/m"+kmon.ndex);
+            Picasso.with(mContext).load("android.resource://" + mContext.getPackageName() + "/drawable/"+kmon.type1.toLowerCase()).into(holder.bgImg);
+            holder.pokeImg.setVisibility(View.VISIBLE);
+            holder.bgImg.setVisibility(View.VISIBLE);
+        } else{
+            holder.pokeImg.setVisibility(View.GONE);
+            holder.bgImg.setVisibility(View.GONE);
+        }
+       /* Ion.with(holder.pokeImg).load("android.resource://" + mContext.getPackageName() + "/drawable/m"+kmon.ndex);
+        Picasso.with(mContext).load("android.resource://" + mContext.getPackageName() + "/drawable/"+kmon.type1.toLowerCase()).into(holder.bgImg);*/
 
 
     }
@@ -86,7 +94,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
         @Override
         public void onClick(View v) {
-            if (mItemClickListener != null) mItemClickListener.onItemClick(itemView,getAdapterPosition());
+            if (mItemClickListener != null) {
+                mItemClickListener.onItemClick(itemView,getAdapterPosition());
+            }
         }
     }
 

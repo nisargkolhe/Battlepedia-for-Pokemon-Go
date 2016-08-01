@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         StringBuffer sb = new StringBuffer();
         BufferedReader br = null;
         try {
@@ -138,7 +139,6 @@ public class MainActivity extends AppCompatActivity {
             Log.e("me.nisarg.battlepedia",e.toString());
             e.printStackTrace();
         }
-
 
         mAdapter = new ListAdapter(this);
         mRecyclerView.setAdapter(mAdapter);
@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
             /*Pair<View, String> statusPair = Pair.create(statusBar, Window.STATUS_BAR_BACKGROUND_TRANSITION_NAME);*/
             ActivityOptionsCompat options;
             if(hasNavBar(getApplicationContext())){
-                options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, bgPair, ndexPair, navPair, toolbarPair, holderPair);
+                options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, bgPair, navPair, ndexPair, toolbarPair, holderPair);
             }
             else{
                 options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, bgPair, ndexPair, toolbarPair, holderPair);
