@@ -249,16 +249,16 @@
             android:layout_height="wrap_content"
             android:padding="8dp">
 
-            <GridView
+            <me.nisarg.battlepedia.MovesGridView
                 android:id="@+id/quickGrid"
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
                 android:gravity="center"
                 android:horizontalSpacing="10dp"
                 android:numColumns="auto_fit"
+                android:isScrollContainer="false"
                 android:stretchMode="columnWidth"
                 android:verticalSpacing="10dp"
-
                 />
         </LinearLayout>
 
@@ -279,16 +279,16 @@
             android:padding="8dp"
             android:paddingBottom="0dp">
 
-            <GridView
+            <me.nisarg.battlepedia.MovesGridView
                 android:id="@+id/chargeGrid"
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
                 android:gravity="center"
                 android:horizontalSpacing="10dp"
                 android:numColumns="auto_fit"
+                android:isScrollContainer="false"
                 android:stretchMode="columnWidth"
                 android:verticalSpacing="10dp"
-
                 />
         </LinearLayout>
 

@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/frame"
+        android:background="@color/grass"
         >
 
     <ImageView
         android:id="@+id/bgImg"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/grass"
         android:scaleType="matrix"
         android:transitionName="tBgImage"
         />

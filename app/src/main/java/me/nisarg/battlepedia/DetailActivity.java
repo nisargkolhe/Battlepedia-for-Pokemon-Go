@@ -15,7 +15,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -60,8 +59,8 @@ public class DetailActivity extends Activity {
     private TextView type2;
     private LinearLayout type2box;
     private LinearLayout pokeNameHolder;
-    private GridView quickMovesGrid;
-    private GridView chargeMovesGrid;
+    private MovesGridView quickMovesGrid;
+    private MovesGridView chargeMovesGrid;
     private EditText calcCP;
     private TextView cpResult;
     private TextView txtCp;
@@ -109,8 +108,8 @@ public class DetailActivity extends Activity {
         defence = (TextView) findViewById(R.id.defence);
         stamina = (TextView) findViewById(R.id.stamina);
 
-        quickMovesGrid = (GridView) findViewById(R.id.quickGrid);
-        chargeMovesGrid = (GridView) findViewById(R.id.chargeGrid);
+        quickMovesGrid = (MovesGridView) findViewById(R.id.quickGrid);
+        chargeMovesGrid = (MovesGridView) findViewById(R.id.chargeGrid);
         weaknesses = (TextView) findViewById(R.id.weakAgainst);
         advantages = (TextView) findViewById(R.id.advOver);
 
@@ -119,6 +118,8 @@ public class DetailActivity extends Activity {
 
         quickMovesGrid.setAdapter(new MovesAdapter(this, quickMoves));
         chargeMovesGrid.setAdapter(new MovesAdapter(this, chargeMoves));
+        quickMovesGrid.setExpanded(true);
+        chargeMovesGrid.setExpanded(true);
 
         txtCp = (TextView) findViewById(R.id.txtCp);
         LinearLayout multiplierBox = (LinearLayout) findViewById(R.id.multiplier);
@@ -271,34 +272,36 @@ public class DetailActivity extends Activity {
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void windowTransition() {
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            getWindow().setEnterTransition(makeEnterTransition());
 
-        getWindow().setEnterTransition(makeEnterTransition());
-        getWindow().getEnterTransition().addListener(new Transition.TransitionListener() {
-            @Override
-            public void onTransitionStart(Transition transition) {
+            getWindow().getEnterTransition().addListener(new Transition.TransitionListener() {
+                @Override
+                public void onTransitionStart(Transition transition) {
 
-            }
+                }
 
-            @Override
-            public void onTransitionEnd(Transition transition) {
-                getWindow().getEnterTransition().removeListener(this);
-            }
+                @Override
+                public void onTransitionEnd(Transition transition) {
+                    getWindow().getEnterTransition().removeListener(this);
+                }
 
-            @Override
-            public void onTransitionCancel(Transition transition) {
+                @Override
+                public void onTransitionCancel(Transition transition) {
 
-            }
+                }
 
-            @Override
-            public void onTransitionPause(Transition transition) {
+                @Override
+                public void onTransitionPause(Transition transition) {
 
-            }
+                }
 
-            @Override
-            public void onTransitionResume(Transition transition) {
+                @Override
+                public void onTransitionResume(Transition transition) {
 
-            }
-        });
+                }
+            });
+        }
     }
 
     public static Transition makeEnterTransition() {

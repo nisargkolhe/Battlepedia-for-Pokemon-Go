@@ -34,6 +34,7 @@ import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
         actionBar.setDisplayHomeAsUpEnabled(true);
+        toolbar.setFitsSystemWindows(true);
         mRecyclerView = (RecyclerView) findViewById(R.id.list);
         mStaggeredLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(mStaggeredLayoutManager);
@@ -200,10 +202,10 @@ public class MainActivity extends AppCompatActivity {
             /*Pair<View, String> statusPair = Pair.create(statusBar, Window.STATUS_BAR_BACKGROUND_TRANSITION_NAME);*/
             ActivityOptionsCompat options;
             if(hasNavBar(getApplicationContext())){
-                options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, bgPair, navPair, ndexPair, toolbarPair, holderPair);
+                options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, navPair, ndexPair, toolbarPair, holderPair);
             }
             else{
-                options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, bgPair, ndexPair, toolbarPair, holderPair);
+                options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, ndexPair, toolbarPair, holderPair);
             }
 
             ActivityCompat.startActivity(MainActivity.this, intent, options.toBundle());

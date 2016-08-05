@@ -1,16 +1,17 @@
 package me.nisarg.battlepedia;
 
 import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.koushikdutta.ion.Ion;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -54,8 +55,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
 
         if(kmon.getThumb(mContext) != null){
-            Ion.with(holder.pokeImg).load("android.resource://" + mContext.getPackageName() + "/drawable/m"+kmon.ndex);
-            Picasso.with(mContext).load("android.resource://" + mContext.getPackageName() + "/drawable/"+kmon.type1.toLowerCase()).into(holder.bgImg);
+            Ion.with(holder.pokeImg).resize(200,200).load("android.resource://" + mContext.getPackageName() + "/drawable/m"+kmon.ndex);
+            //Picasso.with(mContext).load("android.resource://" + mContext.getPackageName() + "/drawable/"+kmon.type1.toLowerCase()).resize(200,200).into(holder.bgImg);
+            GradientDrawable gd = new GradientDrawable(
+                    GradientDrawable.Orientation.TOP_BOTTOM,
+                    new int[] {mContext.getResources().getColor(mContext.getResources().getIdentifier(kmon.type1.toLowerCase(), "color", mContext.getPackageName())),mContext.getResources().getIdentifier(kmon.type1.toLowerCase(), "color", mContext.getPackageName())});
+            gd.setCornerRadius(0f);
+            holder.cardFrame.setBackground(gd);
             holder.pokeImg.setVisibility(View.VISIBLE);
             holder.bgImg.setVisibility(View.VISIBLE);
         } else{
@@ -76,6 +82,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public LinearLayout pokemonHolder;
         public LinearLayout pokemonNameHolder;
+        public FrameLayout cardFrame;
         public TextView pokemonName;
         public TextView ndex;
         public ImageView bgImg;
@@ -89,6 +96,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             bgImg = (ImageView) itemView.findViewById(R.id.bgImg);
             pokeImg = (ImageView) itemView.findViewById(R.id.pokeImg);
             ndex = (TextView) itemView.findViewById(R.id.ndex);
+            cardFrame = (FrameLayout) itemView.findViewById(R.id.frame);
             pokemonHolder.setOnClickListener(this);
         }
 
@@ -108,57 +116,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         this.mItemClickListener = mItemClickListener;
     }
 
-    public Pokemon removeItem(int position) {
-        final Pokemon model = PokeList.remove(position);
-        notifyItemRemoved(position);
-        return model;
-    }
-
-    public void addItem(int position, Pokemon model) {
-        PokeList.add(position, model);
-        notifyItemInserted(position);
-    }
-
-    public void moveItem(int fromPosition, int toPosition) {
-        final Pokemon model = PokeList.remove(fromPosition);
-        PokeList.add(toPosition, model);
-        notifyItemMoved(fromPosition, toPosition);
-    }
-
-    public void animateTo(ArrayList<Pokemon> models) {
-        applyAndAnimateRemovals(models);
-        applyAndAnimateAdditions(models);
-        applyAndAnimateMovedItems(models);
-    }
-
-    private void applyAndAnimateMovedItems(ArrayList<Pokemon> models) {
-        for (int toPosition = models.size() - 1; toPosition >= 0; toPosition--) {
-            final Pokemon model = models.get(toPosition);
-            final int fromPosition = PokeList.indexOf(model);
-            if (fromPosition >= 0 && fromPosition != toPosition) {
-                moveItem(fromPosition, toPosition);
-            }
-        }
-    }
-
-
-    private void applyAndAnimateAdditions(ArrayList<Pokemon> models) {
-        for (int i = 0, count = models.size(); i < count; i++) {
-            final Pokemon model = models.get(i);
-            if (!PokeList.contains(model)) {
-                addItem(i, model);
-            }
-        }
-    }
-
-    private void applyAndAnimateRemovals(ArrayList<Pokemon> models) {
-        for (int i = PokeList.size() - 1; i >= 0; i--) {
-            final Pokemon model = PokeList.get(i);
-            if (!models.contains(model)) {
-                removeItem(i);
-            }
-        }
-    }
 
     public void reset(){
         PokeList.clear();
@@ -175,7 +132,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             text = text.toLowerCase();
             for(Pokemon item: itemsCopy){
                 if(item.name.toLowerCase().contains(text)){
-                    result.add(item);
+                    if(!result.contains(item)) {
+                        result.add(item);
+                    }
                 }
             }
             PokeList.clear();
@@ -193,7 +152,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             text = text.toLowerCase();
             for(Pokemon item: itemsCopy){
                 if(item.type1.toLowerCase().contains(text) || item.type2.toLowerCase().contains(text)){
-                    result.add(item);
+                    if(!result.contains(item)) {
+                        result.add(item);
+                    }
                 }
             }
             PokeList.clear();
