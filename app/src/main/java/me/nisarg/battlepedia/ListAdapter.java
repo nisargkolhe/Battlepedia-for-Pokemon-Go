@@ -36,7 +36,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_places, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_mons, parent, false);
         return new ViewHolder(view);
     }
 
@@ -68,10 +68,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             holder.pokeImg.setVisibility(View.GONE);
             holder.bgImg.setVisibility(View.GONE);
         }
-       /* Ion.with(holder.pokeImg).load("android.resource://" + mContext.getPackageName() + "/drawable/m"+kmon.ndex);
-        Picasso.with(mContext).load("android.resource://" + mContext.getPackageName() + "/drawable/"+kmon.type1.toLowerCase()).into(holder.bgImg);*/
-
-
     }
 
     @Override
@@ -103,7 +99,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         @Override
         public void onClick(View v) {
             if (mItemClickListener != null) {
-                mItemClickListener.onItemClick(itemView,getAdapterPosition());
+                mItemClickListener.onItemClick(itemView, getAdapterPosition());
             }
         }
     }

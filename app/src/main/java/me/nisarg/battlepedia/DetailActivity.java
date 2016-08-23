@@ -3,22 +3,31 @@ package me.nisarg.battlepedia;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.transition.Fade;
 import android.transition.Transition;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.appindexing.Thing;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.koushikdutta.ion.Ion;
@@ -72,6 +81,12 @@ public class DetailActivity extends Activity {
     private TextView defence;
     private TextView weaknesses;
     private TextView advantages;
+    private FrameLayout cardFrame;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient mClient;
 
 
     @Override
@@ -87,9 +102,12 @@ public class DetailActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
 //        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        Bundle bundle = getIntent().getExtras();
+        int pos  = Integer.parseInt(bundle.getString(EXTRA_PARAM_ID));
+        pokedet = PokeList.get(pos);
 
-        pokedet = PokeList.get(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
 
+        cardFrame = (FrameLayout) findViewById(R.id.frame);
         bgImage = (ImageView) findViewById(bgImg);
         txtName = (TextView) findViewById(R.id.textView);
         txtNdex = (TextView) findViewById(R.id.ndex);
@@ -110,6 +128,17 @@ public class DetailActivity extends Activity {
 
         quickMovesGrid = (MovesGridView) findViewById(R.id.quickGrid);
         chargeMovesGrid = (MovesGridView) findViewById(R.id.chargeGrid);
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int density = metrics.densityDpi;
+
+        if (density >= DisplayMetrics.DENSITY_XHIGH) {
+            quickMovesGrid.setNumColumns(2);
+            chargeMovesGrid.setNumColumns(2);
+        }
+
+
+
         weaknesses = (TextView) findViewById(R.id.weakAgainst);
         advantages = (TextView) findViewById(R.id.advOver);
 
@@ -126,12 +155,12 @@ public class DetailActivity extends Activity {
         TextView labelCP = (TextView) findViewById(R.id.cpLabel);
         cpResult = (TextView) findViewById(R.id.txtResult);
         calcCP = (EditText) findViewById(R.id.calc);
-        if(pokedet.cpMultiplier.length() < 1){
+        if (pokedet.cpMultiplier.length() < 1) {
             calcCP.setEnabled(false);
             multiplierBox.setVisibility(View.GONE);
             labelCP.setVisibility(View.GONE);
         }
-        if(pokedet.ndex == 133){
+        if (pokedet.ndex == 133) {
             TextView msg = (TextView) findViewById(R.id.eeveeMsg);
             msg.setVisibility(View.VISIBLE);
         }
@@ -142,8 +171,8 @@ public class DetailActivity extends Activity {
             }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2)  {
-                if(!calcCP.getText().toString().equals("")) {
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!calcCP.getText().toString().equals("")) {
                     cpResult.setText("" + Math.round(Integer.parseInt(calcCP.getText().toString()) * Double.parseDouble(pokedet.cpMultiplier)));
                 }
             }
@@ -156,18 +185,21 @@ public class DetailActivity extends Activity {
 
         loadDetails();
         windowTransition();
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        mClient = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-    private void loadDetails(){
+    private void loadDetails() {
         txtName.setText(pokedet.name);
-        txtNdex.setText("#"+pokedet.ndex);
+        txtNdex.setText("#" + pokedet.ndex);
         type1.setText(pokedet.type1);
-        baseHP.setText(""+pokedet.hpBase);
-        maxTotalHP.setText(""+pokedet.maxTotalHP);
-        maxTotalCP.setText(""+pokedet.maxTotalCP);
-        attack.setText(""+pokedet.attack);
-        stamina.setText(""+pokedet.stamina);
-        defence.setText(""+pokedet.defence);
+        baseHP.setText("" + pokedet.hpBase);
+        maxTotalHP.setText("" + pokedet.maxTotalHP);
+        maxTotalCP.setText("" + pokedet.maxTotalCP);
+        attack.setText("" + pokedet.attack);
+        stamina.setText("" + pokedet.stamina);
+        defence.setText("" + pokedet.defence);
 
         HashMap<String, String> type1stats = getTypeStats(pokedet.type1.toUpperCase());
         HashMap<String, String> type2stats = getTypeStats(pokedet.type2.toUpperCase());
@@ -175,30 +207,30 @@ public class DetailActivity extends Activity {
         ArrayList<String> weak = new ArrayList<String>();
 
 
-        for(String key: type1stats.keySet()){
-            if(Double.parseDouble(type1stats.get(key)) < 1){
-                if(!adv.contains(key))
+        for (String key : type1stats.keySet()) {
+            if (Double.parseDouble(type1stats.get(key)) < 1) {
+                if (!adv.contains(key))
                     adv.add(key);
-            } else if (Double.parseDouble(type1stats.get(key)) > 1){
-                if(!weak.contains(key))
+            } else if (Double.parseDouble(type1stats.get(key)) > 1) {
+                if (!weak.contains(key))
                     weak.add(key);
             }
         }
 
-        for(String key: type2stats.keySet()){
-            if(Double.parseDouble(type2stats.get(key)) < 1){
-                if(!adv.contains(key))
+        for (String key : type2stats.keySet()) {
+            if (Double.parseDouble(type2stats.get(key)) < 1) {
+                if (!adv.contains(key))
                     adv.add(key);
-            } else if (Double.parseDouble(type2stats.get(key)) > 1){
-                if(!weak.contains(key))
+            } else if (Double.parseDouble(type2stats.get(key)) > 1) {
+                if (!weak.contains(key))
                     weak.add(key);
             }
         }
 
-        advantages.setText(android.text.TextUtils.join("\n", adv));
-        weaknesses.setText(android.text.TextUtils.join("\n", weak));
+        advantages.setText(TextUtils.join("\n", adv));
+        weaknesses.setText(TextUtils.join("\n", weak));
 
-        if(!pokedet.cpMultiplier.equals("")){
+        if (!pokedet.cpMultiplier.equals("")) {
             txtCp.setText(pokedet.cpMultiplier);
         }
         int type1color = getResources().getIdentifier(pokedet.type1.toLowerCase(), "color", getPackageName());
@@ -210,8 +242,7 @@ public class DetailActivity extends Activity {
         //type2box.setBackgroundColor(mContext.getResources().getIdentifier(pokedet.type2.toLowerCase(), "color", mContext.getPackageName()));
 
 
-
-        if(pokedet.type1.equals(pokedet.type2)){
+        if (pokedet.type1.equals(pokedet.type2)) {
             type2box.setVisibility(View.GONE);
         } else {
             type2.setText(pokedet.type2);
@@ -219,23 +250,28 @@ public class DetailActivity extends Activity {
 
         //Picasso.with(getApplicationContext()).load(pokedet.imageName).into(pokeImage);
         //Glide.with(getApplicationContext()).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+pokedet.ndex).asBitmap().into(pokeImage);
-        Ion.with(pokeImage).load("android.resource://" + mContext.getPackageName() + "/drawable/m"+pokedet.ndex);
+        Ion.with(pokeImage).resize(200, 200).load("android.resource://" + mContext.getPackageName() + "/drawable/m" + pokedet.ndex);
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                // Do something after 5s = 5000ms
-                //Glide.with(getApplicationContext()).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+pokedet.ndex).asGif().into(pokeImage);
-
-                Ion.with(pokeImage).animateGif(AnimateGifMode.ANIMATE).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+pokedet.ndex);
+                Ion.with(pokeImage).animateGif(AnimateGifMode.ANIMATE).load("android.resource://" + mContext.getPackageName() + "/drawable/n" + pokedet.ndex);
             }
         }, 1500);
         //Ion.with(bgImage).load("android.resource://" + mContext.getPackageName() + "/drawable/"+pokedet.type1.toLowerCase());
-        Picasso.with(getApplicationContext()).load("android.resource://" + mContext.getPackageName() + "/drawable/"+pokedet.type1.toLowerCase()).into(bgImage);
+        Picasso.with(getApplicationContext())
+                .load("android.resource://" + mContext.getPackageName() + "/drawable/" + pokedet.type1.toLowerCase())
+                .fit()
+                .into(bgImage);
 
+        GradientDrawable gd = new GradientDrawable(
+                GradientDrawable.Orientation.TOP_BOTTOM,
+                new int[] {mContext.getResources().getColor(mContext.getResources().getIdentifier(pokedet.type1.toLowerCase(), "color", mContext.getPackageName())),mContext.getResources().getIdentifier(pokedet.type1.toLowerCase(), "color", mContext.getPackageName())});
+        gd.setCornerRadius(0f);
+        cardFrame.setBackground(gd);
     }
 
-    private HashMap getTypeStats(String type){
+    private HashMap getTypeStats(String type) {
         StringBuffer sb = new StringBuffer();
         BufferedReader br = null;
         HashMap typeData = new HashMap();
@@ -246,12 +282,12 @@ public class DetailActivity extends Activity {
             while ((temp = br.readLine()) != null)
                 sb.append(temp);
         } catch (IOException e) {
-            Log.e("me.nisarg.battlepedia",e.toString());
+            Log.e("me.nisarg.battlepedia", e.toString());
         } finally {
             try {
                 br.close(); // stop reading
             } catch (IOException e) {
-                Log.e("me.nisarg.battlepedia",e.toString());
+                Log.e("me.nisarg.battlepedia", e.toString());
             }
         }
         String myjsonstring = sb.toString();
@@ -261,10 +297,11 @@ public class DetailActivity extends Activity {
             JSONArray jsonArray = jsonObjMain.getJSONArray(type);
             //for (int i = 0; i < jsonArray.length(); i++) {
             //}
-            typeData = new Gson().fromJson(jsonArray.get(0).toString(), new TypeToken<HashMap<String, String>>() {}.getType());
+            typeData = new Gson().fromJson(jsonArray.get(0).toString(), new TypeToken<HashMap<String, String>>() {
+            }.getType());
 
         } catch (JSONException e) {
-            Log.e("me.nisarg.battlepedia",e.toString());
+            Log.e("me.nisarg.battlepedia", e.toString());
             e.printStackTrace();
         }
         return typeData;
@@ -272,7 +309,7 @@ public class DetailActivity extends Activity {
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void windowTransition() {
-        if (android.os.Build.VERSION.SDK_INT >= 21) {
+        if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setEnterTransition(makeEnterTransition());
 
             getWindow().getEnterTransition().addListener(new Transition.TransitionListener() {
@@ -311,6 +348,12 @@ public class DetailActivity extends Activity {
         return fade;
     }
 
+    public static Transition makeExitTransition() {
+        Transition fade = new Fade();
+        fade.addTarget(bgImg);
+        return fade;
+    }
+
     public int getStatusBarHeight() {
         int result = 0;
         int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -318,5 +361,47 @@ public class DetailActivity extends Activity {
             result = getResources().getDimensionPixelSize(resourceId);
         }
         return result;
+    }
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    public Action getIndexApiAction() {
+        Thing object = new Thing.Builder()
+                .setName("Detail Page") // TODO: Define a title for the content shown.
+                // TODO: Make sure this auto-generated URL is correct.
+                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
+                .build();
+        return new Action.Builder(Action.TYPE_VIEW)
+                .setObject(object)
+                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
+                .build();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        mClient.connect();
+        AppIndex.AppIndexApi.start(mClient, getIndexApiAction());
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        AppIndex.AppIndexApi.end(mClient, getIndexApiAction());
+        mClient.disconnect();
+    }
+
+    @Override
+    public void onBackPressed(){
+        bgImage.animate().alpha(0.0f);
+        super.onBackPressed();
     }
 }

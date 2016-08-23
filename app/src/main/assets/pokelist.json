@@ -2264,6 +2264,21 @@
       "defence": 90,
       "type1": "Poison",
       "type2": "Flying"
-    }
+    },
+    /*{
+      "num": 152,
+      "name": "Demo",
+      "cpMultiplier": 3.12,
+      "hpBase": 40,
+      "maxTotalCP": 642,
+      "maxTotalHP": 75,
+      "basicAttack": "Water Gun, Bite",
+      "specialAttack": "Earthquake, Rock Tomb, Bulldoze",
+      "stamina": 80,
+      "attack": 88,
+      "defence": 90,
+      "type1": "Water",
+      "type2": "Ground"
+    }*/
   ]
 }

@@ -88,19 +88,10 @@ public class MovesAdapter extends BaseAdapter {
         }
 
         try{
-            //holder.type.setImageDrawable(context.getDrawable(context.getResources().getIdentifier(movesList.get(result.get(i)).toString().toLowerCase()+"icon", "drawable", context.getPackageName())));
             Picasso.with(context).load(context.getResources().getIdentifier(movesList.get(result.get(i)).toString().toLowerCase()+"icon", "drawable", context.getPackageName())).into(holder.type);
         } catch (Exception e){
             Log.e("me.nisarg.battlepedia","type icon didn't load "+e.toString());
         }
-        /*rowView.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
-            }
-        });*/
 
         return rowView;
 

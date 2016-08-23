@@ -59,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setUpActionBar();
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -78,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "FAB", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });*/
@@ -177,7 +175,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onItemClick(View v, int position) {
             Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-            intent.putExtra(DetailActivity.EXTRA_PARAM_ID, position);
+            Bundle bundle = new Bundle();
+            bundle.putString(DetailActivity.EXTRA_PARAM_ID,""+position);
+            intent.putExtras(bundle);
 
             ImageView bgImage = (ImageView) v.findViewById(R.id.bgImg);
             ImageView pokeImage = (ImageView) v.findViewById(R.id.pokeImg);
@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
             LinearLayout placeNameHolder = (LinearLayout) v.findViewById(R.id.placeNameHolder);
 
             Pair<View, String> imagePair = Pair.create((View) pokeImage, "tPokeImage");
-            Pair<View, String> bgPair = Pair.create((View) bgImage, "tBgImage");
+            Pair<View, String> bgPair = Pair.create((View) bg, "tBg");
             Pair<View, String> holderPair = Pair.create((View) placeNameHolder, "tNameHolder");
             Pair<View, String> ndexPair = Pair.create((View) ndex, "tNdex");
             Pair<View, String> toolbarPair = Pair.create((View)toolbar, "tActionBar");
@@ -279,9 +279,6 @@ public class MainActivity extends AppCompatActivity {
             }
             @Override
             public boolean onQueryTextChange(String s) {
-               // final ArrayList<Pokemon> filteredModelList = filter(PokeList, s);
-               // mAdapter.animateTo(filteredModelList);
-               // mRecyclerView.scrollToPosition(0);
                 mAdapter.filter(s);
                 return true;
             }
@@ -292,19 +289,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         } else if(id == R.id.toggle_view){
             int count = mStaggeredLayoutManager.getSpanCount();
             int fCount = 2;
-            LinearLayout nameHolder = (LinearLayout) findViewById(R.id.placeNameHolder);
-            ImageView bg = (ImageView) findViewById(R.id.bgImg);
             switch (count){
                 case 1:
                     menu.getItem(0).setIcon(R.drawable.ic_view_module_white_24dp);
@@ -326,8 +317,4 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
-    
-    
 }

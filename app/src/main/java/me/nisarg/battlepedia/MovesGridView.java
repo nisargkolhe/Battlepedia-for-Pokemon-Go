@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 /**
- * Created by nisarg on 5/8/16.
+ * Adapted code from http://stackoverflow.com/questions/4523609/grid-of-images-inside-scrollview/4536955#4536955. Original code by Neil Traft.
  */
 
 public class MovesGridView extends GridView {
