@@ -48,18 +48,20 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
 
         holder.pokemonName.setText(kmon.getName());
-        holder.ndex.setText("#" + kmon.ndex);
-        String color = kmon.type1.toLowerCase();
-        int img = mContext.getResources().getIdentifier("n" + kmon.ndex + ".gif", "drawable", mContext.getPackageName());
+        holder.ndex.setText("#" + kmon.getNdex());
+        String color = kmon.getType1().toLowerCase();
+        int img = mContext.getResources().getIdentifier("n" + kmon.getNdex() + ".gif", "drawable", mContext.getPackageName());
         holder.pokemonNameHolder.setBackgroundColor(mContext.getResources().getIdentifier(color, "color", mContext.getPackageName()));
 
 
         if (kmon.getThumb(mContext) != null) {
-            Ion.with(holder.pokeImg).resize(200, 200).load("android.resource://" + mContext.getPackageName() + "/drawable/m" + kmon.ndex);
+            Ion.with(holder.pokeImg).resize(200, 200).load("android.resource://" + mContext.getPackageName() + "/drawable/m" + kmon.getNdex());
             //Picasso.with(mContext).load("android.resource://" + mContext.getPackageName() + "/drawable/"+kmon.type1.toLowerCase()).resize(200,200).into(holder.bgImg);
             GradientDrawable gd = new GradientDrawable(
                     GradientDrawable.Orientation.TOP_BOTTOM,
-                    new int[]{mContext.getResources().getColor(mContext.getResources().getIdentifier(kmon.type1.toLowerCase(), "color", mContext.getPackageName())), mContext.getResources().getIdentifier(kmon.type1.toLowerCase(), "color", mContext.getPackageName())});
+                    new int[]{mContext.getResources().getColor(
+                            mContext.getResources().getIdentifier(kmon.getType1().toLowerCase(), "color", mContext.getPackageName())),
+                            mContext.getResources().getIdentifier(kmon.getType1().toLowerCase(), "color", mContext.getPackageName())});
             gd.setCornerRadius(0f);
             holder.cardFrame.setBackground(gd);
             holder.pokeImg.setVisibility(View.VISIBLE);
@@ -147,7 +149,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             ArrayList<Pokemon> result = new ArrayList<>();
             text = text.toLowerCase();
             for (Pokemon item : itemsCopy) {
-                if (item.type1.toLowerCase().contains(text) || item.type2.toLowerCase().contains(text)) {
+                if (item.getType1().toLowerCase().contains(text) || item.getType2().toLowerCase().contains(text)) {
                     if (!result.contains(item)) {
                         result.add(item);
                     }

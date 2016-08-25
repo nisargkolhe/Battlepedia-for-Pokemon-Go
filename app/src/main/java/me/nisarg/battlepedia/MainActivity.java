@@ -116,18 +116,18 @@ public class MainActivity extends AppCompatActivity {
                 Pokemon Poke = new Pokemon();
 
                 // Getting data from individual JSONObject
-                Poke.ndex = jsonObj.getInt("num");
-                Poke.cpMultiplier = jsonObj.getString("cpMultiplier");
-                Poke.maxTotalCP = jsonObj.getInt("maxTotalCP");
-                Poke.maxTotalHP = jsonObj.getInt("maxTotalHP");
-                Poke.hpBase = jsonObj.getInt("hpBase");
-                Poke.stamina = jsonObj.getInt("stamina");
-                Poke.attack = jsonObj.getInt("attack");
-                Poke.defence = jsonObj.getInt("defence");
-                Poke.basicAttack = jsonObj.getString("basicAttack");
-                Poke.specialAttack = jsonObj.getString("specialAttack");
-                Poke.type1 = jsonObj.getString("type1");
-                Poke.type2 = jsonObj.getString("type2");
+                Poke.setNdex(jsonObj.getInt("num"));
+                Poke.setCpMultiplier(jsonObj.getString("cpMultiplier"));
+                Poke.setMaxTotalCP(jsonObj.getInt("maxTotalCP"));
+                Poke.setMaxTotalHP(jsonObj.getInt("maxTotalHP"));
+                Poke.setHpBase(jsonObj.getInt("hpBase"));
+                Poke.setStamina(jsonObj.getInt("stamina"));
+                Poke.setAttack(jsonObj.getInt("attack"));
+                Poke.setDefence(jsonObj.getInt("defence"));
+                Poke.setBasicAttack(jsonObj.getString("basicAttack"));
+                Poke.setSpecialAttack(jsonObj.getString("specialAttack"));
+                Poke.setType1(jsonObj.getString("type1"));
+                Poke.setType2(jsonObj.getString("type2"));
                 PokeList.add(Poke);
 
             }
