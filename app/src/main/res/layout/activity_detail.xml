@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:fillViewport="true"
-    >
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <FrameLayout
             android:id="@+id/frame"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:transitionName="tBg"
-            >
+            android:transitionName="tBg">
 
             <ImageView
                 android:id="@+id/bgImg"
@@ -25,8 +22,7 @@
                 android:layout_height="220dp"
                 android:scaleType="matrix"
                 android:src="@drawable/electric"
-                android:transitionName="tBgImage"
-                />
+                android:transitionName="tBgImage" />
 
             <ImageView
                 android:id="@+id/pokeImg"
@@ -35,8 +31,7 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/n1"
                 android:transitionName="tPokeImage"
-                android:translationZ="10dp"
-                />
+                android:translationZ="10dp" />
 
 
             <LinearLayout
@@ -55,7 +50,7 @@
                     android:paddingLeft="10dp"
                     android:text="NAME"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/white" />
 
             </LinearLayout>
 
@@ -70,17 +65,17 @@
                 android:text="#001"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white"
-                android:transitionName="tNdex"
-                />
+                android:transitionName="tNdex" />
 
             <include
                 android:id="@+id/toolbar"
-                layout="@layout/toolbar_detail"/>
+                layout="@layout/toolbar_detail" />
         </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:id="@+id/type1box"
@@ -88,12 +83,11 @@
                 android:layout_height="60dp"
                 android:layout_gravity="bottom"
                 android:layout_weight="0.5"
-                android:background="#4CAF50"
-                >
+                android:background="#4CAF50">
 
                 <TextView
                     android:id="@+id/type1"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0.5"
@@ -102,7 +96,7 @@
                     android:text="GRASS"
                     android:textAlignment="center"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/white" />
             </LinearLayout>
 
             <LinearLayout
@@ -112,8 +106,7 @@
                 android:layout_gravity="bottom"
                 android:layout_weight="0.5"
                 android:background="#039BE5"
-                android:visibility="visible"
-                >
+                android:visibility="visible">
 
                 <TextView
                     android:id="@+id/type2"
@@ -125,7 +118,7 @@
                     android:text="WATER"
                     android:textAlignment="center"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/white" />
 
 
             </LinearLayout>
@@ -142,13 +135,12 @@
             android:text="Type Advantage"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/black"
-            android:textStyle="italic"/>
+            android:textStyle="italic" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="8dp"
-            >
+            android:paddingTop="8dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -159,7 +151,7 @@
                 android:paddingLeft="10dp"
                 android:text="Weak Against"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@android:color/black"/>
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -170,7 +162,7 @@
                 android:paddingLeft="10dp"
                 android:text="Advantage Over"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@android:color/black"/>
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -196,7 +188,7 @@
                     android:gravity="center"
                     android:text="FIGHTING\nPOISON\nBUG\nGRASS"
                     android:textAlignment="center"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/white" />
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
@@ -218,7 +210,7 @@
                     android:gravity="center"
                     android:text="FIGHTING\nPOISON\nBUG\nGRASS"
                     android:textAlignment="center"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/white" />
             </android.support.v7.widget.CardView>
 
         </LinearLayout>
@@ -233,7 +225,7 @@
             android:text="Move Sets"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/black"
-            android:textStyle="italic"/>
+            android:textStyle="italic" />
 
         <TextView
             android:layout_width="match_parent"
@@ -244,7 +236,7 @@
             android:paddingTop="8dp"
             android:text="Quick"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -253,15 +245,14 @@
 
             <me.nisarg.battlepedia.MovesGridView
                 android:id="@+id/quickGrid"
-                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:horizontalSpacing="10dp"
-                android:numColumns="1"
                 android:isScrollContainer="false"
+                android:numColumns="1"
                 android:stretchMode="columnWidth"
-                android:verticalSpacing="10dp"
-                />
+                android:verticalSpacing="10dp" />
         </LinearLayout>
 
         <TextView
@@ -273,7 +264,7 @@
             android:paddingTop="8dp"
             android:text="Charge"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -283,15 +274,14 @@
 
             <me.nisarg.battlepedia.MovesGridView
                 android:id="@+id/chargeGrid"
-                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:horizontalSpacing="10dp"
-                android:numColumns="1"
                 android:isScrollContainer="false"
+                android:numColumns="1"
                 android:stretchMode="columnWidth"
-                android:verticalSpacing="10dp"
-                />
+                android:verticalSpacing="10dp" />
         </LinearLayout>
 
         <TextView
@@ -305,7 +295,7 @@
             android:text="Stats"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/black"
-            android:textStyle="italic"/>
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/eeveeMsg"
@@ -315,7 +305,7 @@
             android:text="Go to the respective Eevolution's page to calculate the CP."
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearance"
-            android:visibility="invisible"/>
+            android:visibility="invisible" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -331,8 +321,7 @@
                 android:fontFamily="sans-serif"
                 android:text="CP Multiplier"
                 android:textAlignment="center"
-                android:textColor="@color/dark_grey"
-                />
+                android:textColor="@color/dark_grey" />
 
             <LinearLayout
                 android:id="@+id/multiplier"
@@ -347,8 +336,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:inputType="number"
-                    android:textSize="30dp"
-                    android:textStyle="italic"/>
+                    android:textSize="30sp"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -358,8 +347,8 @@
                     android:text="×"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="30dp"
-                    android:textStyle="italic"/>
+                    android:textSize="30sp"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/txtCp"
@@ -370,8 +359,8 @@
                     android:text="N/A"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="30dp"
-                    android:textStyle="italic"/>
+                    android:textSize="30sp"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -381,8 +370,8 @@
                     android:text="≈"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="30dp"
-                    android:textStyle="italic"/>
+                    android:textSize="30sp"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/txtResult"
@@ -393,8 +382,8 @@
                     android:text="\???"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="30dp"
-                    android:textStyle="italic"/>
+                    android:textSize="30sp"
+                    android:textStyle="italic" />
             </LinearLayout>
 
             <LinearLayout
@@ -411,24 +400,21 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Base HP"
-                    android:textColor="@color/dark_grey"
-                    />
+                    android:textColor="@color/dark_grey" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Max Total CP"
-                    android:textColor="@color/dark_grey"
-                    />
+                    android:textColor="@color/dark_grey" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Max Total HP"
-                    android:textColor="@color/dark_grey"
-                    />
+                    android:textColor="@color/dark_grey" />
             </LinearLayout>
 
             <LinearLayout
@@ -447,8 +433,7 @@
                     android:paddingTop="4dp"
                     android:text="40"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/black"
-                    />
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/maxTotalCP"
@@ -470,8 +455,7 @@
                     android:paddingTop="4dp"
                     android:text="45"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/black"
-                    />
+                    android:textColor="@android:color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -488,24 +472,21 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Stamina"
-                    android:textColor="@color/dark_grey"
-                    />
+                    android:textColor="@color/dark_grey" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Attack"
-                    android:textColor="@color/dark_grey"
-                    />
+                    android:textColor="@color/dark_grey" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Defence"
-                    android:textColor="@color/dark_grey"
-                    />
+                    android:textColor="@color/dark_grey" />
             </LinearLayout>
 
             <LinearLayout
@@ -513,9 +494,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/head2"
+                android:layout_marginBottom="50dp"
                 android:paddingLeft="8dp"
-                android:weightSum="3"
-                android:layout_marginBottom="50dp">
+                android:weightSum="3">
 
                 <TextView
                     android:id="@+id/stamina"
@@ -525,8 +506,7 @@
                     android:paddingTop="4dp"
                     android:text="40"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/black"
-                    />
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/attack"
@@ -536,8 +516,7 @@
                     android:paddingTop="4dp"
                     android:text="878"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/black"
-                    />
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/defence"
@@ -547,8 +526,7 @@
                     android:paddingTop="4dp"
                     android:text="45"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/black"
-                    />
+                    android:textColor="@android:color/black" />
             </LinearLayout>
         </RelativeLayout>
 
