@@ -1,6 +1,9 @@
 # Battlepedia for Pokémon Go
 
+![Battlepedia](https://thumbs.gfycat.com/ConsciousIllinformedJumpingbean-size_restricted.gif)
+
 Battlepedia is a companion app for Pokémon Go with all the data, info and tools needed to win and defend gyms. The app was rejected from Google Play Store for containing copyrighted content(even though loads of other apps on Play Store use Pokémons without any problems), so I'm open sourcing it here on GitHub(because I spent a lot of time on this and I want senpai to notice me.) For now the app is exclusively on Android, and the design is heavily inspired by Google's Material Guidelines.
+
 
 ####Some Screenshots:
 
