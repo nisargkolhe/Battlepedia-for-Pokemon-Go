@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private Menu menu;
 
-    public static ArrayList<Pokemon> PokeList = new ArrayList<>();
+    public static final ArrayList<Pokemon> PokeList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
         actionBar.setDisplayHomeAsUpEnabled(true);
         toolbar.setFitsSystemWindows(true);
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         BufferedReader br = null;
         try {
             br = new BufferedReader(new InputStreamReader(getAssets().open(
@@ -94,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
             Log.e("me.nisarg.battlepedia", e.toString());
         } finally {
             try {
+                assert br != null;
                 br.close(); // stop reading
             } catch (IOException e) {
                 Log.e("me.nisarg.battlepedia", e.toString());
@@ -143,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
         mAdapter.setOnItemClickListener(onItemClickListener);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
-        SubMenu topChannelMenu = navigationView.getMenu().addSubMenu("Types");
+        SubMenu topChannelMenu = navigationView != null ? navigationView.getMenu().addSubMenu("Types") : null;
         final String[] types = {"Normal", "Fighting", "Flying", "Poison", "Ground", "Rock", "Bug", "Ghost", "Steel", "Fire", "Water", "Grass", "Electric", "Psychic", "Ice", "Dragon", "Dark", "Fairy"};
         for (String type : types) {
             topChannelMenu.add(type).setIcon(getApplicationContext().getResources().getIdentifier(type.toLowerCase() + "icon", "drawable", getApplicationContext().getPackageName()));
@@ -165,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    ListAdapter.OnItemClickListener onItemClickListener = new ListAdapter.OnItemClickListener() {
+    private final ListAdapter.OnItemClickListener onItemClickListener = new ListAdapter.OnItemClickListener() {
         @TargetApi(Build.VERSION_CODES.LOLLIPOP)
         @Override
         public void onItemClick(View v, int position) {
@@ -206,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-    public boolean hasNavBar(Context context) {
+    private boolean hasNavBar(Context context) {
         Point realSize = new Point();
         Point screenSize = new Point();
         boolean hasNavBar = false;
@@ -234,6 +236,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // TODO not used ?!?
     private void setUpActionBar() {
         if (toolbar != null) {
 

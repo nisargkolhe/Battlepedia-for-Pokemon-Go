@@ -202,8 +202,8 @@ public class DetailActivity extends Activity {
 
         HashMap<String, String> type1stats = getTypeStats(pokedet.getType1().toUpperCase());
         HashMap<String, String> type2stats = getTypeStats(pokedet.getType2().toUpperCase());
-        ArrayList<String> adv = new ArrayList<String>();
-        ArrayList<String> weak = new ArrayList<String>();
+        ArrayList<String> adv = new ArrayList<>();
+        ArrayList<String> weak = new ArrayList<>();
 
 
         for (String key : type1stats.keySet()) {
@@ -274,7 +274,7 @@ public class DetailActivity extends Activity {
     }
 
     private HashMap getTypeStats(String type) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         BufferedReader br = null;
         HashMap typeData = new HashMap();
         try {
@@ -287,6 +287,7 @@ public class DetailActivity extends Activity {
             Log.e("me.nisarg.battlepedia", e.toString());
         } finally {
             try {
+                assert br != null;
                 br.close(); // stop reading
             } catch (IOException e) {
                 Log.e("me.nisarg.battlepedia", e.toString());
@@ -343,19 +344,23 @@ public class DetailActivity extends Activity {
         }
     }
 
-    public static Transition makeEnterTransition() {
+    private static Transition makeEnterTransition() {
         Transition fade = new Fade();
-        fade.excludeTarget(android.R.id.navigationBarBackground, true);
-        fade.excludeTarget(android.R.id.statusBarBackground, true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            fade.excludeTarget(android.R.id.navigationBarBackground, true);
+            fade.excludeTarget(android.R.id.statusBarBackground, true);
+        }
         return fade;
     }
 
+    // TODO remove? not used ?!?
     public static Transition makeExitTransition() {
         Transition fade = new Fade();
         fade.addTarget(bgImg);
         return fade;
     }
 
+    // TODO remove? not used ?!?
     public int getStatusBarHeight() {
         int result = 0;
         int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -369,7 +374,7 @@ public class DetailActivity extends Activity {
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    public Action getIndexApiAction() {
+    private Action getIndexApiAction() {
         Thing object = new Thing.Builder()
                 .setName("Detail Page") // TODO: Define a title for the content shown.
                 // TODO: Make sure this auto-generated URL is correct.

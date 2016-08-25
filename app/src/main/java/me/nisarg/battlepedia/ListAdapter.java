@@ -25,9 +25,9 @@ import static me.nisarg.battlepedia.MainActivity.PokeList;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
-    Context mContext;
-    OnItemClickListener mItemClickListener;
-    private ArrayList<Pokemon> itemsCopy = new ArrayList<Pokemon>();
+    private final Context mContext;
+    private OnItemClickListener mItemClickListener;
+    private final ArrayList<Pokemon> itemsCopy = new ArrayList<>();
 
     public ListAdapter(Context context) {
         this.mContext = context;
@@ -78,13 +78,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public LinearLayout pokemonHolder;
-        public LinearLayout pokemonNameHolder;
-        public FrameLayout cardFrame;
-        public TextView pokemonName;
-        public TextView ndex;
-        public ImageView bgImg;
-        public ImageView pokeImg;
+        public final LinearLayout pokemonHolder;
+        public final LinearLayout pokemonNameHolder;
+        public final FrameLayout cardFrame;
+        public final TextView pokemonName;
+        public final TextView ndex;
+        public final ImageView bgImg;
+        public final ImageView pokeImg;
 
         public ViewHolder(View itemView) {
             super(itemView);
