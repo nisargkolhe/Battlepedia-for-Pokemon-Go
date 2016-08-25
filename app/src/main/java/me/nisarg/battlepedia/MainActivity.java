@@ -34,7 +34,6 @@ import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -59,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Helper.setContext(getApplicationContext());
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -82,8 +82,6 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
 
-
-
         StringBuffer sb = new StringBuffer();
         BufferedReader br = null;
         try {
@@ -93,12 +91,12 @@ public class MainActivity extends AppCompatActivity {
             while ((temp = br.readLine()) != null)
                 sb.append(temp);
         } catch (IOException e) {
-            Log.e("me.nisarg.battlepedia",e.toString());
+            Log.e("me.nisarg.battlepedia", e.toString());
         } finally {
             try {
                 br.close(); // stop reading
             } catch (IOException e) {
-                Log.e("me.nisarg.battlepedia",e.toString());
+                Log.e("me.nisarg.battlepedia", e.toString());
             }
         }
         String myjsonstring = sb.toString();
@@ -118,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
                 Pokemon Poke = new Pokemon();
 
                 // Getting data from individual JSONObject
-                Poke.name = jsonObj.getString("name");
                 Poke.ndex = jsonObj.getInt("num");
                 Poke.cpMultiplier = jsonObj.getString("cpMultiplier");
                 Poke.maxTotalCP = jsonObj.getInt("maxTotalCP");
@@ -136,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } catch (JSONException e) {
-            Log.e("me.nisarg.battlepedia",e.toString());
+            Log.e("me.nisarg.battlepedia", e.toString());
             e.printStackTrace();
         }
 
@@ -147,22 +144,20 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         SubMenu topChannelMenu = navigationView.getMenu().addSubMenu("Types");
-        final String[] types = {"Normal","Fighting","Flying","Poison","Ground","Rock","Bug","Ghost","Steel","Fire","Water","Grass","Electric","Psychic","Ice","Dragon","Dark","Fairy"};
-        for(String type: types){
-            topChannelMenu.add(type).setIcon(getApplicationContext().getResources().getIdentifier(type.toLowerCase()+"icon", "drawable", getApplicationContext().getPackageName()));
+        final String[] types = {"Normal", "Fighting", "Flying", "Poison", "Ground", "Rock", "Bug", "Ghost", "Steel", "Fire", "Water", "Grass", "Electric", "Psychic", "Ice", "Dragon", "Dark", "Fairy"};
+        for (String type : types) {
+            topChannelMenu.add(type).setIcon(getApplicationContext().getResources().getIdentifier(type.toLowerCase() + "icon", "drawable", getApplicationContext().getPackageName()));
         }
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 menuItem.setEnabled(true);
                 mDrawerLayout.closeDrawers();
-                if(menuItem.getTitle().toString().equals("Alphabetic")){
+                if (menuItem.getTitle().toString().equals("Alphabetic")) {
                     mAdapter.reset();
-                }
-                else if(menuItem.getTitle().toString().equals("Ndex")){
+                } else if (menuItem.getTitle().toString().equals("Ndex")) {
                     mAdapter.sortByNdex();
-                }
-                else if(Arrays.asList(types).contains(menuItem.getTitle().toString())){
+                } else if (Arrays.asList(types).contains(menuItem.getTitle().toString())) {
                     mAdapter.filterByType(menuItem.getTitle().toString());
                 }
                 return true;
@@ -176,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
         public void onItemClick(View v, int position) {
             Intent intent = new Intent(MainActivity.this, DetailActivity.class);
             Bundle bundle = new Bundle();
-            bundle.putString(DetailActivity.EXTRA_PARAM_ID,""+position);
+            bundle.putString(DetailActivity.EXTRA_PARAM_ID, "" + position);
             intent.putExtras(bundle);
 
             ImageView bgImage = (ImageView) v.findViewById(R.id.bgImg);
@@ -193,18 +188,16 @@ public class MainActivity extends AppCompatActivity {
             Pair<View, String> bgPair = Pair.create((View) bg, "tBg");
             Pair<View, String> holderPair = Pair.create((View) placeNameHolder, "tNameHolder");
             Pair<View, String> ndexPair = Pair.create((View) ndex, "tNdex");
-            Pair<View, String> toolbarPair = Pair.create((View)toolbar, "tActionBar");
-
+            Pair<View, String> toolbarPair = Pair.create((View) toolbar, "tActionBar");
 
 
             Pair<View, String> navPair = Pair.create(navigationBar,
                     Window.NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME);
             /*Pair<View, String> statusPair = Pair.create(statusBar, Window.STATUS_BAR_BACKGROUND_TRANSITION_NAME);*/
             ActivityOptionsCompat options;
-            if(hasNavBar(getApplicationContext())){
+            if (hasNavBar(getApplicationContext())) {
                 options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, navPair, ndexPair, toolbarPair, holderPair);
-            }
-            else{
+            } else {
                 options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imagePair, ndexPair, toolbarPair, holderPair);
             }
 
@@ -259,7 +252,7 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         this.menu = menu;
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        final MenuItem myActionMenuItem = menu.findItem( R.id.searchPokemon);
+        final MenuItem myActionMenuItem = menu.findItem(R.id.searchPokemon);
 
         SearchManager searchManager =
                 (SearchManager) getSystemService(Context.SEARCH_SERVICE);
@@ -277,6 +270,7 @@ public class MainActivity extends AppCompatActivity {
 
                 return false;
             }
+
             @Override
             public boolean onQueryTextChange(String s) {
                 mAdapter.filter(s);
@@ -293,10 +287,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_settings) {
             return true;
-        } else if(id == R.id.toggle_view){
+        } else if (id == R.id.toggle_view) {
             int count = mStaggeredLayoutManager.getSpanCount();
             int fCount = 2;
-            switch (count){
+            switch (count) {
                 case 1:
                     menu.getItem(0).setIcon(R.drawable.ic_view_module_white_24dp);
                     break;
@@ -310,7 +304,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
             mStaggeredLayoutManager.setSpanCount(fCount);
-        } else if(id == android.R.id.home){
+        } else if (id == android.R.id.home) {
             mDrawerLayout.openDrawer(GravityCompat.START);
             return true;
         }

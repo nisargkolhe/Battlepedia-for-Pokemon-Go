@@ -103,7 +103,7 @@ public class DetailActivity extends Activity {
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
 //        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Bundle bundle = getIntent().getExtras();
-        int pos  = Integer.parseInt(bundle.getString(EXTRA_PARAM_ID));
+        int pos = Integer.parseInt(bundle.getString(EXTRA_PARAM_ID));
         pokedet = PokeList.get(pos);
 
 
@@ -136,7 +136,6 @@ public class DetailActivity extends Activity {
             quickMovesGrid.setNumColumns(2);
             chargeMovesGrid.setNumColumns(2);
         }
-
 
 
         weaknesses = (TextView) findViewById(R.id.weakAgainst);
@@ -191,7 +190,7 @@ public class DetailActivity extends Activity {
     }
 
     private void loadDetails() {
-        txtName.setText(pokedet.name);
+        txtName.setText(pokedet.getName());
         txtNdex.setText("#" + pokedet.ndex);
         type1.setText(pokedet.type1);
         baseHP.setText("" + pokedet.hpBase);
@@ -266,7 +265,7 @@ public class DetailActivity extends Activity {
 
         GradientDrawable gd = new GradientDrawable(
                 GradientDrawable.Orientation.TOP_BOTTOM,
-                new int[] {mContext.getResources().getColor(mContext.getResources().getIdentifier(pokedet.type1.toLowerCase(), "color", mContext.getPackageName())),mContext.getResources().getIdentifier(pokedet.type1.toLowerCase(), "color", mContext.getPackageName())});
+                new int[]{mContext.getResources().getColor(mContext.getResources().getIdentifier(pokedet.type1.toLowerCase(), "color", mContext.getPackageName())), mContext.getResources().getIdentifier(pokedet.type1.toLowerCase(), "color", mContext.getPackageName())});
         gd.setCornerRadius(0f);
         cardFrame.setBackground(gd);
     }
@@ -400,7 +399,7 @@ public class DetailActivity extends Activity {
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         bgImage.animate().alpha(0.0f);
         super.onBackPressed();
     }
