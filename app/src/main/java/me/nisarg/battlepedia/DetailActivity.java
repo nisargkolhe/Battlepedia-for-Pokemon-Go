@@ -103,7 +103,7 @@ public class DetailActivity extends Activity {
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
 //        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Bundle bundle = getIntent().getExtras();
-        int pos  = Integer.parseInt(bundle.getString(EXTRA_PARAM_ID));
+        int pos = Integer.parseInt(bundle.getString(EXTRA_PARAM_ID));
         pokedet = PokeList.get(pos);
 
 
@@ -138,12 +138,11 @@ public class DetailActivity extends Activity {
         }
 
 
-
         weaknesses = (TextView) findViewById(R.id.weakAgainst);
         advantages = (TextView) findViewById(R.id.advOver);
 
-        List<String> quickMoves = Arrays.asList(pokedet.basicAttack.split("\\s*,\\s*"));
-        List<String> chargeMoves = Arrays.asList(pokedet.specialAttack.split("\\s*,\\s*"));
+        List<String> quickMoves = Arrays.asList(pokedet.getBasicAttack().split("\\s*,\\s*"));
+        List<String> chargeMoves = Arrays.asList(pokedet.getSpecialAttack().split("\\s*,\\s*"));
 
         quickMovesGrid.setAdapter(new MovesAdapter(this, quickMoves));
         chargeMovesGrid.setAdapter(new MovesAdapter(this, chargeMoves));
@@ -155,12 +154,12 @@ public class DetailActivity extends Activity {
         TextView labelCP = (TextView) findViewById(R.id.cpLabel);
         cpResult = (TextView) findViewById(R.id.txtResult);
         calcCP = (EditText) findViewById(R.id.calc);
-        if (pokedet.cpMultiplier.length() < 1) {
+        if (pokedet.getCpMultiplier().length() < 1) {
             calcCP.setEnabled(false);
             multiplierBox.setVisibility(View.GONE);
             labelCP.setVisibility(View.GONE);
         }
-        if (pokedet.ndex == 133) {
+        if (pokedet.getNdex() == 133) {
             TextView msg = (TextView) findViewById(R.id.eeveeMsg);
             msg.setVisibility(View.VISIBLE);
         }
@@ -173,7 +172,7 @@ public class DetailActivity extends Activity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (!calcCP.getText().toString().equals("")) {
-                    cpResult.setText("" + Math.round(Integer.parseInt(calcCP.getText().toString()) * Double.parseDouble(pokedet.cpMultiplier)));
+                    cpResult.setText("" + Math.round(Integer.parseInt(calcCP.getText().toString()) * Double.parseDouble(pokedet.getCpMultiplier())));
                 }
             }
 
@@ -191,20 +190,20 @@ public class DetailActivity extends Activity {
     }
 
     private void loadDetails() {
-        txtName.setText(pokedet.name);
-        txtNdex.setText("#" + pokedet.ndex);
-        type1.setText(pokedet.type1);
-        baseHP.setText("" + pokedet.hpBase);
-        maxTotalHP.setText("" + pokedet.maxTotalHP);
-        maxTotalCP.setText("" + pokedet.maxTotalCP);
-        attack.setText("" + pokedet.attack);
-        stamina.setText("" + pokedet.stamina);
-        defence.setText("" + pokedet.defence);
+        txtName.setText(pokedet.getName());
+        txtNdex.setText("#" + pokedet.getNdex());
+        type1.setText(pokedet.getType1());
+        baseHP.setText("" + pokedet.getHpBase());
+        maxTotalHP.setText("" + pokedet.getMaxTotalHP());
+        maxTotalCP.setText("" + pokedet.getMaxTotalCP());
+        attack.setText("" + pokedet.getAttack());
+        stamina.setText("" + pokedet.getStamina());
+        defence.setText("" + pokedet.getDefence());
 
-        HashMap<String, String> type1stats = getTypeStats(pokedet.type1.toUpperCase());
-        HashMap<String, String> type2stats = getTypeStats(pokedet.type2.toUpperCase());
-        ArrayList<String> adv = new ArrayList<String>();
-        ArrayList<String> weak = new ArrayList<String>();
+        HashMap<String, String> type1stats = getTypeStats(pokedet.getType1().toUpperCase());
+        HashMap<String, String> type2stats = getTypeStats(pokedet.getType2().toUpperCase());
+        ArrayList<String> adv = new ArrayList<>();
+        ArrayList<String> weak = new ArrayList<>();
 
 
         for (String key : type1stats.keySet()) {
@@ -230,49 +229,52 @@ public class DetailActivity extends Activity {
         advantages.setText(TextUtils.join("\n", adv));
         weaknesses.setText(TextUtils.join("\n", weak));
 
-        if (!pokedet.cpMultiplier.equals("")) {
-            txtCp.setText(pokedet.cpMultiplier);
+        if (!pokedet.getCpMultiplier().equals("")) {
+            txtCp.setText(pokedet.getCpMultiplier());
         }
-        int type1color = getResources().getIdentifier(pokedet.type1.toLowerCase(), "color", getPackageName());
-        int type2color = getResources().getIdentifier(pokedet.type2.toLowerCase(), "color", getPackageName());
-        pokeNameHolder.setBackgroundColor(getResources().getIdentifier(pokedet.type1.toLowerCase(), "color", getPackageName()));
+        int type1color = getResources().getIdentifier(pokedet.getType1().toLowerCase(), "color", getPackageName());
+        int type2color = getResources().getIdentifier(pokedet.getType2().toLowerCase(), "color", getPackageName());
+        pokeNameHolder.setBackgroundColor(getResources().getIdentifier(pokedet.getType1().toLowerCase(), "color", getPackageName()));
 
         type1box.setBackgroundColor(getResources().getColor(type1color));
         type2box.setBackgroundColor(getResources().getColor(type2color));
         //type2box.setBackgroundColor(mContext.getResources().getIdentifier(pokedet.type2.toLowerCase(), "color", mContext.getPackageName()));
 
 
-        if (pokedet.type1.equals(pokedet.type2)) {
+        if (pokedet.getType1().equals(pokedet.getType2())) {
             type2box.setVisibility(View.GONE);
         } else {
-            type2.setText(pokedet.type2);
+            type2.setText(pokedet.getType2());
         }
 
         //Picasso.with(getApplicationContext()).load(pokedet.imageName).into(pokeImage);
         //Glide.with(getApplicationContext()).load("android.resource://" + mContext.getPackageName() + "/drawable/n"+pokedet.ndex).asBitmap().into(pokeImage);
-        Ion.with(pokeImage).resize(200, 200).load("android.resource://" + mContext.getPackageName() + "/drawable/m" + pokedet.ndex);
+        Ion.with(pokeImage).resize(200, 200).load("android.resource://" + mContext.getPackageName() + "/drawable/m" + pokedet.getNdex());
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Ion.with(pokeImage).animateGif(AnimateGifMode.ANIMATE).load("android.resource://" + mContext.getPackageName() + "/drawable/n" + pokedet.ndex);
+                Ion.with(pokeImage).animateGif(AnimateGifMode.ANIMATE).load("android.resource://" + mContext.getPackageName() + "/drawable/n" + pokedet.getNdex());
             }
         }, 1500);
         //Ion.with(bgImage).load("android.resource://" + mContext.getPackageName() + "/drawable/"+pokedet.type1.toLowerCase());
         Picasso.with(getApplicationContext())
-                .load("android.resource://" + mContext.getPackageName() + "/drawable/" + pokedet.type1.toLowerCase())
+                .load("android.resource://" + mContext.getPackageName() + "/drawable/" + pokedet.getType1().toLowerCase())
                 .fit()
                 .into(bgImage);
 
         GradientDrawable gd = new GradientDrawable(
                 GradientDrawable.Orientation.TOP_BOTTOM,
-                new int[] {mContext.getResources().getColor(mContext.getResources().getIdentifier(pokedet.type1.toLowerCase(), "color", mContext.getPackageName())),mContext.getResources().getIdentifier(pokedet.type1.toLowerCase(), "color", mContext.getPackageName())});
+                new int[]{mContext.getResources().getColor(mContext.getResources().getIdentifier(
+                        pokedet.getType1().toLowerCase(), "color", mContext.getPackageName())),
+                        mContext.getResources().getIdentifier(pokedet.getType1().toLowerCase(),
+                                "color", mContext.getPackageName())});
         gd.setCornerRadius(0f);
         cardFrame.setBackground(gd);
     }
 
     private HashMap getTypeStats(String type) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         BufferedReader br = null;
         HashMap typeData = new HashMap();
         try {
@@ -285,6 +287,7 @@ public class DetailActivity extends Activity {
             Log.e("me.nisarg.battlepedia", e.toString());
         } finally {
             try {
+                assert br != null;
                 br.close(); // stop reading
             } catch (IOException e) {
                 Log.e("me.nisarg.battlepedia", e.toString());
@@ -341,19 +344,23 @@ public class DetailActivity extends Activity {
         }
     }
 
-    public static Transition makeEnterTransition() {
+    private static Transition makeEnterTransition() {
         Transition fade = new Fade();
-        fade.excludeTarget(android.R.id.navigationBarBackground, true);
-        fade.excludeTarget(android.R.id.statusBarBackground, true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            fade.excludeTarget(android.R.id.navigationBarBackground, true);
+            fade.excludeTarget(android.R.id.statusBarBackground, true);
+        }
         return fade;
     }
 
+    // TODO remove? not used ?!?
     public static Transition makeExitTransition() {
         Transition fade = new Fade();
         fade.addTarget(bgImg);
         return fade;
     }
 
+    // TODO remove? not used ?!?
     public int getStatusBarHeight() {
         int result = 0;
         int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -367,7 +374,7 @@ public class DetailActivity extends Activity {
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    public Action getIndexApiAction() {
+    private Action getIndexApiAction() {
         Thing object = new Thing.Builder()
                 .setName("Detail Page") // TODO: Define a title for the content shown.
                 // TODO: Make sure this auto-generated URL is correct.
@@ -400,7 +407,7 @@ public class DetailActivity extends Activity {
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         bgImage.animate().alpha(0.0f);
         super.onBackPressed();
     }

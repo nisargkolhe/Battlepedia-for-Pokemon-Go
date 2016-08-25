@@ -25,9 +25,9 @@ import static me.nisarg.battlepedia.MainActivity.PokeList;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
-    Context mContext;
-    OnItemClickListener mItemClickListener;
-    private ArrayList<Pokemon> itemsCopy = new ArrayList<Pokemon>();
+    private final Context mContext;
+    private OnItemClickListener mItemClickListener;
+    private final ArrayList<Pokemon> itemsCopy = new ArrayList<>();
 
     public ListAdapter(Context context) {
         this.mContext = context;
@@ -47,24 +47,26 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         kmon = PokeList.get(position);
 
 
-        holder.pokemonName.setText(kmon.name);
-        holder.ndex.setText("#"+kmon.ndex);
-        String color = kmon.type1.toLowerCase();
-        int img = mContext.getResources().getIdentifier("n"+kmon.ndex+".gif", "drawable", mContext.getPackageName());
+        holder.pokemonName.setText(kmon.getName());
+        holder.ndex.setText("#" + kmon.getNdex());
+        String color = kmon.getType1().toLowerCase();
+        int img = mContext.getResources().getIdentifier("n" + kmon.getNdex() + ".gif", "drawable", mContext.getPackageName());
         holder.pokemonNameHolder.setBackgroundColor(mContext.getResources().getIdentifier(color, "color", mContext.getPackageName()));
 
 
-        if(kmon.getThumb(mContext) != null){
-            Ion.with(holder.pokeImg).resize(200,200).load("android.resource://" + mContext.getPackageName() + "/drawable/m"+kmon.ndex);
+        if (kmon.getThumb(mContext) != null) {
+            Ion.with(holder.pokeImg).resize(200, 200).load("android.resource://" + mContext.getPackageName() + "/drawable/m" + kmon.getNdex());
             //Picasso.with(mContext).load("android.resource://" + mContext.getPackageName() + "/drawable/"+kmon.type1.toLowerCase()).resize(200,200).into(holder.bgImg);
             GradientDrawable gd = new GradientDrawable(
                     GradientDrawable.Orientation.TOP_BOTTOM,
-                    new int[] {mContext.getResources().getColor(mContext.getResources().getIdentifier(kmon.type1.toLowerCase(), "color", mContext.getPackageName())),mContext.getResources().getIdentifier(kmon.type1.toLowerCase(), "color", mContext.getPackageName())});
+                    new int[]{mContext.getResources().getColor(
+                            mContext.getResources().getIdentifier(kmon.getType1().toLowerCase(), "color", mContext.getPackageName())),
+                            mContext.getResources().getIdentifier(kmon.getType1().toLowerCase(), "color", mContext.getPackageName())});
             gd.setCornerRadius(0f);
             holder.cardFrame.setBackground(gd);
             holder.pokeImg.setVisibility(View.VISIBLE);
             holder.bgImg.setVisibility(View.VISIBLE);
-        } else{
+        } else {
             holder.pokeImg.setVisibility(View.GONE);
             holder.bgImg.setVisibility(View.GONE);
         }
@@ -76,13 +78,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public LinearLayout pokemonHolder;
-        public LinearLayout pokemonNameHolder;
-        public FrameLayout cardFrame;
-        public TextView pokemonName;
-        public TextView ndex;
-        public ImageView bgImg;
-        public ImageView pokeImg;
+        public final LinearLayout pokemonHolder;
+        public final LinearLayout pokemonNameHolder;
+        public final FrameLayout cardFrame;
+        public final TextView pokemonName;
+        public final TextView ndex;
+        public final ImageView bgImg;
+        public final ImageView pokeImg;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -113,22 +115,22 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
 
-    public void reset(){
+    public void reset() {
         PokeList.clear();
         PokeList.addAll(itemsCopy);
         notifyDataSetChanged();
     }
 
     public void filter(String text) {
-        if(text.isEmpty()){
+        if (text.isEmpty()) {
             PokeList.clear();
             PokeList.addAll(itemsCopy);
-        } else{
+        } else {
             ArrayList<Pokemon> result = new ArrayList<>();
             text = text.toLowerCase();
-            for(Pokemon item: itemsCopy){
-                if(item.name.toLowerCase().contains(text)){
-                    if(!result.contains(item)) {
+            for (Pokemon item : itemsCopy) {
+                if (item.getName().toLowerCase().contains(text)) {
+                    if (!result.contains(item)) {
                         result.add(item);
                     }
                 }
@@ -140,15 +142,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     public void filterByType(String text) {
-        if(text.isEmpty()){
+        if (text.isEmpty()) {
             PokeList.clear();
             PokeList.addAll(itemsCopy);
-        } else{
+        } else {
             ArrayList<Pokemon> result = new ArrayList<>();
             text = text.toLowerCase();
-            for(Pokemon item: itemsCopy){
-                if(item.type1.toLowerCase().contains(text) || item.type2.toLowerCase().contains(text)){
-                    if(!result.contains(item)) {
+            for (Pokemon item : itemsCopy) {
+                if (item.getType1().toLowerCase().contains(text) || item.getType2().toLowerCase().contains(text)) {
+                    if (!result.contains(item)) {
                         result.add(item);
                     }
                 }
@@ -159,7 +161,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    public void sortByNdex(){
+    public void sortByNdex() {
         ArrayList<Pokemon> result = new ArrayList<>(151);
         result.addAll(itemsCopy);
         Collections.sort(result, new Comparator<Pokemon>() {

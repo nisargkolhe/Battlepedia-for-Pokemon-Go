@@ -28,17 +28,17 @@ import java.util.List;
 
 public class MovesAdapter extends BaseAdapter {
 
-    List<String> result;
-    Context context;
-    private static LayoutInflater inflater=null;
-    public HashMap movesList = new HashMap();
-    private HashMap<String,String> dpsList = new HashMap<String,String> ();
+    private final List<String> result;
+    private final Context context;
+    private static LayoutInflater inflater = null;
+    private final HashMap movesList = new HashMap();
+    private final HashMap<String, String> dpsList = new HashMap<String, String>();
 
 
     public MovesAdapter(DetailActivity mainActivity, List<String> moves) {
-        result=moves;
-        context=mainActivity;
-        inflater = ( LayoutInflater )context.
+        result = moves;
+        context = mainActivity;
+        inflater = (LayoutInflater) context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
     }
@@ -58,8 +58,7 @@ public class MovesAdapter extends BaseAdapter {
         return i;
     }
 
-    public class Holder
-    {
+    public class Holder {
         TextView move;
         CardView card;
         ImageView type;
@@ -72,9 +71,9 @@ public class MovesAdapter extends BaseAdapter {
         View rowView;
 
         rowView = inflater.inflate(R.layout.move_single, null);
-        holder.move=(TextView) rowView.findViewById(R.id.move);
-        holder.dps=(TextView) rowView.findViewById(R.id.dps);
-        holder.type=(ImageView) rowView.findViewById(R.id.moveType);
+        holder.move = (TextView) rowView.findViewById(R.id.move);
+        holder.dps = (TextView) rowView.findViewById(R.id.dps);
+        holder.type = (ImageView) rowView.findViewById(R.id.moveType);
         holder.card = (CardView) rowView.findViewById(R.id.moveCard);
 
         holder.move.setText(result.get(i));
@@ -83,21 +82,21 @@ public class MovesAdapter extends BaseAdapter {
         try {
             int moveColor = context.getResources().getIdentifier(movesList.get(result.get(i)).toString().toLowerCase(), "color", context.getPackageName());
             holder.card.setCardBackgroundColor(context.getResources().getColor(moveColor));
-        } catch (Exception e){
-            Log.e("me.nisarg.battlepedia","bg color didn't load "+e.toString());
+        } catch (Exception e) {
+            Log.e("me.nisarg.battlepedia", "bg color didn't load " + e.toString());
         }
 
-        try{
-            Picasso.with(context).load(context.getResources().getIdentifier(movesList.get(result.get(i)).toString().toLowerCase()+"icon", "drawable", context.getPackageName())).into(holder.type);
-        } catch (Exception e){
-            Log.e("me.nisarg.battlepedia","type icon didn't load "+e.toString());
+        try {
+            Picasso.with(context).load(context.getResources().getIdentifier(movesList.get(result.get(i)).toString().toLowerCase() + "icon", "drawable", context.getPackageName())).into(holder.type);
+        } catch (Exception e) {
+            Log.e("me.nisarg.battlepedia", "type icon didn't load " + e.toString());
         }
 
         return rowView;
 
     }
 
-    public void loadMoves(){
+    private void loadMoves() {
         StringBuffer sb = new StringBuffer();
         BufferedReader br = null;
         try {
@@ -107,12 +106,13 @@ public class MovesAdapter extends BaseAdapter {
             while ((temp = br.readLine()) != null)
                 sb.append(temp);
         } catch (IOException e) {
-            Log.e("me.nisarg.battlepedia",e.toString());
+            Log.e("me.nisarg.battlepedia", e.toString());
         } finally {
             try {
+                assert br != null;
                 br.close(); // stop reading
             } catch (IOException e) {
-                Log.e("me.nisarg.battlepedia",e.toString());
+                Log.e("me.nisarg.battlepedia", e.toString());
             }
         }
         String myjsonstring = sb.toString();
@@ -129,13 +129,13 @@ public class MovesAdapter extends BaseAdapter {
 
                 // Creating JSONObject from JSONArray
                 JSONObject jsonObj = jsonArray.getJSONObject(i);
-                movesList.put(jsonObj.getString("attack"),jsonObj.getString("type"));
-                dpsList.put(jsonObj.getString("attack"),jsonObj.getString("dps"));
+                movesList.put(jsonObj.getString("attack"), jsonObj.getString("type"));
+                dpsList.put(jsonObj.getString("attack"), jsonObj.getString("dps"));
             }
 
         } catch (JSONException e) {
             // TODO Auto-generated catch block
-            Log.e("me.nisarg.battlepedia",e.toString());
+            Log.e("me.nisarg.battlepedia", e.toString());
             e.printStackTrace();
         }
     }
