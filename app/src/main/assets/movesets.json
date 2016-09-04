@@ -1,664 +1,1100 @@
 {
   "Movesets":[
     {
-      "attack": "Pound",
-      "type": "Normal",
-      "dps": 7
+      "dps":12.96,
+      "attack":"POUND",
+      "type":"normal",
+      "power":7,
+      "duration":"540",
+      "dmgWindow":"200"
+    },
+    {
+      "dps":12.7,
+      "attack":"METAL CLAW",
+      "type":"steel",
+      "power":8,
+      "duration":"630",
+      "dmgWindow":"200"
+    },
+    {
+      "dps":12.28,
+      "attack":"PSYCHO CUT",
+      "type":"psychic",
+      "power":7,
+      "duration":"570",
+      "dmgWindow":"200"
+    },
+    {
+      "dps":12,
+      "attack":"SCRATCH",
+      "type":"normal",
+      "power":6,
+      "duration":"500",
+      "dmgWindow":"200"
+    },
+    {
+      "dps":12,
+      "attack":"WATER GUN",
+      "type":"water",
+      "power":6,
+      "duration":"500",
+      "dmgWindow":"200"
+    },
+    {
+      "dps":12,
+      "attack":"WING ATTACK",
+      "type":"flying",
+      "power":9,
+      "duration":"750",
+      "dmgWindow":"200"
+    },
+    {
+      "dps":12,
+      "attack":"BITE",
+      "type":"dark",
+      "power":6,
+      "duration":"500",
+      "dmgWindow":"200"
+    },
+    /*{
+      "dps":12,
+      "attack":"WATER GUN (BLASTOISE)",
+      "type":"water",
+      "power":6,
+      "duration":"500",
+      "dmgWindow":"200"
+    },*/
+    {
+      "dps":12,
+      "attack":"DRAGON BREATH",
+      "type":"dragon",
+      "power":6,
+      "duration":"500",
+      "dmgWindow":"200"
+    },
+    {
+      "dps":11.9,
+      "attack":"FIRE FANG",
+      "type":"fire",
+      "power":10,
+      "duration":"840",
+      "dmgWindow":"200"
+    },
+    {
+      "dps":11.58,
+      "attack":"SHADOW CLAW",
+      "type":"ghost",
+      "power":11,
+      "duration":"950",
+      "dmgWindow":"200"
+    },
+    {
+      "dps":11.54,
+      "attack":"FEINT ATTACK",
+      "type":"dark",
+      "power":12,
+      "duration":"1,040",
+      "dmgWindow":"200"
+    },
+    {
+      "dps":11.43,
+      "attack":"POISON JAB",
+      "type":"poison",
+      "power":12,
+      "duration":"1,050",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Metal Claw",
-      "type": "Steel",
-      "dps": 8
+      "dps":11.43,
+      "attack":"ZEN HEADBUTT",
+      "type":"psychic",
+      "power":12,
+      "duration":"1,050",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Psycho Cut",
-      "type": "Psychic",
-      "dps": 7
+      "dps":11.28,
+      "attack":"STEEL WING",
+      "type":"steel",
+      "power":15,
+      "duration":"1,330",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Bite",
-      "type": "Dark",
-      "dps": 6
+      "dps":11.11,
+      "attack":"FROST BREATH",
+      "type":"ice",
+      "power":9,
+      "duration":"810",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Dragon Breath",
-      "type": "Dragon",
-      "dps": 6
+      "dps":11.11,
+      "attack":"BUG BITE",
+      "type":"bug",
+      "power":5,
+      "duration":"450",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Scratch",
-      "type": "Normal",
-      "dps": 6
+      "dps":11.11,
+      "attack":"MUD SLAP",
+      "type":"ground",
+      "power":15,
+      "duration":"1,350",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Water Gun",
-      "type": "Water",
-      "dps": 6
+      "dps":10.91,
+      "attack":"TACKLE",
+      "type":"normal",
+      "power":12,
+      "duration":"1,100",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Wing Attack",
-      "type": "Flying",
-      "dps": 9
+      "dps":10.91,
+      "attack":"MUD SHOT",
+      "type":"ground",
+      "power":6,
+      "duration":"550",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Fire Fang",
-      "type": "Fire",
-      "dps": 10
+      "dps":10.87,
+      "attack":"BUBBLE",
+      "type":"water",
+      "power":25,
+      "duration":"2,300",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Shadow Claw",
-      "type": "Ghost",
-      "dps": 11
+      "dps":10.77,
+      "attack":"VINE WHIP",
+      "type":"grass",
+      "power":7,
+      "duration":"650",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Feint Attack",
-      "type": "Dark",
-      "dps": 12
+      "dps":10.71,
+      "attack":"ICE SHARD",
+      "type":"ice",
+      "power":15,
+      "duration":"1,400",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Poison Jab",
-      "type": "Poison",
-      "dps": 12
+      "dps":10.64,
+      "attack":"ROCK SMASH",
+      "type":"fighting",
+      "power":15,
+      "duration":"1,410",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Zen Headbutt",
-      "type": "Psychic",
-      "dps": 12
+      "dps":10.62,
+      "attack":"CUT",
+      "type":"normal",
+      "power":12,
+      "duration":"1,130",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Steel Wing",
-      "type": "Steel",
-      "dps": 15
+      "dps":10.43,
+      "attack":"POISON STING",
+      "type":"poison",
+      "power":6,
+      "duration":"575",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Bug Bite",
-      "type": "Bug",
-      "dps": 5
+      "dps":10.34,
+      "attack":"RAZOR LEAF",
+      "type":"grass",
+      "power":15,
+      "duration":"1,450",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Frost Breath",
-      "type": "Ice",
-      "dps": 9
+      "dps":10,
+      "attack":"LICK",
+      "type":"ghost",
+      "power":5,
+      "duration":"500",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Mud Slap",
-      "type": "Ground",
-      "dps": 15
+      "dps":10,
+      "attack":"SUCKER PUNCH",
+      "type":"dark",
+      "power":7,
+      "duration":"700",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Mud Shot",
-      "type": "Ground",
-      "dps": 6
+      "dps":10,
+      "attack":"SPARK",
+      "type":"electric",
+      "power":7,
+      "duration":"700",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Tackle",
-      "type": "Normal",
-      "dps": 12
+      "dps":9.93,
+      "attack":"CONFUSION",
+      "type":"psychic",
+      "power":15,
+      "duration":"1,510",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Bubble",
-      "type": "Water",
-      "dps": 25
+      "dps":9.52,
+      "attack":"ACID",
+      "type":"poison",
+      "power":10,
+      "duration":"1,050",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Vine Whip",
-      "type": "Grass",
-      "dps": 7
+      "dps":9.52,
+      "attack":"EMBER",
+      "type":"fire",
+      "power":10,
+      "duration":"1,050",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Ice Shard",
-      "type": "Ice",
-      "dps": 15
+      "dps":8.82,
+      "attack":"ROCK THROW",
+      "type":"rock",
+      "power":12,
+      "duration":"1,360",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Rock Smash",
-      "type": "Fighting",
-      "dps": 15
+      "dps":8.7,
+      "attack":"PECK",
+      "type":"flying",
+      "power":10,
+      "duration":"1,150",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Cut",
-      "type": "Normal",
-      "dps": 12
+      "dps":8.33,
+      "attack":"THUNDER SHOCK",
+      "type":"electric",
+      "power":5,
+      "duration":"600",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Poison Sting",
-      "type": "Poison",
-      "dps": 6
+      "dps":8.33,
+      "attack":"BULLET PUNCH",
+      "type":"steel",
+      "power":10,
+      "duration":"1,200",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Razor Leaf",
-      "type": "Grass",
-      "dps": 15
+      "dps":8.33,
+      "attack":"LOW KICK",
+      "type":"fighting",
+      "power":5,
+      "duration":"600",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Lick",
-      "type": "Ghost",
-      "dps": 5
+      "dps":7.52,
+      "attack":"QUICK ATTACK",
+      "type":"normal",
+      "power":10,
+      "duration":"1,330",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Spark",
-      "type": "Electric",
-      "dps": 7
+      "dps":7.5,
+      "attack":"KARATE CHOP",
+      "type":"fighting",
+      "power":6,
+      "duration":"800",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Sucker Punch",
-      "type": "Dark",
-      "dps": 7
+      "dps":7.5,
+      "attack":"FURY CUTTER",
+      "type":"bug",
+      "power":3,
+      "duration":"400",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Confusion",
-      "type": "Psychic",
-      "dps": 15
+      "dps":0,
+      "attack":"SPLASH",
+      "type":"water",
+      "power":0,
+      "duration":"1,230",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Acid",
-      "type": "Poison",
-      "dps": 10
+      "dps":30,
+      "attack":"CROSS CHOP",
+      "type":"fighting",
+      "power":60,
+      "duration":"2,000",
+      "dmgWindow":"300"
     },
     {
-      "attack": "Ember",
-      "type": "Fire",
-      "dps": 10
+      "dps":25.81,
+      "attack":"STONE EDGE",
+      "type":"rock",
+      "power":80,
+      "duration":"3,100",
+      "dmgWindow":"400"
     },
     {
-      "attack": "Rock Throw",
-      "type": "Rock",
-      "dps": 12
+      "dps":25.64,
+      "attack":"BLIZZARD",
+      "type":"ice",
+      "power":100,
+      "duration":"3,900",
+      "dmgWindow":"0"
     },
     {
-      "attack": "Peck",
-      "type": "Flying",
-      "dps": 10
+      "dps":25.64,
+      "attack":"BODY SLAM",
+      "type":"normal",
+      "power":40,
+      "duration":"1,560",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Low Kick",
-      "type": "Fighting",
-      "dps": 5
+      "dps":25,
+      "attack":"POWER WHIP",
+      "type":"grass",
+      "power":70,
+      "duration":"2,800",
+      "dmgWindow":"1,300"
     },
     {
-      "attack": "Thunder Shock",
-      "type": "Electric",
-      "dps": 5
+      "dps":25,
+      "attack":"HURRICANE",
+      "type":"flying",
+      "power":80,
+      "duration":"3,200",
+      "dmgWindow":"1,770"
     },
     {
-      "attack": "Bullet Punch",
-      "type": "Steel",
-      "dps": 10
+      "dps":25,
+      "attack":"MEGAHORN",
+      "type":"bug",
+      "power":80,
+      "duration":"3,200",
+      "dmgWindow":"300"
     },
     {
-      "attack": "Quick Attack",
-      "type": "Normal",
-      "dps": 10
+      "dps":24.49,
+      "attack":"SOLAR BEAM",
+      "type":"grass",
+      "power":120,
+      "duration":"4,900",
+      "dmgWindow":"1,700"
     },
     {
-      "attack": "Fury Cutter",
-      "type": "Bug",
-      "dps": 3
+      "dps":24.39,
+      "attack":"FIRE BLAST",
+      "type":"fire",
+      "power":100,
+      "duration":"4,100",
+      "dmgWindow":"400"
     },
     {
-      "attack": "Karate Chop",
-      "type": "Fighting",
-      "dps": 6
+      "dps":24,
+      "attack":"HYPER BEAM",
+      "type":"normal",
+      "power":120,
+      "duration":"5,000",
+      "dmgWindow":"800"
     },
     {
-      "attack": "Splash",
-      "type": "Water",
-      "dps": 0
+      "dps":23.81,
+      "attack":"EARTHQUAKE",
+      "type":"ground",
+      "power":100,
+      "duration":"4,200",
+      "dmgWindow":"1,950"
     },
     {
-      "attack": "Cross Chop",
-      "type": "Fighting",
-      "dps": 60
+      "dps":23.68,
+      "attack":"HYDRO PUMP BLASTOISE",
+      "type":"water",
+      "power":90,
+      "duration":"3,800",
+      "dmgWindow":"2,100"
     },
     {
-      "attack": "Stone Edge",
-      "type": "Rock",
-      "dps": 80
+      "dps":23.68,
+      "attack":"HYDRO PUMP",
+      "type":"water",
+      "power":90,
+      "duration":"3,800",
+      "dmgWindow":"2,100"
     },
     {
-      "attack": "Body Slam",
-      "type": "Normal",
-      "dps": 40
+      "dps":23.33,
+      "attack":"DRAGON CLAW",
+      "type":"dragon",
+      "power":35,
+      "duration":"1,500",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Blizzard",
-      "type": "Ice",
-      "dps": 100
+      "dps":23.26,
+      "attack":"THUNDER",
+      "type":"electric",
+      "power":100,
+      "duration":"4,300",
+      "dmgWindow":"1,550"
     },
     {
-      "attack": "Power Whip",
-      "type": "Grass",
-      "dps": 70
+      "dps":21.67,
+      "attack":"GUNK SHOT",
+      "type":"poison",
+      "power":65,
+      "duration":"3,000",
+      "dmgWindow":"400"
     },
     {
-      "attack": "Megahorn",
-      "type": "Bug",
-      "dps": 80
+      "dps":21.15,
+      "attack":"SLUDGE BOMB",
+      "type":"poison",
+      "power":55,
+      "duration":"2,600",
+      "dmgWindow":"500"
     },
     {
-      "attack": "Hurricane",
-      "type": "Flying",
-      "dps": 80
+      "dps":21.05,
+      "attack":"HEAT WAVE",
+      "type":"fire",
+      "power":80,
+      "duration":"3,800",
+      "dmgWindow":"400"
     },
     {
-      "attack": "Solar Beam",
-      "type": "Grass",
-      "dps": 120
+      "dps":20.73,
+      "attack":"MOONBLAST",
+      "type":"fairy",
+      "power":85,
+      "duration":"4,100",
+      "dmgWindow":"600"
     },
     {
-      "attack": "Fire Blast",
-      "type": "Fire",
-      "dps": 100
+      "dps":20.59,
+      "attack":"SLUDGE WAVE",
+      "type":"poison",
+      "power":70,
+      "duration":"3,400",
+      "dmgWindow":"900"
     },
     {
-      "attack": "Hyper Beam",
-      "type": "Normal",
-      "dps": 120
+      "dps":20.37,
+      "attack":"THUNDERBOLT",
+      "type":"electric",
+      "power":55,
+      "duration":"2,700",
+      "dmgWindow":"800"
     },
     {
-      "attack": "Earthquake",
-      "type": "Ground",
-      "dps": 100
+      "dps":20.31,
+      "attack":"PETAL BLIZZARD",
+      "type":"grass",
+      "power":65,
+      "duration":"3,200",
+      "dmgWindow":"1,000"
     },
     {
-      "attack": "Hydro Pump",
-      "type": "Water",
-      "dps": 90
+      "dps":19.64,
+      "attack":"LEAF BLADE",
+      "type":"grass",
+      "power":55,
+      "duration":"2,800",
+      "dmgWindow":"1,000"
     },
     {
-      "attack": "Dragon Claw",
-      "type": "Dragon",
-      "dps": 35
+      "dps":19.64,
+      "attack":"PSYCHIC",
+      "type":"psychic",
+      "power":55,
+      "duration":"2,800",
+      "dmgWindow":"1,200"
     },
     {
-      "attack": "Thunder",
-      "type": "Electric",
-      "dps": 100
+      "dps":19.61,
+      "attack":"PSYSTRIKE",
+      "type":"psychic",
+      "power":100,
+      "duration":"5,100",
+      "dmgWindow":"900"
     },
     {
-      "attack": "Gunk Shot",
-      "type": "Poison",
-      "dps": 65
+      "dps":19.15,
+      "attack":"AQUA TAIL",
+      "type":"water",
+      "power":45,
+      "duration":"2,350",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Sludge Bomb",
-      "type": "Poison",
-      "dps": 55
+      "dps":18.97,
+      "attack":"FLAMETHROWER",
+      "type":"fire",
+      "power":55,
+      "duration":"2,900",
+      "dmgWindow":"900"
     },
     {
-      "attack": "Heat Wave",
-      "type": "Fire",
-      "dps": 80
+      "dps":18.97,
+      "attack":"PLAY ROUGH",
+      "type":"fairy",
+      "power":55,
+      "duration":"2,900",
+      "dmgWindow":"1,300"
     },
     {
-      "attack": "Moonblast",
-      "type": "Fairy",
-      "dps": 85
+      "dps":18.75,
+      "attack":"BRICK BREAK",
+      "type":"fighting",
+      "power":30,
+      "duration":"1,600",
+      "dmgWindow":"400"
     },
     {
-      "attack": "Sludge Wave",
-      "type": "Poison",
-      "dps": 70
+      "dps":18.06,
+      "attack":"DRAGON PULSE",
+      "type":"dragon",
+      "power":65,
+      "duration":"3,600",
+      "dmgWindow":"1,200"
     },
     {
-      "attack": "Thunderbolt",
-      "type": "Electric",
-      "dps": 55
+      "dps":17.81,
+      "attack":"ICE BEAM",
+      "type":"ice",
+      "power":65,
+      "duration":"3,650",
+      "dmgWindow":"1,350"
     },
     {
-      "attack": "Petal Blizzard",
-      "type": "Grass",
-      "dps": 65
+      "dps":17.65,
+      "attack":"BUG BUZZ",
+      "type":"bug",
+      "power":75,
+      "duration":"4,250",
+      "dmgWindow":"1,500"
     },
     {
-      "attack": "Psychic",
-      "type": "Psychic",
-      "dps": 55
+      "dps":16.67,
+      "attack":"THUNDER PUNCH",
+      "type":"electric",
+      "power":40,
+      "duration":"2,400",
+      "dmgWindow":"250"
     },
     {
-      "attack": "Leaf Blade",
-      "type": "Grass",
-      "dps": 55
+      "dps":16.67,
+      "attack":"SEED BOMB",
+      "type":"grass",
+      "power":40,
+      "duration":"2,400",
+      "dmgWindow":"500"
     },
     {
-      "attack": "Psystrike",
-      "type": "Psychic",
-      "dps": 100
+      "dps":16.67,
+      "attack":"CROSS POISON",
+      "type":"poison",
+      "power":25,
+      "duration":"1,500",
+      "dmgWindow":"300"
     },
     {
-      "attack": "Aqua Tail",
-      "type": "Water",
-      "dps": 45
+      "dps":16.67,
+      "attack":"X SCISSOR",
+      "type":"bug",
+      "power":35,
+      "duration":"2,100",
+      "dmgWindow":"250"
     },
     {
-      "attack": "Play Rough",
-      "type": "Fairy",
-      "dps": 55
+      "dps":16.67,
+      "attack":"HYPER FANG",
+      "type":"normal",
+      "power":35,
+      "duration":"2,100",
+      "dmgWindow":"300"
     },
     {
-      "attack": "Flamethrower",
-      "type": "Fire",
-      "dps": 55
+      "dps":16.13,
+      "attack":"REST",
+      "type":"psychic",
+      "power":50,
+      "duration":"3,100",
+      "dmgWindow":"1,296"
     },
     {
-      "attack": "Brick Break",
-      "type": "Fighting",
-      "dps": 30
+      "dps":15.63,
+      "attack":"BONE CLUB",
+      "type":"ground",
+      "power":25,
+      "duration":"1,600",
+      "dmgWindow":"250"
     },
     {
-      "attack": "Dragon Pulse",
-      "type": "Dragon",
-      "dps": 65
+      "dps":15.63,
+      "attack":"ROCK SLIDE",
+      "type":"rock",
+      "power":50,
+      "duration":"3,200",
+      "dmgWindow":"1,400"
     },
     {
-      "attack": "Ice Beam",
-      "type": "Ice",
-      "dps": 65
+      "dps":15.38,
+      "attack":"FLASH CANNON",
+      "type":"steel",
+      "power":60,
+      "duration":"3,900",
+      "dmgWindow":"1,100"
     },
     {
-      "attack": "Bug Buzz",
-      "type": "Bug",
-      "dps": 75
+      "dps":15,
+      "attack":"IRON HEAD",
+      "type":"steel",
+      "power":30,
+      "duration":"2,000",
+      "dmgWindow":"250"
     },
     {
-      "attack": "X Scissor",
-      "type": "Bug",
-      "dps": 35
+      "dps":14.81,
+      "attack":"DRILL PECK",
+      "type":"flying",
+      "power":40,
+      "duration":"2,700",
+      "dmgWindow":"900"
     },
     {
-      "attack": "Seed Bomb",
-      "type": "Grass",
-      "dps": 40
+      "dps":14.81,
+      "attack":"PSYSHOCK",
+      "type":"psychic",
+      "power":40,
+      "duration":"2,700",
+      "dmgWindow":"500"
     },
     {
-      "attack": "Hyper Fang",
-      "type": "Normal",
-      "dps": 35
+      "dps":14.71,
+      "attack":"DRILL RUN",
+      "type":"ground",
+      "power":50,
+      "duration":"3,400",
+      "dmgWindow":"700"
     },
     {
-      "attack": "Cross Poison",
-      "type": "Poison",
-      "dps": 25
+      "dps":14.61,
+      "attack":"SHADOW BALL",
+      "type":"ghost",
+      "power":45,
+      "duration":"3,080",
+      "dmgWindow":"300"
     },
     {
-      "attack": "Thunder Punch",
-      "type": "Electric",
-      "dps": 40
+      "dps":14.52,
+      "attack":"SIGNAL BEAM",
+      "type":"bug",
+      "power":45,
+      "duration":"3,100",
+      "dmgWindow":"1,000"
     },
     {
-      "attack": "Rest",
-      "type": "Normal",
-      "dps": 50
+      "dps":14.29,
+      "attack":"FLAME BURST",
+      "type":"fire",
+      "power":30,
+      "duration":"2,100",
+      "dmgWindow":"400"
     },
     {
-      "attack": "Rock Slide",
-      "type": "Rock",
-      "dps": 50
+      "dps":14.29,
+      "attack":"STOMP",
+      "type":"normal",
+      "power":30,
+      "duration":"2,100",
+      "dmgWindow":"700"
     },
     {
-      "attack": "Bone Club",
-      "type": "Ground",
-      "dps": 25
+      "dps":14.29,
+      "attack":"FIRE PUNCH",
+      "type":"fire",
+      "power":40,
+      "duration":"2,800",
+      "dmgWindow":"510"
     },
     {
-      "attack": "Flash Cannon",
-      "type": "Steel",
-      "dps": 60
+      "dps":14.29,
+      "attack":"SUBMISSION",
+      "type":"fighting",
+      "power":30,
+      "duration":"2,100",
+      "dmgWindow":"150"
     },
     {
-      "attack": "Iron Head",
-      "type": "Steel",
-      "dps": 30
+      "dps":14,
+      "attack":"DISCHARGE",
+      "type":"electric",
+      "power":35,
+      "duration":"2,500",
+      "dmgWindow":"700"
     },
     {
-      "attack": "Psyshock",
-      "type": "Psychic",
-      "dps": 40
+      "dps":13.89,
+      "attack":"GIGA DRAIN",
+      "type":"grass",
+      "power":50,
+      "duration":"3,600",
+      "dmgWindow":"1,150"
     },
     {
-      "attack": "Drill Peck",
-      "type": "Flying",
-      "dps": 40
+      "dps":13.79,
+      "attack":"POWER GEM",
+      "type":"rock",
+      "power":40,
+      "duration":"2,900",
+      "dmgWindow":"800"
     },
     {
-      "attack": "Drill Run",
-      "type": "Ground",
-      "dps": 50
+      "dps":13.75,
+      "attack":"SCALD",
+      "type":"water",
+      "power":55,
+      "duration":"4,000",
+      "dmgWindow":"2,100"
     },
     {
-      "attack": "Shadow Ball",
-      "type": "Ghost",
-      "dps": 45
+      "dps":13.33,
+      "attack":"LOW SWEEP",
+      "type":"fighting",
+      "power":30,
+      "duration":"2,250",
+      "dmgWindow":"150"
     },
     {
-      "attack": "Signal Beam",
-      "type": "Bug",
-      "dps": 45
+      "dps":13.1,
+      "attack":"DAZZLING GLEAM",
+      "type":"fairy",
+      "power":55,
+      "duration":"4,200",
+      "dmgWindow":"800"
     },
     {
-      "attack": "Submission",
-      "type": "Fighting",
-      "dps": 30
+      "dps":12.86,
+      "attack":"ICE PUNCH",
+      "type":"ice",
+      "power":45,
+      "duration":"3,500",
+      "dmgWindow":"1,100"
     },
     {
-      "attack": "Stomp",
-      "type": "Normal",
-      "dps": 30
+      "dps":12.86,
+      "attack":"DARK PULSE",
+      "type":"dark",
+      "power":45,
+      "duration":"3,500",
+      "dmgWindow":"1,100"
     },
     {
-      "attack": "Flame Burst",
-      "type": "Fire",
-      "dps": 30
+      "dps":12.5,
+      "attack":"SCALD BLASTOISE",
+      "type":"water",
+      "power":50,
+      "duration":"4,000",
+      "dmgWindow":"2,100"
     },
     {
-      "attack": "Fire Punch",
-      "type": "Fire",
-      "dps": 40
+      "dps":12.07,
+      "attack":"DIG",
+      "type":"ground",
+      "power":70,
+      "duration":"5,800",
+      "dmgWindow":"400"
     },
     {
-      "attack": "Discharge",
-      "type": "Electric",
-      "dps": 35
+      "dps":11.9,
+      "attack":"VICE GRIP",
+      "type":"normal",
+      "power":25,
+      "duration":"2,100",
+      "dmgWindow":"250"
     },
     {
-      "attack": "Giga Drain",
-      "type": "Grass",
-      "dps": 50
+      "dps":11.9,
+      "attack":"SHADOW PUNCH",
+      "type":"ghost",
+      "power":25,
+      "duration":"2,100",
+      "dmgWindow":"300"
     },
     {
-      "attack": "Power Gem",
-      "type": "Rock",
-      "dps": 40
+      "dps":11.9,
+      "attack":"PARABOLIC CHARGE",
+      "type":"electric",
+      "power":25,
+      "duration":"2,100",
+      "dmgWindow":"400"
     },
     {
-      "attack": "Scald",
-      "type": "Water",
-      "dps": 55
+      "dps":11.54,
+      "attack":"SLUDGE",
+      "type":"poison",
+      "power":30,
+      "duration":"2,600",
+      "dmgWindow":"500"
     },
     {
-      "attack": "Low Sweep",
-      "type": "Fighting",
-      "dps": 30
+      "dps":11.54,
+      "attack":"MUD BOMB",
+      "type":"ground",
+      "power":30,
+      "duration":"2,600",
+      "dmgWindow":"450"
     },
     {
-      "attack": "Dazzling Gleam",
-      "type": "Fairy",
-      "dps": 55
+      "dps":11.36,
+      "attack":"HORN ATTACK",
+      "type":"normal",
+      "power":25,
+      "duration":"2,200",
+      "dmgWindow":"300"
     },
     {
-      "attack": "Ice Punch",
-      "type": "Ice",
-      "dps": 45
+      "dps":11.11,
+      "attack":"NIGHT SLASH",
+      "type":"dark",
+      "power":30,
+      "duration":"2,700",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Dark Pulse",
-      "type": "Dark",
-      "dps": 45
+      "dps":10.71,
+      "attack":"MAGNET BOMB",
+      "type":"steel",
+      "power":30,
+      "duration":"2,800",
+      "dmgWindow":"550"
     },
     {
-      "attack": "Dig",
-      "type": "Ground",
-      "dps": 70
+      "dps":10.64,
+      "attack":"AQUA JET",
+      "type":"water",
+      "power":25,
+      "duration":"2,350",
+      "dmgWindow":"400"
     },
     {
-      "attack": "Vice Grip",
-      "type": "Normal",
-      "dps": 25
+      "dps":10.61,
+      "attack":"WATER PULSE",
+      "type":"water",
+      "power":35,
+      "duration":"3,300",
+      "dmgWindow":"1,000"
     },
     {
-      "attack": "Shadow Punch",
-      "type": "Ghost",
-      "dps": 25
+      "dps":10.53,
+      "attack":"PSYBEAM",
+      "type":"psychic",
+      "power":40,
+      "duration":"3,800",
+      "dmgWindow":"1,300"
     },
     {
-      "attack": "Parabolic Charge",
-      "type": "Electric",
-      "dps": 25
+      "dps":10.42,
+      "attack":"POISON FANG",
+      "type":"poison",
+      "power":25,
+      "duration":"2,400",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Sludge",
-      "type": "Poison",
-      "dps": 30
+      "dps":10.42,
+      "attack":"BRINE",
+      "type":"water",
+      "power":25,
+      "duration":"2,400",
+      "dmgWindow":"350"
     },
     {
-      "attack": "Mud Bomb",
-      "type": "Ground",
-      "dps": 30
+      "dps":10.34,
+      "attack":"BUBBLE BEAM",
+      "type":"water",
+      "power":30,
+      "duration":"2,900",
+      "dmgWindow":"200"
     },
     {
-      "attack": "Horn Attack",
-      "type": "Normal",
-      "dps": 25
+      "dps":10.34,
+      "attack":"AERIAL ACE",
+      "type":"flying",
+      "power":30,
+      "duration":"2,900",
+      "dmgWindow":"600"
     },
     {
-      "attack": "Night Slash",
-      "type": "Dark",
-      "dps": 30
+      "dps":10.29,
+      "attack":"BULLDOZE",
+      "type":"ground",
+      "power":35,
+      "duration":"3,400",
+      "dmgWindow":"1,100"
     },
     {
-      "attack": "Magnet Bomb",
-      "type": "Steel",
-      "dps": 30
+      "dps":10,
+      "attack":"SWIFT",
+      "type":"normal",
+      "power":30,
+      "duration":"3,000",
+      "dmgWindow":"500"
     },
     {
-      "attack": "Aqua Jet",
-      "type": "Water",
-      "dps": 25
+      "dps":9.8,
+      "attack":"HEART STAMP",
+      "type":"psychic",
+      "power":25,
+      "duration":"2,550",
+      "dmgWindow":"300"
     },
     {
-      "attack": "Water Pulse",
-      "type": "Water",
-      "dps": 35
+      "dps":9.72,
+      "attack":"ANCIENT POWER",
+      "type":"rock",
+      "power":35,
+      "duration":"3,600",
+      "dmgWindow":"350"
     },
     {
-      "attack": "Psybeam",
-      "type": "Psychic",
-      "dps": 40
+      "dps":9.68,
+      "attack":"OMINOUS WIND",
+      "type":"ghost",
+      "power":30,
+      "duration":"3,100",
+      "dmgWindow":"250"
     },
     {
-      "attack": "Poison Fang",
-      "type": "Poison",
-      "dps": 25
+      "dps":9.26,
+      "attack":"TWISTER",
+      "type":"dragon",
+      "power":25,
+      "duration":"2,700",
+      "dmgWindow":"1,750"
     },
     {
-      "attack": "Brine",
-      "type": "Water",
-      "dps": 25
-    },
-    {
-      "attack": "Bubble Beam",
-      "type": "Water",
-      "dps": 30
-    },
-    {
-      "attack": "Aerial Ace",
-      "type": "Flying",
-      "dps": 30
-    },
-    {
-      "attack": "Bulldoze",
-      "type": "Ground",
-      "dps": 35
-    },
-    {
-      "attack": "Swift",
-      "type": "Normal",
-      "dps": 30
-    },
-    {
-      "attack": "Heart Stamp",
-      "type": "Psychic",
-      "dps": 25
-    },
-    {
-      "attack": "Ancient Power",
-      "type": "Rock",
-      "dps": 35
-    },
-    {
-      "attack": "Ominous Wind",
-      "type": "Ghost",
-      "dps": 30
-    },
-    {
-      "attack": "Twister",
-      "type": "Dragon",
-      "dps": 25
-    },
-    {
-      "attack": "Air Cutter",
-      "type": "Flying",
-      "dps": 30
-    },
-    {
-      "attack": "Draining Kiss",
-      "type": "Fairy",
-      "dps": 25
-    },
-    {
-      "attack": "Struggle",
-      "type": "Normal",
-      "dps": 15
-    },
-    {
-      "attack": "Rock Tomb",
-      "type": "Rock",
-      "dps": 30
-    },
-    {
-      "attack": "Flame Wheel",
-      "type": "Fire",
-      "dps": 40
-    },
-    {
-      "attack": "Flame Charge",
-      "type": "Fire",
-      "dps": 25
-    },
-    {
-      "attack": "Shadow Sneak",
-      "type": "Ghost",
-      "dps": 25
-    },
-    {
-      "attack": "Mega Drain",
-      "type": "Grass",
-      "dps": 25
-    },
-    {
-      "attack": "Icy Wind",
-      "type": "Ice",
-      "dps": 25
-    },
-    {
-      "attack": "Disarming Voice",
-      "type": "Fairy",
-      "dps": 25
-    },
-    {
-      "attack": "Wrap",
-      "type": "Normal",
-      "dps": 25
+      "dps":9.09,
+      "attack":"AIR CUTTER",
+      "type":"flying",
+      "power":30,
+      "duration":"3,300",
+      "dmgWindow":"900"
+    },
+    {
+      "dps":8.93,
+      "attack":"DRAINING KISS",
+      "type":"fairy",
+      "power":25,
+      "duration":"2,800",
+      "dmgWindow":"100"
+    },
+    {
+      "dps":8.85,
+      "attack":"STRUGGLE",
+      "type":"normal",
+      "power":15,
+      "duration":"1,695",
+      "dmgWindow":"700"
+    },
+    {
+      "dps":8.82,
+      "attack":"ROCK TOMB",
+      "type":"rock",
+      "power":30,
+      "duration":"3,400",
+      "dmgWindow":"900"
+    },
+    {
+      "dps":8.7,
+      "attack":"FLAME WHEEL",
+      "type":"fire",
+      "power":40,
+      "duration":"4,600",
+      "dmgWindow":"500"
+    },
+    {
+      "dps":8.06,
+      "attack":"SHADOW SNEAK",
+      "type":"ghost",
+      "power":25,
+      "duration":"3,100",
+      "dmgWindow":"600"
+    },
+    {
+      "dps":8.06,
+      "attack":"FLAME CHARGE",
+      "type":"fire",
+      "power":25,
+      "duration":"3,100",
+      "dmgWindow":"200"
+    },
+    {
+      "dps":7.81,
+      "attack":"MEGA DRAIN",
+      "type":"grass",
+      "power":25,
+      "duration":"3,200",
+      "dmgWindow":"1,200"
+    },
+    {
+      "dps":6.76,
+      "attack":"WRAP PINK",
+      "type":"grass",
+      "power":25,
+      "duration":"3,700",
+      "dmgWindow":"1,000"
+    },
+    {
+      "dps":6.76,
+      "attack":"WRAP GREEN",
+      "type":"grass",
+      "power":25,
+      "duration":"3,700",
+      "dmgWindow":"1,000"
+    },
+    {
+      "dps":6.58,
+      "attack":"ICY WIND",
+      "type":"ice",
+      "power":25,
+      "duration":"3,800",
+      "dmgWindow":"700"
+    },
+    {
+      "dps":6.41,
+      "attack":"DISARMING VOICE",
+      "type":"fairy",
+      "power":25,
+      "duration":"3,900",
+      "dmgWindow":"1,800"
+    },
+    {
+      "dps":6.25,
+      "attack":"WRAP",
+      "type":"normal",
+      "power":25,
+      "duration":"4,000",
+      "dmgWindow":"600"
     }
   ]
 }

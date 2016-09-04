@@ -2,7 +2,9 @@ package me.nisarg.battlepedia;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,7 +18,9 @@ import android.transition.Transition;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -78,13 +82,14 @@ public class DetailActivity extends Activity {
     private TextView advantages;
     private FrameLayout cardFrame;
 
+    private ArrayList<Move> movesArrayList = new ArrayList<Move>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         mContext = getApplicationContext();
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setMinimumHeight(0);
 
@@ -122,22 +127,108 @@ public class DetailActivity extends Activity {
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         int density = metrics.densityDpi;
 
-        if (density >= DisplayMetrics.DENSITY_XHIGH) {
+        /*if (density >= DisplayMetrics.DENSITY_XHIGH) {
             quickMovesGrid.setNumColumns(2);
             chargeMovesGrid.setNumColumns(2);
-        }
+        }*/
 
 
         weaknesses = (TextView) findViewById(R.id.weakAgainst);
         advantages = (TextView) findViewById(R.id.advOver);
 
-        List<String> quickMoves = Arrays.asList(pokedet.getBasicAttack().split("\\s*,\\s*"));
-        List<String> chargeMoves = Arrays.asList(pokedet.getSpecialAttack().split("\\s*,\\s*"));
+        final List<String> quickMoves = Arrays.asList(pokedet.getBasicAttack().split("\\s*,\\s*"));
 
-        quickMovesGrid.setAdapter(new MovesAdapter(this, quickMoves));
-        chargeMovesGrid.setAdapter(new MovesAdapter(this, chargeMoves));
+        final List<String> chargeMoves = Arrays.asList(pokedet.getSpecialAttack().split("\\s*,\\s*"));
+        loadMoves();
+        quickMovesGrid.setAdapter(new MovesAdapter(this, quickMoves, movesArrayList, pokedet.getType1(), pokedet.getType2()));
+        chargeMovesGrid.setAdapter(new MovesAdapter(this, chargeMoves, movesArrayList, pokedet.getType1(), pokedet.getType2()));
         quickMovesGrid.setExpanded(true);
         chargeMovesGrid.setExpanded(true);
+
+        quickMovesGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id){
+
+                final Dialog dialog = new Dialog(DetailActivity.this);
+
+                dialog.setContentView(R.layout.move_dialog);
+                Move m = MovesAdapter.getMove(quickMoves.get(position).toUpperCase(), movesArrayList);
+                TextView attack = (TextView) dialog.findViewById(R.id.attack);
+                TextView type = (TextView) dialog.findViewById(R.id.type);
+                TextView dps = (TextView) dialog.findViewById(R.id.dps);
+                TextView stab = (TextView) dialog.findViewById(R.id.stab);
+                TextView power = (TextView) dialog.findViewById(R.id.power);
+                TextView duration = (TextView) dialog.findViewById(R.id.duration);
+                TextView dmgWindow = (TextView) dialog.findViewById(R.id.dmgWindow);
+
+                dialog.setTitle(m.getAttack());
+                attack.setText(toTitleCase(m.getAttack().toLowerCase()));
+                type.setText(toTitleCase(m.getType()));
+                if(m.getType().equals(pokedet.getType1().toLowerCase()) || m.getType().equals(pokedet.getType2().toLowerCase())){
+                    stab.setText("Yes");
+                    dps.setText("" + Math.round((Double.parseDouble(m.getDps()) * 125))/100.0 + "*");
+                    power.setText("" + Math.round((Double.parseDouble(m.getPower()) * 125))/100.0 + "*");
+                    dps.setTypeface(dps.getTypeface(), Typeface.ITALIC);
+                    power.setTypeface(dps.getTypeface(), Typeface.ITALIC);
+                } else {
+                    dps.setText(m.getDps());
+                    power.setText(m.getPower());
+                }
+                duration.setText(m.getDuration()+"ms");
+                dmgWindow.setText(m.getDmgWindow()+"ms");
+
+
+                dialog.show();
+
+                int moveColor = getApplicationContext().getResources().getIdentifier(m.getType(), "color", getApplicationContext().getPackageName());
+                Window window = dialog.getWindow();
+                window.setBackgroundDrawableResource(moveColor);
+
+                Log.e("me.nisarg.battlepedia",""+position);
+
+            }
+        });
+        chargeMovesGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id){
+
+                final Dialog dialog = new Dialog(DetailActivity.this);
+
+                dialog.setContentView(R.layout.move_dialog);
+                Move m = MovesAdapter.getMove(chargeMoves.get(position).toUpperCase(), movesArrayList);
+                TextView attack = (TextView) dialog.findViewById(R.id.attack);
+                TextView type = (TextView) dialog.findViewById(R.id.type);
+                TextView dps = (TextView) dialog.findViewById(R.id.dps);
+                TextView stab = (TextView) dialog.findViewById(R.id.stab);
+                TextView power = (TextView) dialog.findViewById(R.id.power);
+                TextView duration = (TextView) dialog.findViewById(R.id.duration);
+                TextView dmgWindow = (TextView) dialog.findViewById(R.id.dmgWindow);
+
+                dialog.setTitle(m.getAttack());
+                attack.setText(toTitleCase(m.getAttack().toLowerCase()));
+                type.setText(toTitleCase(m.getType()));
+                if(m.getType().equals(pokedet.getType1().toLowerCase()) || m.getType().equals(pokedet.getType2().toLowerCase())){
+                    stab.setText("Yes");
+                    dps.setText("" + Math.round((Double.parseDouble(m.getDps()) * 125))/100.0 + "*");
+                    power.setText("" + Math.round((Double.parseDouble(m.getPower()) * 125))/100.0 + "*");
+                    dps.setTypeface(dps.getTypeface(), Typeface.ITALIC);
+                    power.setTypeface(dps.getTypeface(), Typeface.ITALIC);
+                } else {
+                    dps.setText(m.getDps());
+                    power.setText(m.getPower());
+                }
+                duration.setText(m.getDuration()+"ms");
+                dmgWindow.setText(m.getDmgWindow()+"ms");
+
+
+                dialog.show();
+
+                int moveColor = getApplicationContext().getResources().getIdentifier(m.getType(), "color", getApplicationContext().getPackageName());
+                Window window = dialog.getWindow();
+                window.setBackgroundDrawableResource(moveColor);
+
+                Log.e("me.nisarg.battlepedia",""+position);
+
+            }
+        });
 
         txtCp = (TextView) findViewById(R.id.txtCp);
         LinearLayout multiplierBox = (LinearLayout) findViewById(R.id.multiplier);
@@ -258,6 +349,66 @@ public class DetailActivity extends Activity {
                                 "color", mContext.getPackageName())});
         gd.setCornerRadius(0f);
         cardFrame.setBackground(gd);
+    }
+
+    public static String toTitleCase(String input){
+        StringBuilder titleCase = new StringBuilder();
+        boolean nextTitleCase = true;
+
+        for (char c : input.toCharArray()) {
+            if (Character.isSpaceChar(c)) {
+                nextTitleCase = true;
+            } else if (nextTitleCase) {
+                c = Character.toTitleCase(c);
+                nextTitleCase = false;
+            }
+
+            titleCase.append(c);
+        }
+
+        return titleCase.toString();
+    }
+
+    public void loadMoves() {
+        StringBuffer sb = new StringBuffer();
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new InputStreamReader(getApplicationContext().getAssets().open(
+                    "movesets.json")));
+            String temp;
+            while ((temp = br.readLine()) != null)
+                sb.append(temp);
+        } catch (IOException e) {
+            Log.e("me.nisarg.battlepedia", e.toString());
+        } finally {
+            try {
+                assert br != null;
+                br.close(); // stop reading
+            } catch (IOException e) {
+                Log.e("me.nisarg.battlepedia", e.toString());
+            }
+        }
+        String myjsonstring = sb.toString();
+        // Try to parse JSON
+        try {
+            // Creating JSONObject from String
+            JSONObject jsonObjMain = new JSONObject(myjsonstring);
+
+            // Creating JSONArray from JSONObject
+            JSONArray jsonArray = jsonObjMain.getJSONArray("Movesets");
+
+            // JSONArray has x JSONObject
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                // Creating JSONObject from JSONArray
+                JSONObject jsonObj = jsonArray.getJSONObject(i);
+                movesArrayList.add(new Move(jsonObj.getString("attack"),jsonObj.getString("type"),jsonObj.getString("dps"),jsonObj.getString("power"),jsonObj.getString("duration"),jsonObj.getString("dmgWindow")));
+            }
+
+        } catch (JSONException e) {
+            Log.e("me.nisarg.battlepedia", e.toString());
+            e.printStackTrace();
+        }
     }
 
     private HashMap getTypeStats(String type) {

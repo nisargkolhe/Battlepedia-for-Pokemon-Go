@@ -252,8 +252,8 @@
       "stamina": 190,
       "attack": 178,
       "defence": 178,
-      "type1": "Normal",
-      "type2": "Normal"
+      "type1": "Fairy",
+      "type2": "Fairy"
     },
     {
       "num": 35,
@@ -267,8 +267,8 @@
       "stamina": 140,
       "attack": 116,
       "defence": 124,
-      "type1": "Normal",
-      "type2": "Normal"
+      "type1": "Fairy",
+      "type2": "Fairy"
     },
     {
       "num": 91,
@@ -868,7 +868,7 @@
       "attack": 98,
       "defence": 54,
       "type1": "Normal",
-      "type2": "Normal"
+      "type2": "Fairy"
     },
     {
       "num": 135,
@@ -1273,7 +1273,7 @@
       "attack": 154,
       "defence": 196,
       "type1": "Psychic",
-      "type2": "Psychic"
+      "type2": "Fairy"
     },
     {
       "num": 89,
@@ -2233,7 +2233,7 @@
       "attack": 168,
       "defence": 108,
       "type1": "Normal",
-      "type2": "Normal"
+      "type2": "Fairy"
     },
     {
       "num": 145,
@@ -2264,7 +2264,7 @@
       "defence": 90,
       "type1": "Poison",
       "type2": "Flying"
-    },
+    }
     /*{
       "num": 152,
       "name": "Demo",

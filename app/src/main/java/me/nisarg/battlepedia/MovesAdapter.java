@@ -1,6 +1,7 @@
 package me.nisarg.battlepedia;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,14 +13,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,24 +22,26 @@ import java.util.List;
 
 public class MovesAdapter extends BaseAdapter {
 
-    private final List<String> result;
-    private final Context context;
+    private List<String> pokeMoves;
+    private Context context;
     private static LayoutInflater inflater = null;
-    private final HashMap movesList = new HashMap();
-    private final HashMap<String, String> dpsList = new HashMap<String, String>();
+    private ArrayList<Move> movesArrayList = new ArrayList<Move>();
+    private String type1;
+    private String type2;
 
 
-    public MovesAdapter(DetailActivity mainActivity, List<String> moves) {
-        result = moves;
-        context = mainActivity;
-        inflater = (LayoutInflater) context.
-                getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
+    public MovesAdapter(DetailActivity mainActivity, List<String> pokeMoves, ArrayList<Move> movesArrayList, String type1, String type2) {
+        this.pokeMoves = pokeMoves;
+        this.context = mainActivity;
+        this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.type1 = type1.toLowerCase();
+        this.type2 = type2.toLowerCase();
+        this.movesArrayList = movesArrayList;
     }
 
     @Override
     public int getCount() {
-        return result.size();
+        return pokeMoves.size();
     }
 
     @Override
@@ -75,19 +71,32 @@ public class MovesAdapter extends BaseAdapter {
         holder.dps = (TextView) rowView.findViewById(R.id.dps);
         holder.type = (ImageView) rowView.findViewById(R.id.moveType);
         holder.card = (CardView) rowView.findViewById(R.id.moveCard);
+        //loadMoves();
 
-        holder.move.setText(result.get(i));
-        holder.dps.setText(dpsList.get(result.get(i)));
-        loadMoves();
+        Move move = getMove(pokeMoves.get(i).toUpperCase(), movesArrayList);
+
+        //Check if STAB
+        if(move.getType().equals(type1) || move.getType().equals(type2)){
+            holder.move.setText(pokeMoves.get(i)+"*");
+            holder.move.setTypeface(holder.move.getTypeface(),Typeface.ITALIC);
+            String dps = "" + Math.round((Double.parseDouble(move.getDps()) * 125))/100.0;
+            holder.dps.setText(dps);
+        }
+        else{
+            holder.move.setText(pokeMoves.get(i));
+            holder.dps.setText(move.getDps());
+        }
+
+
         try {
-            int moveColor = context.getResources().getIdentifier(movesList.get(result.get(i)).toString().toLowerCase(), "color", context.getPackageName());
+            int moveColor = context.getResources().getIdentifier(move.getType(), "color", context.getPackageName());
             holder.card.setCardBackgroundColor(context.getResources().getColor(moveColor));
         } catch (Exception e) {
-            Log.e("me.nisarg.battlepedia", "bg color didn't load " + e.toString());
+           Log.e("me.nisarg.battlepedia", "bg color didn't load " + e.toString());
         }
 
         try {
-            Picasso.with(context).load(context.getResources().getIdentifier(movesList.get(result.get(i)).toString().toLowerCase() + "icon", "drawable", context.getPackageName())).into(holder.type);
+            Picasso.with(context).load(context.getResources().getIdentifier(move.getType() + "icon", "drawable", context.getPackageName())).into(holder.type);
         } catch (Exception e) {
             Log.e("me.nisarg.battlepedia", "type icon didn't load " + e.toString());
         }
@@ -96,47 +105,13 @@ public class MovesAdapter extends BaseAdapter {
 
     }
 
-    private void loadMoves() {
-        StringBuffer sb = new StringBuffer();
-        BufferedReader br = null;
-        try {
-            br = new BufferedReader(new InputStreamReader(context.getAssets().open(
-                    "movesets.json")));
-            String temp;
-            while ((temp = br.readLine()) != null)
-                sb.append(temp);
-        } catch (IOException e) {
-            Log.e("me.nisarg.battlepedia", e.toString());
-        } finally {
-            try {
-                assert br != null;
-                br.close(); // stop reading
-            } catch (IOException e) {
-                Log.e("me.nisarg.battlepedia", e.toString());
+    public static Move getMove(String attack, ArrayList<Move> moves){
+        for(Move m : moves){
+            //Log.e("me.nisarg.battlepedia",m.getAttack());
+            if(m.getAttack().contains(attack.toUpperCase())){
+                return m;
             }
         }
-        String myjsonstring = sb.toString();
-        // Try to parse JSON
-        try {
-            // Creating JSONObject from String
-            JSONObject jsonObjMain = new JSONObject(myjsonstring);
-
-            // Creating JSONArray from JSONObject
-            JSONArray jsonArray = jsonObjMain.getJSONArray("Movesets");
-
-            // JSONArray has x JSONObject
-            for (int i = 0; i < jsonArray.length(); i++) {
-
-                // Creating JSONObject from JSONArray
-                JSONObject jsonObj = jsonArray.getJSONObject(i);
-                movesList.put(jsonObj.getString("attack"), jsonObj.getString("type"));
-                dpsList.put(jsonObj.getString("attack"), jsonObj.getString("dps"));
-            }
-
-        } catch (JSONException e) {
-            // TODO Auto-generated catch block
-            Log.e("me.nisarg.battlepedia", e.toString());
-            e.printStackTrace();
-        }
+        return null;
     }
 }

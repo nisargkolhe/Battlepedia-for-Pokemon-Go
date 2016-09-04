@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:fillViewport="true">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -283,6 +287,16 @@
                 android:stretchMode="columnWidth"
                 android:verticalSpacing="10dp" />
         </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:textStyle="italic"
+            android:text="* Same Type Attack Bonus: 25% more damage"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textColor="@android:color/black"
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -534,3 +548,4 @@
 
 
 </ScrollView>
+    </LinearLayout>
