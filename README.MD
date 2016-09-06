@@ -2,7 +2,7 @@
 
 ![Battlepedia](https://thumbs.gfycat.com/ConsciousIllinformedJumpingbean-size_restricted.gif)
 
-Battlepedia is a companion app for Pokémon Go with all the data, info and tools needed to win and defend gyms. The app was rejected from Google Play Store for containing copyrighted content(even though loads of other apps on Play Store use Pokémons without any problems), so I'm open sourcing it here on GitHub(because I spent a lot of time on this and I want senpai to notice me.) For now the app is exclusively on Android, and the design is heavily inspired by Google's Material Guidelines.
+Battlepedia is a companion app for Pokémon Go with all the data, info and tools needed to win and defend gyms. The app was rejected from Google Play Store for containing copyrighted content(even though loads of other apps on Play Store use Pokémons without any problems), so I'm open sourcing it here on GitHub(because I spent a lot of time on this and I want senpai to notice me.) For now the app is exclusively on Android, and the design is heavily inspired by Google's Material Design Guidelines.
 
 
 ####Some Screenshots:
@@ -18,7 +18,7 @@ Battlepedia is a companion app for Pokémon Go with all the data, info and tools
   - Get all the hidden stats from the Pokémon Go source code.
 
 What this app **does not** do:
-   
+
   - Tell you where the Pokémons are or where they'll spawn.
   - Help you edit any values or any kind of code.
   - Basically help you cheat in any way at all.
@@ -27,20 +27,20 @@ What this app **does not** do:
 ### Credits
 
 This couldn't have been possible without:
-   
-  - [The Silph Road](https://www.reddit.com/r/TheSilphRoad/) team and their database, in fact their webapp was a huge inspiration for me to create this app.
+
+  - [The Silph Road](https://www.reddit.com/r/TheSilphRoad/) team and their database, in fact their web-app was a huge inspiration for me to create this app.
   - [wasniahC](https://www.reddit.com/user/wasniahC) from /r/TheSilphRoad for the [movesets list](https://www.reddit.com/r/TheSilphRoad/comments/4sqqb0/movesmovesets_in_pokemon_go_an_almost_complete/).
   - [Dyploxrs](https://www.reddit.com/user/Dyploxrs) from /r/TheSilphRoad for the [evolution CP multiplier list](https://www.reddit.com/r/TheSilphRoad/comments/4t6rfd/pokemon_go_spreadsheet_cp_evolution_multipliers/).
   - [Veekun](http://veekun.com/dex/downloads) for Pokémon sprites.
-  
+
 
 ### Version
-1.0.0
+1.1.0
 
 ### Installation
 
-Go to Settings -> Security and disable "Unknown sources" and then install the following APK file:
-[Battlepedia_for_Pokemon_Go_1.0.0.apk](https://github.com/nisargkolhe/Battlepedia-for-Pokemon-Go/releases/download/v1.0.0/BattlepediaForPokemonGo_1.0.0.apk)
+Go to Settings -> Security, disable "Unknown sources" and then install the following APK file:
+[Battlepedia_for_Pokemon_Go_1.1.0.apk](https://github.com/nisargkolhe/Battlepedia-for-Pokemon-Go/releases/download/v1.1.0/BattlepediaForPokemonGo_1.1.0.apk)
 
 ### Development
 
@@ -56,9 +56,3 @@ License
 ----
 
 MIT
-
-
-
-
-
-
